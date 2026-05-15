@@ -1,133 +1,480 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flagstone Heritage Construction Group</title>
-  <meta name="description" content="Boutique roofing and construction company in Central Florida with engineering-led expertise.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flagstone Heritage Construction Group | Central Florida Roofing</title>
+  <meta name="description" content="Boutique Central Florida roofing and construction company. Licensed roofing contractor with engineering oversight. Free inspections, storm restoration, insurance claim support." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
+      --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --color-bg:#ffffff;
+      --color-surface:#f5f8fc;
+      --color-surface-2:#eaf0f8;
+      --color-surface-offset:#dde7f2;
+      --color-text:#0c1a2e;
+      --color-text-muted:#506070;
+      --color-text-faint:#8fa0b2;
+      --color-text-inverse:#f5f8fc;
+      --color-border:rgba(12,26,46,.11);
+      --color-divider:rgba(12,26,46,.07);
+      --color-primary:#0f3460;
+      --color-primary-hover:#0a2749;
+      --color-accent:#8b1a2a;
+      --color-accent-hover:#6e1421;
+      --color-accent-soft:rgba(139,26,42,.08);
+      --radius-sm:.4rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--radius-full:999px;
+      --shadow-sm:0 1px 3px rgba(12,26,46,.06);
+      --shadow-md:0 8px 28px rgba(12,26,46,.09);
+      --shadow-lg:0 20px 56px rgba(12,26,46,.13);
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-body:'Inter',Arial,sans-serif;
+    }
+    [data-theme="dark"]{
+      --color-bg:#0b1220;--color-surface:#101c30;--color-surface-2:#162438;--color-surface-offset:#1c2e45;
+      --color-text:#e8f0fa;--color-text-muted:#a8b8cc;--color-text-faint:#6a7f96;--color-text-inverse:#0e1828;
+      --color-border:rgba(232,240,250,.11);--color-divider:rgba(232,240,250,.07);
+      --color-primary:#6fa3d8;--color-primary-hover:#91bbdf;
+      --color-accent:#c95466;--color-accent-hover:#df7080;--color-accent-soft:rgba(201,84,102,.12);
+      --shadow-sm:0 1px 3px rgba(0,0,0,.22);--shadow-md:0 8px 28px rgba(0,0,0,.32);--shadow-lg:0 20px 56px rgba(0,0,0,.42);
+    }
+    *,:before,:after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}
+    body{margin:0;font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text);transition:background .25s,color .25s}
+    img,svg{display:block;max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit;color:inherit;border:none}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.05;color:var(--color-text);margin:0 0 .85rem}
+    h1{font-size:var(--text-3xl)}
+    h2{font-size:var(--text-2xl)}
+    h3{font-size:var(--text-xl)}
+    p{margin:0 0 1rem;color:var(--color-text-muted)}
+    .container{width:min(1180px,calc(100% - 2rem));margin-inline:auto}
+    .section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.9rem;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.18em;color:var(--color-accent);font-weight:700;font-family:var(--font-body)}
+    .eyebrow::before{content:'';display:block;width:1.4rem;height:2px;background:var(--color-accent);border-radius:2px}
+    .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:var(--color-primary);color:#fff;padding:.75rem 1rem;border-radius:var(--radius-md);z-index:999}
+
+    /* NAV */
+    header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--color-bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-divider)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;min-height:72px}
+    .brand{display:flex;align-items:center;gap:.9rem;cursor:pointer}
+    .brand-mark{width:48px;height:48px;padding:9px;border-radius:14px;background:var(--color-primary);color:#fff;flex-shrink:0;box-shadow:var(--shadow-md)}
+    .brand-copy small{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-text-faint)}
+    .brand-copy strong{display:block;font-family:var(--font-display);font-size:1.3rem;font-weight:700;line-height:1.1}
+    .nav-links{display:flex;align-items:center;gap:1.4rem}
+    .nav-links a{font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);transition:color .15s}
+    .nav-links a:hover{color:var(--color-primary)}
+    .nav-cta{display:flex;align-items:center;gap:.75rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.75rem 1.4rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;cursor:pointer;transition:.18s ease;border:none}
+    .btn-primary{background:var(--color-primary);color:#fff}.btn-primary:hover{background:var(--color-primary-hover)}
+    .btn-accent{background:var(--color-accent);color:#fff}.btn-accent:hover{background:var(--color-accent-hover)}
+    .btn-ghost{background:transparent;border:1.5px solid var(--color-border);color:var(--color-text)}.btn-ghost:hover{background:var(--color-surface)}
+    .theme-btn{width:44px;height:44px;border-radius:var(--radius-full);background:var(--color-surface);border:1px solid var(--color-border);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+
+    /* HERO */
+    .hero{padding:clamp(4rem,9vw,7.5rem) 0 clamp(2rem,5vw,4rem)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:stretch}
+    .panel{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
+    .hero-main{padding:clamp(1.5rem,4vw,3rem);position:relative;overflow:hidden}
+    .hero-main::after{content:'';position:absolute;right:-80px;top:-80px;width:280px;height:280px;background:radial-gradient(circle,var(--color-accent-soft) 0%,transparent 70%);pointer-events:none;z-index:0}
+    .hero-main>*{position:relative;z-index:1}
+    .hero-main p.lead{font-size:var(--text-lg);color:var(--color-text-muted);max-width:54ch;line-height:1.55}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin:1.8rem 0 1.5rem}
+    .phone-cta{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:var(--text-base);color:var(--color-primary)}
+    .phone-cta svg{flex-shrink:0}
+    .hero-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:1.5rem}
+    .kpi{padding:1rem 1.1rem;background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg)}
+    .kpi strong{display:block;font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-primary);margin-bottom:.2rem}
+    .kpi span{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .hero-side{padding:clamp(1.5rem,4vw,2.75rem);background:linear-gradient(160deg,#0f3460 0%,#0a2244 100%);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);color:#fff}
+    .hero-side h2,.hero-side h3{color:#fff}
+    .hero-side p{color:rgba(255,255,255,.82)}
+    .hero-side .eyebrow{color:#f0b8c1}
+    .hero-side .eyebrow::before{background:#f0b8c1}
+    .feature-list{display:grid;gap:.85rem;margin-top:1.5rem}
+    .feature-item{padding:1rem 1.1rem;border-radius:1rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+    .feature-item strong{display:block;font-size:var(--text-sm);color:#fff;margin-bottom:.25rem}
+    .feature-item p{color:rgba(255,255,255,.75);font-size:var(--text-sm);margin:0}
+    .trust-bar{margin-top:1.25rem;border-top:1px solid var(--color-divider);padding-top:1.5rem}
+    .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .trust-item{padding:.75rem 0}
+    .trust-item strong{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-text);margin-bottom:.2rem}
+    .trust-item span{font-size:var(--text-sm);color:var(--color-text-muted)}
+
+    /* SECTIONS */
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+    .section-head p{margin:0;max-width:56ch;color:var(--color-text-muted)}
+    .alt{background:var(--color-surface-2)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    .card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm)}
+    .card-icon{width:2.6rem;height:2.6rem;border-radius:var(--radius-md);background:var(--color-accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .card h3{font-family:var(--font-body);font-size:var(--text-base);font-weight:800;margin-bottom:.5rem;color:var(--color-text)}
+    .card p{font-size:var(--text-sm);margin:0}
+
+    /* PROCESS */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .step{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:1.5rem;position:relative}
+    .step-num{display:inline-flex;width:2.2rem;height:2.2rem;align-items:center;justify-content:center;border-radius:var(--radius-full);background:var(--color-primary);color:#fff;font-size:var(--text-sm);font-weight:800;margin-bottom:1rem}
+    .step h3{font-family:var(--font-body);font-size:var(--text-sm);font-weight:800;margin-bottom:.4rem;color:var(--color-text)}
+
+    /* ABOUT SPLIT */
+    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:1.25rem;align-items:start}
+    .dark-panel{background:var(--color-primary);color:#fff;border-radius:var(--radius-xl);padding:clamp(1.5rem,4vw,2.75rem);box-shadow:var(--shadow-lg)}
+    .dark-panel h2,.dark-panel h3{color:#fff}
+    .dark-panel p{color:rgba(255,255,255,.82)}
+    .dark-panel .eyebrow{color:#f0b8c1}
+    .dark-panel .eyebrow::before{background:#f0b8c1}
+    .credentials{display:grid;gap:.85rem;margin-top:1.5rem}
+    .cred{display:flex;gap:.9rem;align-items:flex-start;padding:1rem;border-radius:1rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}
+    .cred-dot{width:.8rem;height:.8rem;border-radius:999px;background:#f0b8c1;margin-top:.5rem;flex-shrink:0}
+    .cred strong{display:block;color:#fff;font-size:var(--text-sm);margin-bottom:.2rem}
+    .cred p{margin:0;font-size:var(--text-sm);color:rgba(255,255,255,.75)}
+    .light-panel{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:clamp(1.5rem,4vw,2.75rem);box-shadow:var(--shadow-sm)}
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+    .stat-box{padding:1.2rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg)}
+    .stat-box strong{display:block;font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);line-height:1.1;margin-bottom:.3rem}
+    .stat-box span{font-size:var(--text-sm);color:var(--color-text-muted)}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .faq{padding:1.4rem;border-radius:var(--radius-lg);background:var(--color-surface);border:1px solid var(--color-border)}
+    .faq h3{font-family:var(--font-body);font-size:var(--text-sm);font-weight:800;margin-bottom:.5rem;color:var(--color-primary)}
+    .faq p{font-size:var(--text-sm);margin:0}
+
+    /* CONTACT */
+    .contact-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:1.25rem;align-items:start}
+    .contact-info{padding:clamp(1.5rem,4vw,2.75rem)}
+    .contact-steps{display:grid;gap:1.1rem;margin-top:1.5rem}
+    .contact-step{display:flex;gap:.9rem;align-items:flex-start}
+    .contact-step .num{display:inline-flex;width:2rem;height:2rem;min-width:2rem;align-items:center;justify-content:center;border-radius:999px;background:var(--color-primary);color:#fff;font-size:var(--text-sm);font-weight:800}
+    .contact-step strong{display:block;font-size:var(--text-sm);font-weight:800;color:var(--color-text);margin-bottom:.2rem}
+    .contact-step p{margin:0;font-size:var(--text-sm)}
+    .form-panel{padding:clamp(1.5rem,4vw,2.5rem)}
+    .field{margin-bottom:1rem}
+    label{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-text);margin-bottom:.4rem}
+    input,select,textarea{width:100%;padding:.95rem 1rem;border-radius:.85rem;border:1.5px solid var(--color-border);background:var(--color-bg);color:var(--color-text);transition:border-color .15s,box-shadow .15s;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-primary) 14%,transparent)}
+    textarea{min-height:140px;resize:vertical}
+    .form-notice{display:none;margin-top:1rem;padding:1rem;border-radius:.85rem;background:var(--color-accent-soft);font-size:var(--text-sm);color:var(--color-text);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent)}
+
+    /* FOOTER */
+    footer{padding:2.5rem 0 3rem;border-top:1px solid var(--color-divider)}
+    .footer-row{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+    .footer-brand strong{font-family:var(--font-display);font-size:var(--text-lg);display:block;margin-bottom:.35rem}
+    .footer-brand p{font-size:var(--text-sm);max-width:40ch;margin:0}
+    .footer-nav{display:flex;flex-direction:column;gap:.55rem}
+    .footer-nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .footer-nav a:hover{color:var(--color-primary)}
+    .footer-bottom{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--color-divider);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+    .footer-bottom span{font-size:var(--text-xs);color:var(--color-text-faint)}
+
+    /* UTILITY */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .accent-text{color:var(--color-accent)}
+    .primary-text{color:var(--color-primary)}
+    .divider{height:1px;background:var(--color-divider);margin:0}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.hero-grid,.split,.contact-wrap{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.trust-row{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}}
+    @media(max-width:640px){.grid-3,.faq-grid,.stat-grid,.process-grid,.trust-row{grid-template-columns:1fr}.hero-kpis{grid-template-columns:1fr}.hero-main,.hero-side,.dark-panel,.light-panel,.contact-info,.form-panel{padding:1.25rem}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.grid-2{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-label="Flagstone Heritage logo">
-        <path d="M14 46L26 14h12l12 32" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M22 34h20" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-        <path d="M18 50h28" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-      </svg>
-      <div>
-        <div class="eyebrow">Central Florida</div>
-        <div class="brand-name">Flagstone Heritage</div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Flagstone Heritage home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M14 46L26 14h12l12 32" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 34h20" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M18 50h28" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-copy">
+          <small>Central Florida</small>
+          <strong>Flagstone Heritage</strong>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-accent">Free Inspection</a>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">&#9680;</button>
       </div>
     </div>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button class="theme-btn" id="themeToggle" aria-label="Switch theme">&#9680;</button>
-  </div>
-</header>
+  </header>
 
-<main id="main">
-  <section class="hero">
-    <div class="container hero-wrap">
-      <div class="card hero-card">
-        <div class="eyebrow">Boutique roofing + construction</div>
-        <h1>Roofing for distinctive Central Florida properties, guided by craftsmanship and engineering rigor.</h1>
-        <p>Flagstone Heritage is a boutique roofing company inside a broader construction firm, designed for homeowners, builders, and property teams who expect premium communication, thoughtful detailing, and stronger structural confidence.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="contact.html">Book a consultation</a>
-          <a class="btn btn-secondary" href="services.html">Explore services</a>
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="panel hero-main">
+          <span class="eyebrow">Boutique Roofing &amp; Construction &mdash; Central Florida</span>
+          <h1 id="hero-heading">Your home deserves a roofer with engineering-backed precision and boutique care.</h1>
+          <p class="lead">Flagstone Heritage Construction Group is a licensed roofing and construction company serving Central Florida. We handle roof replacements, storm damage, insurance claims, and repairs &mdash; with the structural confidence that only a dual-licensed firm can offer.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get a free roof inspection</a>
+            <a href="#services" class="btn btn-ghost">See all services</a>
+          </div>
+          <div class="phone-cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>Call now for same-day response</span>
+          </div>
+          <div class="hero-kpis">
+            <div class="kpi reveal"><strong>Free</strong><span>Roof inspection &amp; estimate</span></div>
+            <div class="kpi reveal"><strong>Dual-licensed</strong><span>Roofing + engineering</span></div>
+            <div class="kpi reveal"><strong>Storm-ready</strong><span>Insurance claim support</span></div>
+          </div>
         </div>
-        <div class="metrics">
-          <div class="stat"><strong>Dual-license advantage</strong><span>Roofing expertise with engineering-led oversight.</span></div>
-          <div class="stat"><strong>Boutique service</strong><span>Selective project volume and concierge communication.</span></div>
-          <div class="stat"><strong>Florida resilience</strong><span>Storm-smart systems, ventilation, and envelope protection.</span></div>
-          <div class="stat"><strong>Construction depth</strong><span>Exterior scopes beyond roofing when needed.</span></div>
+        <aside class="hero-side">
+          <span class="eyebrow">Why Central Florida trusts us</span>
+          <h2>Boutique service. Real contractor depth.</h2>
+          <p>We take on fewer projects so every client gets direct communication, proper documentation, and the quality that only comes from a focused team.</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <strong>Full roof replacement</strong>
+              <p>Shingle, tile, metal, and flat roofing systems planned to match your property, budget, and insurance situation.</p>
+            </div>
+            <div class="feature-item">
+              <strong>Storm &amp; insurance claims</strong>
+              <p>We document damage, work with adjusters, and coordinate everything from inspection through final installation.</p>
+            </div>
+            <div class="feature-item">
+              <strong>Engineering oversight</strong>
+              <p>Structural concerns discovered during roofing are addressed in-house &mdash; no subcontracting gaps or liability hand-offs.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="container trust-bar">
+        <div class="trust-row">
+          <div class="trust-item"><strong>Licensed &amp; insured</strong><span>Florida roofing contractor license, fully insured.</span></div>
+          <div class="trust-item"><strong>Engineering license</strong><span>Structural work handled in-house by our licensed team.</span></div>
+          <div class="trust-item"><strong>Hassle-free process</strong><span>We handle permits, HOA docs, and insurance paperwork.</span></div>
+          <div class="trust-item"><strong>Central Florida local</strong><span>Deep knowledge of Florida code, weather, and insurance landscape.</span></div>
         </div>
       </div>
-      <div class="visual">
-        <div class="eyebrow" style="color:rgba(246,241,233,.7)">Refined market position</div>
-        <h2>Elevated presentation without losing contractor credibility.</h2>
-        <p>This direction separates the brand from commodity roofers by using a warm, architectural palette, editorial typography, and premium service language.</p>
-        <div class="mini-grid">
-          <div class="mini"><strong>Residential estates</strong><p>Tile, standing seam metal, designer shingles, and restoration.</p></div>
-          <div class="mini"><strong>Selective commercial</strong><p>Boutique hospitality, churches, HOAs, and property managers.</p></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section alt" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">What we do</span>
+            <h2 id="services-heading">Roofing services for every Florida property type.</h2>
+          </div>
+          <a href="#contact" class="btn btn-accent">Request a consultation</a>
+        </div>
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Roof replacement</h3>
+            <p>Full-system replacement for residential and commercial properties. We walk you through material options, insurance alignment, and permit requirements before work begins.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Roof repair</h3>
+            <p>Fast, targeted repairs for leaks, missing shingles, flashing failures, and storm damage. We diagnose the problem first and give you a written scope before touching anything.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Storm restoration</h3>
+            <p>Post-storm inspection, engineering-grade documentation, insurance adjuster coordination, and complete rebuild scoping for hurricane and wind damage.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Shingle roofing</h3>
+            <p>Architectural and impact-rated shingles. We select products that are Florida-approved, insurance-compatible, and right for your home's profile and exposure.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3>Tile roofing</h3>
+            <p>Concrete and clay tile installation, repair, and full replacement. Engineering load review included for structural compliance and insurance documentation.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h3>Metal &amp; flat roofing</h3>
+            <p>Standing seam metal for premium and modern homes. TPO and modified bitumen for flat or low-slope applications. Engineered for long-term Florida performance.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="services" class="section">
+    <!-- PROCESS -->
+    <section class="section" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">How it works</span>
+            <h2 id="process-heading">Simple. Clear. No surprises.</h2>
+            <p>A straightforward four-step process modeled on what Central Florida homeowners actually need when they&rsquo;re dealing with a roofing problem.</p>
+          </div>
+        </div>
+        <div class="process-grid">
+          <div class="step reveal"><span class="step-num">1</span><h3>Contact us</h3><p>Call or submit a request. Tell us the property address, type of roof, urgency level, and any insurance involvement.</p></div>
+          <div class="step reveal"><span class="step-num">2</span><h3>Free inspection</h3><p>We come to the property, inspect the roof, document conditions with photos, and identify what&rsquo;s needed before writing anything up.</p></div>
+          <div class="step reveal"><span class="step-num">3</span><h3>Written proposal</h3><p>You receive a clear written scope, material options, timeline, and pricing. No pressure. No verbal estimates that disappear later.</p></div>
+          <div class="step reveal"><span class="step-num">4</span><h3>Construction</h3><p>Approved work is scheduled, permitted where required, and executed by our licensed crew. Final walkthrough and documentation on completion.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section alt" id="about" aria-labelledby="about-heading">
+      <div class="container split">
+        <div class="dark-panel">
+          <span class="eyebrow">Who we are</span>
+          <h2 id="about-heading">Built differently than a standard Florida roofer.</h2>
+          <p>Flagstone Heritage is a boutique construction company with roofing at the center of its market presence. We serve homeowners, estate properties, property managers, and selective commercial accounts in Central Florida.</p>
+          <div class="credentials">
+            <div class="cred"><span class="cred-dot"></span><div><strong>Florida roofing contractor license</strong><p>Active state roofing license covering residential, commercial, storm restoration, and new construction work.</p></div></div>
+            <div class="cred"><span class="cred-dot"></span><div><strong>Engineering license</strong><p>Licensed engineering capability in-house means structural concerns found during roofing scopes are resolved by our own team.</p></div></div>
+            <div class="cred"><span class="cred-dot"></span><div><strong>Boutique intake model</strong><p>We select projects carefully so every client gets the communication and quality that high-volume contractors cannot sustain.</p></div></div>
+          </div>
+        </div>
+        <div class="light-panel">
+          <span class="eyebrow">Local market knowledge</span>
+          <h2>Deep roots in the Central Florida roofing landscape.</h2>
+          <p>Florida&rsquo;s combination of hurricane exposure, changing insurance regulations, and strict building codes means your roofer has to know more than how to install shingles. We know Florida.</p>
+          <div class="stat-grid">
+            <div class="stat-box reveal"><strong>Central FL</strong><span>Our primary service area and local community.</span></div>
+            <div class="stat-box reveal"><strong>Dual licensed</strong><span>Roofing contractor + engineering credentials.</span></div>
+            <div class="stat-box reveal"><strong>Boutique</strong><span>Selective project intake for premium quality control.</span></div>
+            <div class="stat-box reveal"><strong>Full-service</strong><span>Replacement, repairs, storm, commercial, flat roofs.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2 id="faq-heading">Common questions from Florida homeowners.</h2>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <article class="faq reveal"><h3>Are you licensed and insured in Florida?</h3><p>Yes. We hold an active Florida roofing contractor license and general liability insurance. Engineering credentials are also maintained in-house as a licensed engineering firm.</p></article>
+          <article class="faq reveal"><h3>Do you help with insurance claims?</h3><p>Yes. We provide written damage documentation, work with insurance adjusters, and help coordinate the claim through approval and construction. We do not act as a public adjuster, but we support the process thoroughly.</p></article>
+          <article class="faq reveal"><h3>How quickly can you respond to storm damage?</h3><p>We prioritize urgent storm-related calls and work to get on-site within one business day for emergency inspections when conditions allow.</p></article>
+          <article class="faq reveal"><h3>Do you offer financing options?</h3><p>We understand that major roofing work is often unexpected. Ask us about financing options when you request your consultation and we will walk you through what is available.</p></article>
+          <article class="faq reveal"><h3>What areas do you serve?</h3><p>We are based in Central Florida and primarily serve Orange, Osceola, Seminole, Lake, and Polk counties. Contact us for service availability in surrounding areas.</p></article>
+          <article class="faq reveal"><h3>What makes you different from other roofers?</h3><p>The combination of roofing contractor license and engineering capability in one firm means structural issues found during roofing jobs are resolved by our team rather than handed off to a third party or left for the homeowner to figure out.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section alt" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-wrap">
+        <div class="panel contact-info">
+          <span class="eyebrow">Get in touch</span>
+          <h2 id="contact-heading">Request your free roof inspection.</h2>
+          <p>We review every request and respond within one business day. Emergency calls are handled as quickly as possible.</p>
+          <div class="contact-steps">
+            <div class="contact-step"><span class="num">1</span><div><strong>Tell us about your property</strong><p>Roof type, issue, urgency, and any insurance claim involvement.</p></div></div>
+            <div class="contact-step"><span class="num">2</span><div><strong>We schedule an inspection</strong><p>A real team member contacts you to confirm timing and access details.</p></div></div>
+            <div class="contact-step"><span class="num">3</span><div><strong>Receive a written proposal</strong><p>Clear scope, options, and pricing before any commitment is made.</p></div></div>
+            <div class="contact-step"><span class="num">4</span><div><strong>Work begins on your schedule</strong><p>Permitted, documented, and executed by our licensed team.</p></div></div>
+          </div>
+        </div>
+        <div class="panel form-panel">
+          <h2>Book your consultation</h2>
+          <form id="contactForm" novalidate>
+            <div class="field"><label for="fname">Full name</label><input id="fname" type="text" placeholder="Your full name" required autocomplete="name"></div>
+            <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@email.com" required autocomplete="email"></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="(407) 000-0000" autocomplete="tel"></div>
+            <div class="field"><label for="service">Service needed</label><select id="service"><option value="">Select a service&hellip;</option><option>Roof replacement</option><option>Roof repair</option><option>Storm or hurricane damage</option><option>Insurance claim support</option><option>Tile roofing</option><option>Metal roofing</option><option>Commercial roofing</option><option>Engineering consultation</option></select></div>
+            <div class="field"><label for="details">Project details</label><textarea id="details" placeholder="Property address, current roof condition, insurance status, preferred timeline, and anything else that helps us prepare."></textarea></div>
+            <button class="btn btn-primary" type="submit" style="width:100%;font-size:var(--text-base)">Submit consultation request</button>
+            <div class="form-notice" id="formNotice" role="alert">✓ Thank you. Your request has been received. We will be in touch within one business day.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
     <div class="container">
-      <div class="eyebrow">Core services</div>
-      <h2>Built around roofing, supported by broader construction capability.</h2>
-      <div class="services-grid">
-        <article class="service">
-          <h3>Premium roof replacement</h3>
-          <p>Luxury tile, metal, high-performance shingles, and complete system replacement with curated material guidance and engineering review.</p>
-        </article>
-        <article class="service">
-          <h3>Repair and leak response</h3>
-          <p>Targeted diagnostics, emergency mitigation, and detail-focused repairs for high-value homes and commercial buildings.</p>
-        </article>
-        <article class="service">
-          <h3>Storm restoration</h3>
-          <p>Documentation, insurance coordination, and resilient rebuild planning tailored to Florida weather patterns and wind mitigation standards.</p>
-        </article>
+      <div class="footer-row">
+        <div class="footer-brand">
+          <strong>Flagstone Heritage Construction Group</strong>
+          <p>Boutique roofing and construction for Central Florida. Licensed roofing contractor with engineering-led oversight and insurance claim support.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Flagstone Heritage Construction Group. All rights reserved.</span>
+        <span>Central Florida &mdash; Licensed &amp; Insured</span>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="section bg-offset">
-    <div class="container two-col">
-      <div>
-        <div class="eyebrow">Why this brand wins</div>
-        <h2>A higher-end client experience than the average roofing company.</h2>
-        <p>The site is designed to convert premium buyers by emphasizing trust, process clarity, clean aesthetics, and engineering-informed judgment. Both a roofing license and an engineering license back every project.</p>
-      </div>
-      <div class="quote-card">
-        <p>Boutique roofing company. Engineering-informed construction. Central Florida expertise. Storm-resilient systems. Concierge project management.</p>
-      </div>
-    </div>
-  </section>
+  <script>
+    (function(){
+      // Theme toggle
+      const root=document.documentElement;
+      const btn=document.getElementById('themeToggle');
+      let theme=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+      function paint(){root.setAttribute('data-theme',theme);btn.textContent=theme==='dark'?'\u2600':'\u25D0';}
+      paint();
+      if(btn)btn.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';paint();});
 
-  <section class="section">
-    <div class="container">
-      <div class="eyebrow">Operating model</div>
-      <h2>How projects move from first call to final closeout.</h2>
-      <div class="process">
-        <div class="step"><span>1</span><h3>Discover</h3><p>Lead qualification, roof type, urgency, and property profile capture.</p></div>
-        <div class="step"><span>2</span><h3>Inspect</h3><p>On-site review, drone imagery, moisture points, and scope planning.</p></div>
-        <div class="step"><span>3</span><h3>Deliver</h3><p>Proposal, approvals, schedule, and polished client communication.</p></div>
-        <div class="step"><span>4</span><h3>Protect</h3><p>Warranty, maintenance, annual follow-up, and referral automation.</p></div>
-      </div>
-    </div>
-  </section>
-</main>
+      // Form
+      const form=document.getElementById('contactForm');
+      const notice=document.getElementById('formNotice');
+      if(form&&notice){form.addEventListener('submit',function(e){e.preventDefault();notice.style.display='block';form.reset();setTimeout(function(){notice.style.display='none';},8000);});}
 
-<footer>
-  <div class="container footer-row">
-    <div>
-      <div class="brand-name">Flagstone Heritage Construction Group</div>
-      <p>Boutique roofing and construction for Central Florida. Licensed roofing contractor with engineering-led oversight.</p>
-    </div>
-    <nav>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</footer>
-
-<script src="assets/main.js"></script>
+      // Scroll reveal
+      if('IntersectionObserver' in window){
+        const els=document.querySelectorAll('.reveal');
+        const obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
+        els.forEach(function(el){obs.observe(el);});
+      }else{
+        document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+      }
+    })();
+  </script>
 </body>
 </html>
