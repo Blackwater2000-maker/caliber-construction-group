@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Flagstone Heritage Construction Group</title>
+  <meta name="description" content="Book a roofing consultation with Flagstone Heritage Construction Group in Central Florida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-label="Flagstone Heritage logo">
+        <path d="M14 46L26 14h12l12 32" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 34h20" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M18 50h28" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="eyebrow">Central Florida</div>
+        <div class="brand-name">Flagstone Heritage</div>
+      </div>
+    </div>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle" aria-label="Switch theme">&#9680;</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Get in touch</div>
+      <h1>Schedule a premium roofing consultation with a Central Florida construction team.</h1>
+      <p class="lead">We review every inquiry and respond within one business day. Tell us about your property, your roof type, and your timeline and we will give you an honest scope and a clear proposal.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>What to expect</h2>
+        <div class="contact-steps">
+          <div class="contact-step"><span>1</span><div><strong>Submit your request</strong><p>Tell us your project type, property address, urgency, and any claim or insurance details.</p></div></div>
+          <div class="contact-step"><span>2</span><div><strong>We review and respond</strong><p>A real person reviews your inquiry and contacts you within one business day to schedule an inspection.</p></div></div>
+          <div class="contact-step"><span>3</span><div><strong>On-site inspection</strong><p>We inspect your roof, document findings with photos, and prepare a detailed written proposal.</p></div></div>
+          <div class="contact-step"><span>4</span><div><strong>Clear proposal</strong><p>You receive a written scope, material options, timeline, and pricing. No pressure and no surprises.</p></div></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h2>Request a consultation</h2>
+        <form id="contactForm">
+          <div class="field"><label for="name">Full name</label><input id="name" type="text" placeholder="Your name" required></div>
+          <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="your@email.com" required></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="(407) 000-0000"></div>
+          <div class="field"><label for="type">Project type</label>
+            <select id="type">
+              <option>Luxury roof replacement</option>
+              <option>Repair or leak response</option>
+              <option>Storm or insurance claim</option>
+              <option>Commercial roofing</option>
+              <option>Construction consultation</option>
+              <option>Maintenance program inquiry</option>
+            </select>
+          </div>
+          <div class="field"><label for="system">Preferred roofing system</label>
+            <select id="system">
+              <option>Tile</option>
+              <option>Standing seam metal</option>
+              <option>Designer shingles</option>
+              <option>Flat or low-slope</option>
+              <option>Not sure, need guidance</option>
+            </select>
+          </div>
+          <div class="field"><label for="details">Project details</label><textarea id="details" placeholder="Property address, urgency level, current roof condition, insurance claim status, and any other relevant details."></textarea></div>
+          <button class="btn btn-primary" type="submit">Submit consultation request</button>
+          <div id="formSuccess" class="form-success" style="display:none">Thank you. We will be in touch within one business day.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <div class="brand-name">Flagstone Heritage Construction Group</div>
+      <p>Boutique roofing and construction for Central Florida. Licensed roofing contractor with engineering-led oversight.</p>
+    </div>
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
