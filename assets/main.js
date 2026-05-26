@@ -1,4 +1,4 @@
-// Flagstone Heritage Construction Group — Main JS
+// Caliber Construction Group — Main JS
 
 (function () {
   // Theme toggle
