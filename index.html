@@ -1,480 +1,1106 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caliber Construction Group | Central Florida Roofing</title>
-  <meta name="description" content="Caliber Construction Group — Central Florida roofing and construction company. Licensed roofing contractor with engineering oversight. Free inspections, storm restoration, insurance claim support." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root,[data-theme="light"]{
-      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
-      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
-      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
-      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
-      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
-      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
-      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
-      --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
-      --color-bg:#ffffff;
-      --color-surface:#f5f8fc;
-      --color-surface-2:#eaf0f8;
-      --color-surface-offset:#dde7f2;
-      --color-text:#0c1a2e;
-      --color-text-muted:#506070;
-      --color-text-faint:#8fa0b2;
-      --color-text-inverse:#f5f8fc;
-      --color-border:rgba(12,26,46,.11);
-      --color-divider:rgba(12,26,46,.07);
-      --color-primary:#0f3460;
-      --color-primary-hover:#0a2749;
-      --color-accent:#8b1a2a;
-      --color-accent-hover:#6e1421;
-      --color-accent-soft:rgba(139,26,42,.08);
-      --radius-sm:.4rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--radius-full:999px;
-      --shadow-sm:0 1px 3px rgba(12,26,46,.06);
-      --shadow-md:0 8px 28px rgba(12,26,46,.09);
-      --shadow-lg:0 20px 56px rgba(12,26,46,.13);
-      --font-display:'Cormorant Garamond',Georgia,serif;
-      --font-body:'Inter',Arial,sans-serif;
-    }
-    [data-theme="dark"]{
-      --color-bg:#0b1220;--color-surface:#101c30;--color-surface-2:#162438;--color-surface-offset:#1c2e45;
-      --color-text:#e8f0fa;--color-text-muted:#a8b8cc;--color-text-faint:#6a7f96;--color-text-inverse:#0e1828;
-      --color-border:rgba(232,240,250,.11);--color-divider:rgba(232,240,250,.07);
-      --color-primary:#6fa3d8;--color-primary-hover:#91bbdf;
-      --color-accent:#c95466;--color-accent-hover:#df7080;--color-accent-soft:rgba(201,84,102,.12);
-      --shadow-sm:0 1px 3px rgba(0,0,0,.22);--shadow-md:0 8px 28px rgba(0,0,0,.32);--shadow-lg:0 20px 56px rgba(0,0,0,.42);
-    }
-    *,:before,:after{box-sizing:border-box}
-    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}
-    body{margin:0;font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text);transition:background .25s,color .25s}
-    img,svg{display:block;max-width:100%;height:auto}
-    a{text-decoration:none;color:inherit}
-    button,input,textarea,select{font:inherit;color:inherit;border:none}
-    h1,h2,h3{font-family:var(--font-display);line-height:1.05;color:var(--color-text);margin:0 0 .85rem}
-    h1{font-size:var(--text-3xl)}
-    h2{font-size:var(--text-2xl)}
-    h3{font-size:var(--text-xl)}
-    p{margin:0 0 1rem;color:var(--color-text-muted)}
-    .container{width:min(1180px,calc(100% - 2rem));margin-inline:auto}
-    .section{padding:clamp(3.5rem,8vw,6.5rem) 0}
-    .eyebrow{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.9rem;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.18em;color:var(--color-accent);font-weight:700;font-family:var(--font-body)}
-    .eyebrow::before{content:'';display:block;width:1.4rem;height:2px;background:var(--color-accent);border-radius:2px}
-    .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:var(--color-primary);color:#fff;padding:.75rem 1rem;border-radius:var(--radius-md);z-index:999}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Caliber Construction Group | Elite Roofing & Engineering — Central Florida</title>
+<meta name="description" content="Caliber Construction Group is Central Florida's premier boutique roofing contractor — backed by an engineering license. Residential & commercial roofing, storm restoration, and insurance claims. Opening soon."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --navy:#0c1f3f;--navy-deep:#071429;--navy-mid:#1a3a6b;--navy-lite:#e8edf8;--navy-hint:#f3f6fc;
+  --gold:#b8912a;--gold-lite:#faf3e0;--gold-mid:#d4a843;
+  --white:#ffffff;--off:#f7f8fa;--surface:#f0f3f9;
+  --text:#0c1a2e;--text2:#3d5068;--text3:#7a8fa6;--text4:#b0bfce;
+  --border:rgba(12,31,63,.09);--border2:rgba(12,31,63,.16);
+  --r-sm:.4rem;--r-md:.75rem;--r-lg:1rem;--r-xl:1.5rem;--r-full:999px;
+  --sh-sm:0 1px 4px rgba(12,31,63,.07);
+  --sh-md:0 6px 24px rgba(12,31,63,.1);
+  --sh-lg:0 16px 48px rgba(12,31,63,.14);
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'Inter',Arial,sans-serif;
+  --nav-h:72px;
+}
+[data-theme="dark"]{
+  --navy:#6fa3d8;--navy-deep:#0b1220;--navy-mid:#91bbdf;--navy-lite:#1a2f4a;--navy-hint:#111d2e;
+  --white:#0b1220;--off:#101c30;--surface:#162438;
+  --text:#e8f0fa;--text2:#a8b8cc;--text3:#6a7f96;--text4:#405060;
+  --border:rgba(232,240,250,.09);--border2:rgba(232,240,250,.18);
+  --sh-sm:0 1px 4px rgba(0,0,0,.3);--sh-md:0 6px 24px rgba(0,0,0,.35);--sh-lg:0 16px 48px rgba(0,0,0,.45);
+}
+*,:before,:after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font-b);font-size:16px;line-height:1.65;background:var(--white);color:var(--text);transition:background .25s,color .25s}
+img,video,svg{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:none;background:none}
+h1,h2,h3,h4{font-family:var(--font-d);line-height:1.06;color:var(--text)}
+h1{font-size:clamp(2.4rem,1.2rem+3.5vw,5rem);font-weight:600}
+h2{font-size:clamp(1.8rem,1rem+2.5vw,3.2rem);font-weight:600}
+h3{font-size:clamp(1.2rem,.9rem+1vw,1.8rem);font-weight:500}
+p{color:var(--text2);line-height:1.75}
+ul{list-style:none}
+.wrap{width:min(1200px,calc(100% - 2.5rem));margin-inline:auto}
+.wrap-sm{width:min(820px,calc(100% - 2.5rem));margin-inline:auto}
+.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:var(--navy);color:#fff;padding:.75rem 1.25rem;border-radius:var(--r-md);z-index:9999}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
-    /* NAV */
-    header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--color-bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-divider)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;min-height:72px}
-    .brand{display:flex;align-items:center;gap:.9rem;cursor:pointer}
-    .brand-mark{width:48px;height:48px;padding:9px;border-radius:14px;background:var(--color-primary);color:#fff;flex-shrink:0;box-shadow:var(--shadow-md)}
-    .brand-copy small{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-text-faint)}
-    .brand-copy strong{display:block;font-family:var(--font-display);font-size:1.3rem;font-weight:700;line-height:1.1}
-    .nav-links{display:flex;align-items:center;gap:1.4rem}
-    .nav-links a{font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);transition:color .15s}
-    .nav-links a:hover{color:var(--color-primary)}
-    .nav-cta{display:flex;align-items:center;gap:.75rem}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.75rem 1.4rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;cursor:pointer;transition:.18s ease;border:none}
-    .btn-primary{background:var(--color-primary);color:#fff}.btn-primary:hover{background:var(--color-primary-hover)}
-    .btn-accent{background:var(--color-accent);color:#fff}.btn-accent:hover{background:var(--color-accent-hover)}
-    .btn-ghost{background:transparent;border:1.5px solid var(--color-border);color:var(--color-text)}.btn-ghost:hover{background:var(--color-surface)}
-    .theme-btn{width:44px;height:44px;border-radius:var(--radius-full);background:var(--color-surface);border:1px solid var(--color-border);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+/* ── EYEBROW ── */
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:1rem}
+.eyebrow-line{width:28px;height:1.5px;background:currentColor;border-radius:2px;flex-shrink:0}
 
-    /* HERO */
-    .hero{padding:clamp(4rem,9vw,7.5rem) 0 clamp(2rem,5vw,4rem)}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:stretch}
-    .panel{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
-    .hero-main{padding:clamp(1.5rem,4vw,3rem);position:relative;overflow:hidden}
-    .hero-main::after{content:'';position:absolute;right:-80px;top:-80px;width:280px;height:280px;background:radial-gradient(circle,var(--color-accent-soft) 0%,transparent 70%);pointer-events:none;z-index:0}
-    .hero-main>*{position:relative;z-index:1}
-    .hero-main p.lead{font-size:var(--text-lg);color:var(--color-text-muted);max-width:54ch;line-height:1.55}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin:1.8rem 0 1.5rem}
-    .phone-cta{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:var(--text-base);color:var(--color-primary)}
-    .phone-cta svg{flex-shrink:0}
-    .hero-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:1.5rem}
-    .kpi{padding:1rem 1.1rem;background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg)}
-    .kpi strong{display:block;font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-primary);margin-bottom:.2rem}
-    .kpi span{font-size:var(--text-sm);color:var(--color-text-muted)}
-    .hero-side{padding:clamp(1.5rem,4vw,2.75rem);background:linear-gradient(160deg,#0f3460 0%,#0a2244 100%);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);color:#fff}
-    .hero-side h2,.hero-side h3{color:#fff}
-    .hero-side p{color:rgba(255,255,255,.82)}
-    .hero-side .eyebrow{color:#f0b8c1}
-    .hero-side .eyebrow::before{background:#f0b8c1}
-    .feature-list{display:grid;gap:.85rem;margin-top:1.5rem}
-    .feature-item{padding:1rem 1.1rem;border-radius:1rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
-    .feature-item strong{display:block;font-size:var(--text-sm);color:#fff;margin-bottom:.25rem}
-    .feature-item p{color:rgba(255,255,255,.75);font-size:var(--text-sm);margin:0}
-    .trust-bar{margin-top:1.25rem;border-top:1px solid var(--color-divider);padding-top:1.5rem}
-    .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .trust-item{padding:.75rem 0}
-    .trust-item strong{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-text);margin-bottom:.2rem}
-    .trust-item span{font-size:var(--text-sm);color:var(--color-text-muted)}
+/* ══════════════════════════════════
+   NAVIGATION — megamenu style
+══════════════════════════════════ */
+.nav-bar{
+  position:sticky;top:0;z-index:200;height:var(--nav-h);
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;
+}
+[data-theme="dark"] .nav-bar{background:rgba(11,18,32,.96)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;width:100%}
 
-    /* SECTIONS */
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
-    .section-head p{margin:0;max-width:56ch;color:var(--color-text-muted)}
-    .alt{background:var(--color-surface-2)}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-    .card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-sm)}
-    .card-icon{width:2.6rem;height:2.6rem;border-radius:var(--radius-md);background:var(--color-accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-    .card h3{font-family:var(--font-body);font-size:var(--text-base);font-weight:800;margin-bottom:.5rem;color:var(--color-text)}
-    .card p{font-size:var(--text-sm);margin:0}
+/* logo */
+.logo{display:flex;align-items:center;gap:.85rem;flex-shrink:0}
+.logo-icon{width:42px;height:42px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+[data-theme="dark"] .logo-icon{background:#1a3a6b}
+.logo-icon svg{width:24px;height:24px;color:#fff}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-main{font-family:var(--font-d);font-size:1.18rem;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+[data-theme="dark"] .logo-main{color:#e8f0fa}
+.logo-sub{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin-top:2px}
 
-    /* PROCESS */
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .step{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:1.5rem;position:relative}
-    .step-num{display:inline-flex;width:2.2rem;height:2.2rem;align-items:center;justify-content:center;border-radius:var(--radius-full);background:var(--color-primary);color:#fff;font-size:var(--text-sm);font-weight:800;margin-bottom:1rem}
-    .step h3{font-family:var(--font-body);font-size:var(--text-sm);font-weight:800;margin-bottom:.4rem;color:var(--color-text)}
+/* desktop nav */
+.nav-links{display:flex;align-items:center;gap:.25rem;flex:1;justify-content:center}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.3rem;padding:.55rem .9rem;border-radius:var(--r-md);font-size:.875rem;font-weight:500;color:var(--text2);transition:color .2s,background .2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--navy);background:var(--navy-hint)}
+[data-theme="dark"] .nav-link:hover,[data-theme="dark"] .nav-link.active{color:#e8f0fa;background:rgba(255,255,255,.07)}
+.nav-link svg{width:13px;height:13px;transition:transform .2s;flex-shrink:0}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
 
-    /* ABOUT SPLIT */
-    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:1.25rem;align-items:start}
-    .dark-panel{background:var(--color-primary);color:#fff;border-radius:var(--radius-xl);padding:clamp(1.5rem,4vw,2.75rem);box-shadow:var(--shadow-lg)}
-    .dark-panel h2,.dark-panel h3{color:#fff}
-    .dark-panel p{color:rgba(255,255,255,.82)}
-    .dark-panel .eyebrow{color:#f0b8c1}
-    .dark-panel .eyebrow::before{background:#f0b8c1}
-    .credentials{display:grid;gap:.85rem;margin-top:1.5rem}
-    .cred{display:flex;gap:.9rem;align-items:flex-start;padding:1rem;border-radius:1rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}
-    .cred-dot{width:.8rem;height:.8rem;border-radius:999px;background:#f0b8c1;margin-top:.5rem;flex-shrink:0}
-    .cred strong{display:block;color:#fff;font-size:var(--text-sm);margin-bottom:.2rem}
-    .cred p{margin:0;font-size:var(--text-sm);color:rgba(255,255,255,.75)}
-    .light-panel{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:clamp(1.5rem,4vw,2.75rem);box-shadow:var(--shadow-sm)}
-    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
-    .stat-box{padding:1.2rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg)}
-    .stat-box strong{display:block;font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);line-height:1.1;margin-bottom:.3rem}
-    .stat-box span{font-size:var(--text-sm);color:var(--color-text-muted)}
+/* dropdown */
+.nav-dropdown{
+  position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);
+  box-shadow:var(--sh-lg);min-width:220px;padding:.5rem;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .2s,transform .2s;transform:translateX(-50%) translateY(-4px);
+}
+[data-theme="dark"] .nav-dropdown{background:#101c30}
+.nav-item:hover .nav-dropdown{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.nav-dd-item{display:flex;align-items:center;gap:.75rem;padding:.65rem .85rem;border-radius:var(--r-md);font-size:.875rem;color:var(--text2);transition:all .15s;font-weight:400}
+.nav-dd-item:hover{background:var(--navy-hint);color:var(--navy)}
+[data-theme="dark"] .nav-dd-item:hover{background:rgba(255,255,255,.07);color:#e8f0fa}
+.nav-dd-item svg{width:16px;height:16px;color:var(--gold);flex-shrink:0}
+.nav-dd-divider{height:1px;background:var(--border);margin:.35rem 0}
 
-    /* FAQ */
-    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .faq{padding:1.4rem;border-radius:var(--radius-lg);background:var(--color-surface);border:1px solid var(--color-border)}
-    .faq h3{font-family:var(--font-body);font-size:var(--text-sm);font-weight:800;margin-bottom:.5rem;color:var(--color-primary)}
-    .faq p{font-size:var(--text-sm);margin:0}
+/* nav actions */
+.nav-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.nav-phone{display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:var(--text2);padding:.45rem .75rem;border-radius:var(--r-full);border:1px solid var(--border);transition:all .2s;white-space:nowrap}
+.nav-phone:hover{border-color:var(--navy);color:var(--navy)}
+.nav-phone svg{width:14px;height:14px}
+.nav-cta{background:var(--navy);color:#fff !important;padding:.55rem 1.2rem;border-radius:var(--r-full);font-size:.875rem;font-weight:600;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--navy-mid);transform:translateY(-1px)}
+.theme-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);transition:all .2s}
+.theme-btn:hover{border-color:var(--navy);color:var(--navy)}
+.ham{display:none;flex-direction:column;gap:5px;width:36px;height:36px;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--r-md)}
+.ham span{display:block;width:18px;height:1.5px;background:var(--text);border-radius:2px;transition:all .25s}
 
-    /* CONTACT */
-    .contact-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:1.25rem;align-items:start}
-    .contact-info{padding:clamp(1.5rem,4vw,2.75rem)}
-    .contact-steps{display:grid;gap:1.1rem;margin-top:1.5rem}
-    .contact-step{display:flex;gap:.9rem;align-items:flex-start}
-    .contact-step .num{display:inline-flex;width:2rem;height:2rem;min-width:2rem;align-items:center;justify-content:center;border-radius:999px;background:var(--color-primary);color:#fff;font-size:var(--text-sm);font-weight:800}
-    .contact-step strong{display:block;font-size:var(--text-sm);font-weight:800;color:var(--color-text);margin-bottom:.2rem}
-    .contact-step p{margin:0;font-size:var(--text-sm)}
-    .form-panel{padding:clamp(1.5rem,4vw,2.5rem)}
-    .field{margin-bottom:1rem}
-    label{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-text);margin-bottom:.4rem}
-    input,select,textarea{width:100%;padding:.95rem 1rem;border-radius:.85rem;border:1.5px solid var(--color-border);background:var(--color-bg);color:var(--color-text);transition:border-color .15s,box-shadow .15s;outline:none}
-    input:focus,select:focus,textarea:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-primary) 14%,transparent)}
-    textarea{min-height:140px;resize:vertical}
-    .form-notice{display:none;margin-top:1rem;padding:1rem;border-radius:.85rem;background:var(--color-accent-soft);font-size:var(--text-sm);color:var(--color-text);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent)}
+/* mobile drawer */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:300;pointer-events:none}
+.mobile-menu.open{pointer-events:all}
+.mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity .3s}
+.mobile-menu.open .mobile-overlay{opacity:1}
+.mobile-drawer{position:absolute;top:0;right:0;bottom:0;width:300px;background:var(--white);box-shadow:var(--sh-lg);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:1.5rem}
+[data-theme="dark"] .mobile-drawer{background:#101c30}
+.mobile-menu.open .mobile-drawer{transform:none}
+.mobile-close{display:flex;justify-content:flex-end;margin-bottom:1.5rem}
+.mobile-close button{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text2)}
+.mob-nav-link{display:block;padding:.8rem .75rem;font-size:.95rem;font-weight:500;color:var(--text2);border-radius:var(--r-md);transition:all .2s}
+.mob-nav-link:hover{background:var(--navy-hint);color:var(--navy)}
+.mob-section{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--text4);padding:.5rem .75rem .25rem;margin-top:.75rem}
+.mob-sub-link{display:block;padding:.6rem .75rem .6rem 1.5rem;font-size:.875rem;color:var(--text3);border-radius:var(--r-md);transition:all .2s}
+.mob-sub-link:hover{background:var(--navy-hint);color:var(--navy)}
+.mob-cta{display:block;background:var(--navy);color:#fff;text-align:center;padding:.85rem;border-radius:var(--r-full);font-weight:600;font-size:.9rem;margin-top:1.5rem}
 
-    /* FOOTER */
-    footer{padding:2.5rem 0 3rem;border-top:1px solid var(--color-divider)}
-    .footer-row{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
-    .footer-brand strong{font-family:var(--font-display);font-size:var(--text-lg);display:block;margin-bottom:.35rem}
-    .footer-brand p{font-size:var(--text-sm);max-width:40ch;margin:0}
-    .footer-nav{display:flex;flex-direction:column;gap:.55rem}
-    .footer-nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
-    .footer-nav a:hover{color:var(--color-primary)}
-    .footer-bottom{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--color-divider);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-    .footer-bottom span{font-size:var(--text-xs);color:var(--color-text-faint)}
+@media(max-width:1024px){.nav-links{display:none}.ham{display:flex}.nav-phone{display:none}}
 
-    /* UTILITY */
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
-    .reveal.visible{opacity:1;transform:none}
-    .accent-text{color:var(--color-accent)}
-    .primary-text{color:var(--color-primary)}
-    .divider{height:1px;background:var(--color-divider);margin:0}
+/* ══════════════════════════════════
+   ANNOUNCEMENT BANNER
+══════════════════════════════════ */
+.banner{background:var(--navy);color:#fff;text-align:center;padding:.65rem 1rem;font-size:.8rem;font-weight:500;position:relative}
+.banner a{color:var(--gold-mid);text-decoration:underline;text-underline-offset:2px}
+.banner-close{position:absolute;right:1rem;top:50%;transform:translateY(-50%);width:22px;height:22px;background:rgba(255,255,255,.15);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:13px}
 
-    /* RESPONSIVE */
-    @media(max-width:1024px){.hero-grid,.split,.contact-wrap{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.trust-row{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}}
-    @media(max-width:640px){.grid-3,.faq-grid,.stat-grid,.process-grid,.trust-row{grid-template-columns:1fr}.hero-kpis{grid-template-columns:1fr}.hero-main,.hero-side,.dark-panel,.light-panel,.contact-info,.form-panel{padding:1.25rem}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.grid-2{grid-template-columns:1fr}}
-  </style>
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+.hero{
+  position:relative;min-height:calc(100svh - var(--nav-h));
+  display:flex;align-items:center;overflow:hidden;
+  background:var(--navy-deep);
+}
+.hero-video-wrap{position:absolute;inset:0;z-index:0}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover;opacity:.35}
+.hero-video-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,20,41,.85) 40%,rgba(7,20,41,.55))}
+.hero-content{position:relative;z-index:1;padding:6rem 0 5rem}
+.hero-tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(184,145,42,.15);border:1px solid rgba(184,145,42,.3);color:var(--gold-mid);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;padding:.4rem 1rem;border-radius:var(--r-full);margin-bottom:1.8rem}
+.hero-tag-dot{width:6px;height:6px;background:var(--gold-mid);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{color:#fff;max-width:760px;margin-bottom:1.5rem}
+.hero h1 em{color:var(--gold-mid);font-style:normal}
+.hero-lead{font-size:clamp(1rem,.9rem+.5vw,1.2rem);color:rgba(255,255,255,.72);max-width:600px;margin-bottom:2.5rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.btn-primary{background:var(--gold);color:var(--navy-deep);padding:.85rem 2rem;border-radius:var(--r-full);font-weight:700;font-size:.95rem;transition:all .2s;white-space:nowrap}
+.btn-primary:hover{background:var(--gold-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,145,42,.35)}
+.btn-outline-white{border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:.85rem 2rem;border-radius:var(--r-full);font-weight:500;font-size:.95rem;transition:all .2s;white-space:nowrap}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center}
+.hero-trust-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.6);font-weight:500}
+.hero-trust-item svg{width:15px;height:15px;color:var(--gold-mid)}
+
+/* Engineering badge */
+.eng-badge{display:inline-flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-lg);padding:.9rem 1.25rem;margin-bottom:2rem;max-width:420px}
+.eng-badge-icon{width:36px;height:36px;background:rgba(184,145,42,.2);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.eng-badge-icon svg{width:20px;height:20px;color:var(--gold-mid)}
+.eng-badge-text{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.4}
+.eng-badge-text strong{color:#fff;display:block;font-size:.88rem;margin-bottom:.15rem}
+
+/* ══════════════════════════════════
+   MARQUEE / PARTNER LOGOS STRIP
+══════════════════════════════════ */
+.logo-strip{padding:2rem 0;background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.logo-strip-label{text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--text4);margin-bottom:1.25rem}
+.marquee-track{display:flex;gap:3rem;align-items:center;animation:marquee 30s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-pill{display:flex;align-items:center;gap:.6rem;padding:.5rem 1.25rem;background:var(--white);border:1px solid var(--border);border-radius:var(--r-full);white-space:nowrap;font-size:.8rem;font-weight:600;color:var(--text3);box-shadow:var(--sh-sm)}
+.logo-pill svg{width:16px;height:16px;color:var(--gold);flex-shrink:0}
+
+/* ══════════════════════════════════
+   SECTION DEFAULTS
+══════════════════════════════════ */
+section{padding:5.5rem 0}
+.section-header{margin-bottom:3.5rem}
+.section-header.center{text-align:center}
+.section-header.center .eyebrow{justify-content:center}
+
+/* ══════════════════════════════════
+   ENGINEERING DIFFERENTIATOR BAND
+══════════════════════════════════ */
+.eng-band{background:var(--navy-deep);color:#fff;padding:4rem 0}
+.eng-band-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.eng-band h2{color:#fff;margin-bottom:1rem}
+.eng-band p{color:rgba(255,255,255,.65);margin-bottom:1.5rem}
+.eng-band-features{display:flex;flex-direction:column;gap:1rem}
+.eng-feat{display:flex;align-items:flex-start;gap:.85rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--r-lg);padding:1rem 1.25rem}
+.eng-feat-icon{width:38px;height:38px;border-radius:var(--r-md);background:rgba(184,145,42,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.eng-feat-icon svg{width:20px;height:20px;color:var(--gold-mid)}
+.eng-feat-body strong{display:block;font-size:.9rem;color:#fff;margin-bottom:.2rem}
+.eng-feat-body span{font-size:.82rem;color:rgba(255,255,255,.55)}
+@media(max-width:768px){.eng-band-inner{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════
+   SERVICES GRID
+══════════════════════════════════ */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;transition:box-shadow .25s,transform .25s;position:relative}
+.service-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
+.sc-visual{height:200px;position:relative;overflow:hidden;background:var(--navy-deep)}
+.sc-visual video{width:100%;height:100%;object-fit:cover;opacity:.7;transition:transform 4s ease;transform:scale(1.05)}
+.service-card:hover .sc-visual video{transform:scale(1)}
+.sc-visual-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(7,20,41,.8))}
+.sc-tag{position:absolute;top:1rem;left:1rem;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:.3rem .8rem;border-radius:var(--r-full);border:1px solid rgba(184,145,42,.5);background:rgba(184,145,42,.15);color:var(--gold-mid)}
+.sc-body{padding:1.5rem}
+.sc-body h3{font-size:1.25rem;margin-bottom:.5rem}
+.sc-body p{font-size:.875rem;margin-bottom:1.25rem;color:var(--text3)}
+.sc-features{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
+.sc-feat{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--text2)}
+.sc-feat svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+.sc-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--navy);transition:gap .2s}
+.sc-link:hover{gap:.7rem}
+.sc-link svg{width:16px;height:16px}
+[data-theme="dark"] .service-card{background:var(--surface)}
+
+/* ══════════════════════════════════
+   PROCESS STEPS
+══════════════════════════════════ */
+.process-bg{background:var(--off)}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:32px;left:0;right:0;height:1px;background:var(--border);z-index:0}
+.step-card{position:relative;z-index:1;text-align:center;padding:0 1rem}
+.step-num{width:64px;height:64px;border-radius:50%;background:var(--white);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--font-d);font-size:1.5rem;font-weight:700;color:var(--navy);box-shadow:var(--sh-sm);position:relative}
+.step-num::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(184,145,42,.2)}
+.step-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.step-card p{font-size:.875rem}
+
+/* ══════════════════════════════════
+   MATERIALS SECTION
+══════════════════════════════════ */
+.materials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.mat-card{background:var(--navy-deep);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;position:relative;cursor:pointer}
+.mat-card video{width:100%;height:100%;object-fit:cover;opacity:.6;transition:opacity .3s,transform 4s ease;transform:scale(1.08)}
+.mat-card:hover video{opacity:.8;transform:scale(1)}
+.mat-label{position:absolute;bottom:0;left:0;right:0;padding:.85rem 1rem;background:linear-gradient(transparent,rgba(7,20,41,.9));color:#fff;font-family:var(--font-d);font-size:1.05rem;font-weight:600}
+.mat-sub{font-size:.72rem;color:rgba(255,255,255,.6);display:block;margin-top:.15rem;font-family:var(--font-b);font-weight:400}
+
+/* ══════════════════════════════════
+   STORM / EMERGENCY BAND
+══════════════════════════════════ */
+.storm-band{background:linear-gradient(135deg,#8b1a2a 0%,#5a0f1b 100%);color:#fff;padding:4rem 0}
+.storm-inner{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.storm-inner h2{color:#fff;margin-bottom:.75rem}
+.storm-inner p{color:rgba(255,255,255,.7);font-size:1rem;max-width:560px}
+.storm-actions{display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
+.btn-white{background:#fff;color:#8b1a2a;padding:.85rem 1.75rem;border-radius:var(--r-full);font-weight:700;font-size:.9rem;transition:all .2s;white-space:nowrap;text-align:center}
+.btn-white:hover{background:rgba(255,255,255,.9);transform:translateY(-1px)}
+.btn-outline-white2{border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:.85rem 1.75rem;border-radius:var(--r-full);font-size:.9rem;font-weight:500;text-align:center;transition:all .2s}
+.btn-outline-white2:hover{background:rgba(255,255,255,.1)}
+@media(max-width:640px){.storm-inner{grid-template-columns:1fr}.storm-actions{flex-direction:row;flex-wrap:wrap}}
+
+/* ══════════════════════════════════
+   OPENING COUNTDOWN / CTA
+══════════════════════════════════ */
+.opening-band{background:var(--navy-hint);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 0}
+.opening-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.opening-text h2{font-size:clamp(1.4rem,1rem+1.5vw,2.2rem);margin-bottom:.4rem}
+.opening-text p{font-size:.95rem;color:var(--text2)}
+.countdown{display:flex;gap:1rem}
+.cd-unit{text-align:center;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:.75rem 1.25rem;min-width:70px;box-shadow:var(--sh-sm)}
+.cd-num{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--navy);line-height:1;display:block}
+.cd-label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text4);display:block;margin-top:.2rem}
+
+/* ══════════════════════════════════
+   INSURANCE / FINANCING SECTION
+══════════════════════════════════ */
+.insurance-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.ins-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem 2.25rem;box-shadow:var(--sh-sm)}
+.ins-icon{width:52px;height:52px;border-radius:var(--r-lg);background:var(--navy-lite);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.ins-icon svg{width:26px;height:26px;color:var(--navy)}
+.ins-card h3{font-size:1.3rem;margin-bottom:.6rem}
+.ins-card p{font-size:.9rem;margin-bottom:1.25rem}
+.ins-steps{display:flex;flex-direction:column;gap:.65rem}
+.ins-step{display:flex;align-items:flex-start;gap:.65rem;font-size:.875rem;color:var(--text2)}
+.ins-step-num{width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+[data-theme="dark"] .ins-card{background:var(--surface)}
+@media(max-width:680px){.insurance-grid{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════
+   WHY CALIBER
+══════════════════════════════════ */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.why-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:1.75rem;transition:box-shadow .2s,border-color .2s}
+.why-card:hover{box-shadow:var(--sh-md);border-color:rgba(184,145,42,.3)}
+.why-icon{width:46px;height:46px;border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.why-icon svg{width:24px;height:24px}
+.why-card h3{font-size:1.05rem;margin-bottom:.45rem}
+.why-card p{font-size:.875rem;margin:0}
+[data-theme="dark"] .why-card{background:var(--surface)}
+
+/* ══════════════════════════════════
+   LEAD CAPTURE SECTION
+══════════════════════════════════ */
+.lead-section{background:var(--navy-deep);padding:5.5rem 0}
+.lead-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.lead-copy h2{color:#fff;margin-bottom:1rem}
+.lead-copy p{color:rgba(255,255,255,.65);margin-bottom:2rem}
+.lead-trust{display:flex;flex-direction:column;gap:.85rem}
+.lead-trust-item{display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.7);font-size:.875rem}
+.lead-trust-item svg{width:18px;height:18px;color:var(--gold-mid);flex-shrink:0}
+.lead-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+.form-field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.form-field label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+.form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:.7rem .9rem;font-size:.9rem;color:#fff;outline:none;transition:border-color .2s;font-family:var(--font-b)}
+.form-field input::placeholder{color:rgba(255,255,255,.3)}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(184,145,42,.5);background:rgba(255,255,255,.09)}
+.form-field select option{background:#0c1f3f;color:#fff}
+.btn-submit{width:100%;background:var(--gold);color:var(--navy-deep);padding:.9rem;border-radius:var(--r-full);font-size:.95rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;margin-top:.25rem}
+.btn-submit:hover{background:var(--gold-mid);transform:translateY(-1px)}
+.form-note{font-size:.75rem;color:rgba(255,255,255,.35);text-align:center;margin-top:.75rem}
+.form-success{display:none;background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.3);border-radius:var(--r-md);padding:1rem;text-align:center;color:#4ade80;font-size:.9rem;margin-top:.75rem}
+@media(max-width:768px){.lead-inner{grid-template-columns:1fr;gap:2.5rem}.form-row{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+.footer{background:var(--navy-deep);color:rgba(255,255,255,.55);padding:4rem 0 2rem}
+.footer-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .logo-main{color:#fff;font-size:1.3rem}
+.footer-brand .logo-sub{color:var(--gold-mid)}
+.footer-tagline{font-size:.85rem;line-height:1.7;margin-top:1rem;max-width:260px}
+.footer-heading{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.3);margin-bottom:1rem}
+.footer-links{display:flex;flex-direction:column;gap:.55rem}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,.5);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-contact-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.85rem;margin-bottom:.75rem;color:rgba(255,255,255,.55)}
+.footer-contact-item svg{width:15px;height:15px;color:var(--gold-mid);flex-shrink:0;margin-top:.2rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+.footer-bottom p{font-size:.8rem}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:.8rem;color:rgba(255,255,255,.35);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.footer-top{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════
+   REVEAL ANIMATION
+══════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}
+
+/* ══════════════════════════════════
+   UTILITIES
+══════════════════════════════════ */
+.btn-navy{background:var(--navy);color:#fff;padding:.8rem 1.75rem;border-radius:var(--r-full);font-weight:600;font-size:.9rem;transition:all .2s;display:inline-block}
+.btn-navy:hover{background:var(--navy-mid);transform:translateY(-1px)}
+.text-gold{color:var(--gold)}
+.divider{height:1px;background:var(--border);margin:0}
+
+/* Floating phone button mobile */
+.float-cta{display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:150;background:var(--navy);color:#fff;width:56px;height:56px;border-radius:50%;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(12,31,63,.35);transition:transform .2s}
+.float-cta:hover{transform:scale(1.08)}
+@media(max-width:768px){.float-cta{display:flex}}
+
+/* Back to top */
+.back-top{position:fixed;bottom:1.5rem;left:1.5rem;z-index:150;background:var(--white);border:1px solid var(--border);color:var(--text2);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-sm);opacity:0;pointer-events:none;transition:all .3s;cursor:pointer}
+.back-top.show{opacity:1;pointer-events:all}
+.back-top:hover{background:var(--navy-lite);color:var(--navy)}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header>
-    <div class="container nav">
-      <a href="#top" class="brand" aria-label="Caliber Construction Group home">
-        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M14 46L26 14h12l12 32" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 34h20" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-          <path d="M18 50h28" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        <div class="brand-copy">
-          <small>Central Florida</small>
-          <strong>Caliber Construction Group</strong>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div class="banner" id="annBanner">
+  <span>🚀 Caliber Construction Group is opening in Central Florida — <a href="#contact">Get on our early access list</a> and lock in founding client pricing.</span>
+  <button class="banner-close" onclick="document.getElementById('annBanner').style.display='none'" aria-label="Close announcement">✕</button>
+</div>
+
+<!-- ════════ NAVIGATION ════════ -->
+<header class="nav-bar" role="banner">
+  <div class="wrap nav-inner">
+    <!-- Logo -->
+    <a href="index.html" class="logo" aria-label="Caliber Construction Group home">
+      <div class="logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">Caliber Construction Group</span>
+        <span class="logo-sub">Engineering-Grade Roofing</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links" aria-label="Primary">
+      <!-- About dropdown -->
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">
+          About
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="about.html" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5.5 20a8.38 8.38 0 0 1 13 0"/></svg>
+            Our Story
+          </a>
+          <a href="about.html#engineering" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V10l8-6 8 6v10"/><rect x="9" y="14" width="6" height="6"/></svg>
+            Engineering License
+          </a>
+          <div class="nav-dd-divider"></div>
+          <a href="careers.html" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Careers — We're Hiring
+          </a>
         </div>
+      </div>
+
+      <!-- Services dropdown -->
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">
+          Services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu" style="min-width:260px">
+          <a href="services.html#residential" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            Residential Roofing
+          </a>
+          <a href="services.html#commercial" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V8h8v13M2 9h20"/></svg>
+            Commercial Roofing
+          </a>
+          <a href="services.html#storm" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 16.9A5 5 0 0014 8h-1.26A8 8 0 102 16.29"/><polyline points="13 11 9 17 15 17 11 23"/></svg>
+            Storm Damage & Restoration
+          </a>
+          <a href="services.html#insurance" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Insurance Claims Support
+          </a>
+          <div class="nav-dd-divider"></div>
+          <a href="services.html#inspection" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            Free Roof Inspection
+          </a>
+          <a href="services.html#financing" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Financing Options
+          </a>
+        </div>
+      </div>
+
+      <!-- Resources dropdown -->
+      <div class="nav-item">
+        <a href="#" class="nav-link">
+          Resources
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="faq.html" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            FAQs
+          </a>
+          <a href="projects.html" class="nav-dd-item" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Project Gallery
+          </a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Nav Actions -->
+    <div class="nav-actions">
+      <a href="tel:+14074391200" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (407) 439-1200
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-cta">
-        <a href="#contact" class="btn btn-accent">Free Inspection</a>
-        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">&#9680;</button>
+      <a href="contact.html" class="nav-cta">Free Inspection</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <svg id="sunIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="moonIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="ham" id="hamBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" id="mobileMenu" aria-modal="true" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-drawer">
+    <div class="mobile-close">
+      <button id="drawerClose" aria-label="Close menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="mob-nav-link">Home</a>
+    <div class="mob-section">About</div>
+    <a href="about.html" class="mob-sub-link">Our Story</a>
+    <a href="about.html#engineering" class="mob-sub-link">Engineering License</a>
+    <a href="careers.html" class="mob-sub-link">Careers — We're Hiring</a>
+    <div class="mob-section">Services</div>
+    <a href="services.html#residential" class="mob-sub-link">Residential Roofing</a>
+    <a href="services.html#commercial" class="mob-sub-link">Commercial Roofing</a>
+    <a href="services.html#storm" class="mob-sub-link">Storm Damage</a>
+    <a href="services.html#insurance" class="mob-sub-link">Insurance Claims</a>
+    <a href="services.html#inspection" class="mob-sub-link">Free Inspection</a>
+    <a href="services.html#financing" class="mob-sub-link">Financing</a>
+    <div class="mob-section">Resources</div>
+    <a href="faq.html" class="mob-sub-link">FAQs</a>
+    <a href="projects.html" class="mob-sub-link">Project Gallery</a>
+    <a href="contact.html" class="mob-nav-link" style="margin-top:.5rem">Contact</a>
+    <a href="contact.html" class="mob-cta">Get Free Inspection</a>
+  </nav>
+</div>
+
+<!-- ════════ MAIN ════════ -->
+<main id="main">
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline poster="" aria-hidden="true">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-workers-on-the-roof-of-a-house-4809-large.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Opening in Central Florida — Coming Soon</div>
+    <div class="eng-badge">
+      <div class="eng-badge-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="eng-badge-text">
+        <strong>Engineering-Licensed Contractor</strong>
+        Structural engineering oversight on every project — a standard most roofers simply cannot offer.
       </div>
     </div>
-  </header>
-
-  <main id="main">
-
-    <!-- HERO -->
-    <section class="hero" id="top" aria-labelledby="hero-heading">
-      <div class="container hero-grid">
-        <div class="panel hero-main">
-          <span class="eyebrow">Boutique Roofing &amp; Construction &mdash; Central Florida</span>
-          <h1 id="hero-heading">Your home deserves a roofer with engineering-backed precision and boutique care.</h1>
-          <p class="lead">Caliber Construction Group is a licensed roofing and construction company serving Central Florida. We handle roof replacements, storm damage, insurance claims, and repairs &mdash; with the structural confidence that only a dual-licensed firm can offer.</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Get a free roof inspection</a>
-            <a href="#services" class="btn btn-ghost">See all services</a>
-          </div>
-          <div class="phone-cta">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            <span>Call now for same-day response</span>
-          </div>
-          <div class="hero-kpis">
-            <div class="kpi reveal"><strong>Free</strong><span>Roof inspection &amp; estimate</span></div>
-            <div class="kpi reveal"><strong>Dual-licensed</strong><span>Roofing + engineering</span></div>
-            <div class="kpi reveal"><strong>Storm-ready</strong><span>Insurance claim support</span></div>
-          </div>
-        </div>
-        <aside class="hero-side">
-          <span class="eyebrow">Why Central Florida trusts us</span>
-          <h2>Boutique service. Real contractor depth.</h2>
-          <p>We take on fewer projects so every client gets direct communication, proper documentation, and the quality that only comes from a focused team.</p>
-          <div class="feature-list">
-            <div class="feature-item">
-              <strong>Full roof replacement</strong>
-              <p>Shingle, tile, metal, and flat roofing systems planned to match your property, budget, and insurance situation.</p>
-            </div>
-            <div class="feature-item">
-              <strong>Storm &amp; insurance claims</strong>
-              <p>We document damage, work with adjusters, and coordinate everything from inspection through final installation.</p>
-            </div>
-            <div class="feature-item">
-              <strong>Engineering oversight</strong>
-              <p>Structural concerns discovered during roofing are addressed in-house &mdash; no subcontracting gaps or liability hand-offs.</p>
-            </div>
-          </div>
-        </aside>
+    <h1>Central Florida's <em>Most Precise</em> Roofing Contractor</h1>
+    <p class="hero-lead">Caliber Construction Group brings boutique craftsmanship, engineering-grade quality, and white-glove service to every residential and commercial roofing project in Central Florida.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">Get Your Free Inspection</a>
+      <a href="services.html" class="btn-outline-white">Explore Our Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Licensed & Insured
       </div>
-      <div class="container trust-bar">
-        <div class="trust-row">
-          <div class="trust-item"><strong>Licensed &amp; insured</strong><span>Florida roofing contractor license, fully insured.</span></div>
-          <div class="trust-item"><strong>Engineering license</strong><span>Structural work handled in-house by our licensed team.</span></div>
-          <div class="trust-item"><strong>Hassle-free process</strong><span>We handle permits, HOA docs, and insurance paperwork.</span></div>
-          <div class="trust-item"><strong>Central Florida local</strong><span>Deep knowledge of Florida code, weather, and insurance landscape.</span></div>
-        </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Engineering Oversight
       </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section alt" id="services" aria-labelledby="services-heading">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">What we do</span>
-            <h2 id="services-heading">Roofing services for every Florida property type.</h2>
-          </div>
-          <a href="#contact" class="btn btn-accent">Request a consultation</a>
-        </div>
-        <div class="grid-3">
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3>Roof replacement</h3>
-            <p>Full-system replacement for residential and commercial properties. We walk you through material options, insurance alignment, and permit requirements before work begins.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <h3>Roof repair</h3>
-            <p>Fast, targeted repairs for leaks, missing shingles, flashing failures, and storm damage. We diagnose the problem first and give you a written scope before touching anything.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>Storm restoration</h3>
-            <p>Post-storm inspection, engineering-grade documentation, insurance adjuster coordination, and complete rebuild scoping for hurricane and wind damage.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h3>Shingle roofing</h3>
-            <p>Architectural and impact-rated shingles. We select products that are Florida-approved, insurance-compatible, and right for your home's profile and exposure.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            </div>
-            <h3>Tile roofing</h3>
-            <p>Concrete and clay tile installation, repair, and full replacement. Engineering load review included for structural compliance and insurance documentation.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-            </div>
-            <h3>Metal &amp; flat roofing</h3>
-            <p>Standing seam metal for premium and modern homes. TPO and modified bitumen for flat or low-slope applications. Engineered for long-term Florida performance.</p>
-          </article>
-        </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Free Inspections
       </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="section" id="process" aria-labelledby="process-heading">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">How it works</span>
-            <h2 id="process-heading">Simple. Clear. No surprises.</h2>
-            <p>A straightforward four-step process modeled on what Central Florida homeowners actually need when they&rsquo;re dealing with a roofing problem.</p>
-          </div>
-        </div>
-        <div class="process-grid">
-          <div class="step reveal"><span class="step-num">1</span><h3>Contact us</h3><p>Call or submit a request. Tell us the property address, type of roof, urgency level, and any insurance involvement.</p></div>
-          <div class="step reveal"><span class="step-num">2</span><h3>Free inspection</h3><p>We come to the property, inspect the roof, document conditions with photos, and identify what&rsquo;s needed before writing anything up.</p></div>
-          <div class="step reveal"><span class="step-num">3</span><h3>Written proposal</h3><p>You receive a clear written scope, material options, timeline, and pricing. No pressure. No verbal estimates that disappear later.</p></div>
-          <div class="step reveal"><span class="step-num">4</span><h3>Construction</h3><p>Approved work is scheduled, permitted where required, and executed by our licensed crew. Final walkthrough and documentation on completion.</p></div>
-        </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        24/7 Storm Response
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section alt" id="about" aria-labelledby="about-heading">
-      <div class="container split">
-        <div class="dark-panel">
-          <span class="eyebrow">Who we are</span>
-          <h2 id="about-heading">Built differently than a standard Florida roofer.</h2>
-          <p>Caliber is a boutique construction company with roofing at the center of its market presence. We serve homeowners, estate properties, property managers, and selective commercial accounts in Central Florida.</p>
-          <div class="credentials">
-            <div class="cred"><span class="cred-dot"></span><div><strong>Florida roofing contractor license</strong><p>Active state roofing license covering residential, commercial, storm restoration, and new construction work.</p></div></div>
-            <div class="cred"><span class="cred-dot"></span><div><strong>Engineering license</strong><p>Licensed engineering capability in-house means structural concerns found during roofing scopes are resolved by our own team.</p></div></div>
-            <div class="cred"><span class="cred-dot"></span><div><strong>Boutique intake model</strong><p>We select projects carefully so every client gets the communication and quality that high-volume contractors cannot sustain.</p></div></div>
-          </div>
-        </div>
-        <div class="light-panel">
-          <span class="eyebrow">Local market knowledge</span>
-          <h2>Deep roots in the Central Florida roofing landscape.</h2>
-          <p>Florida&rsquo;s combination of hurricane exposure, changing insurance regulations, and strict building codes means your roofer has to know more than how to install shingles. We know Florida.</p>
-          <div class="stat-grid">
-            <div class="stat-box reveal"><strong>Central FL</strong><span>Our primary service area and local community.</span></div>
-            <div class="stat-box reveal"><strong>Dual licensed</strong><span>Roofing contractor + engineering credentials.</span></div>
-            <div class="stat-box reveal"><strong>Boutique</strong><span>Selective project intake for premium quality control.</span></div>
-            <div class="stat-box reveal"><strong>Full-service</strong><span>Replacement, repairs, storm, commercial, flat roofs.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq" aria-labelledby="faq-heading">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">FAQ</span>
-            <h2 id="faq-heading">Common questions from Florida homeowners.</h2>
-          </div>
-        </div>
-        <div class="faq-grid">
-          <article class="faq reveal"><h3>Are you licensed and insured in Florida?</h3><p>Yes. We hold an active Florida roofing contractor license and general liability insurance. Engineering credentials are also maintained in-house as a licensed engineering firm.</p></article>
-          <article class="faq reveal"><h3>Do you help with insurance claims?</h3><p>Yes. We provide written damage documentation, work with insurance adjusters, and help coordinate the claim through approval and construction. We do not act as a public adjuster, but we support the process thoroughly.</p></article>
-          <article class="faq reveal"><h3>How quickly can you respond to storm damage?</h3><p>We prioritize urgent storm-related calls and work to get on-site within one business day for emergency inspections when conditions allow.</p></article>
-          <article class="faq reveal"><h3>Do you offer financing options?</h3><p>We understand that major roofing work is often unexpected. Ask us about financing options when you request your consultation and we will walk you through what is available.</p></article>
-          <article class="faq reveal"><h3>What areas do you serve?</h3><p>We are based in Central Florida and primarily serve Orange, Osceola, Seminole, Lake, and Polk counties. Contact us for service availability in surrounding areas.</p></article>
-          <article class="faq reveal"><h3>What makes you different from other roofers?</h3><p>The combination of roofing contractor license and engineering capability in one firm means structural issues found during roofing jobs are resolved by our team rather than handed off to a third party or left for the homeowner to figure out.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section alt" id="contact" aria-labelledby="contact-heading">
-      <div class="container contact-wrap">
-        <div class="panel contact-info">
-          <span class="eyebrow">Get in touch</span>
-          <h2 id="contact-heading">Request your free roof inspection.</h2>
-          <p>We review every request and respond within one business day. Emergency calls are handled as quickly as possible.</p>
-          <div class="contact-steps">
-            <div class="contact-step"><span class="num">1</span><div><strong>Tell us about your property</strong><p>Roof type, issue, urgency, and any insurance claim involvement.</p></div></div>
-            <div class="contact-step"><span class="num">2</span><div><strong>We schedule an inspection</strong><p>A real team member contacts you to confirm timing and access details.</p></div></div>
-            <div class="contact-step"><span class="num">3</span><div><strong>Receive a written proposal</strong><p>Clear scope, options, and pricing before any commitment is made.</p></div></div>
-            <div class="contact-step"><span class="num">4</span><div><strong>Work begins on your schedule</strong><p>Permitted, documented, and executed by our licensed team.</p></div></div>
-          </div>
-        </div>
-        <div class="panel form-panel">
-          <h2>Book your consultation</h2>
-          <form id="contactForm" novalidate>
-            <div class="field"><label for="fname">Full name</label><input id="fname" type="text" placeholder="Your full name" required autocomplete="name"></div>
-            <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@email.com" required autocomplete="email"></div>
-            <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="(407) 000-0000" autocomplete="tel"></div>
-            <div class="field"><label for="service">Service needed</label><select id="service"><option value="">Select a service&hellip;</option><option>Roof replacement</option><option>Roof repair</option><option>Storm or hurricane damage</option><option>Insurance claim support</option><option>Tile roofing</option><option>Metal roofing</option><option>Commercial roofing</option><option>Engineering consultation</option></select></div>
-            <div class="field"><label for="details">Project details</label><textarea id="details" placeholder="Property address, current roof condition, insurance status, preferred timeline, and anything else that helps us prepare."></textarea></div>
-            <button class="btn btn-primary" type="submit" style="width:100%;font-size:var(--text-base)">Submit consultation request</button>
-            <div class="form-notice" id="formNotice" role="alert">✓ Thank you. Your request has been received. We will be in touch within one business day.</div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-row">
-        <div class="footer-brand">
-          <strong>Caliber Construction Group</strong>
-          <p>Boutique roofing and construction for Central Florida. Licensed roofing contractor with engineering-led oversight and insurance claim support.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Caliber Construction Group. All rights reserved.</span>
-        <span>Central Florida &mdash; Licensed &amp; Insured</span>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Insurance Claim Experts
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    (function(){
-      // Theme toggle
-      const root=document.documentElement;
-      const btn=document.getElementById('themeToggle');
-      let theme=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
-      function paint(){root.setAttribute('data-theme',theme);btn.textContent=theme==='dark'?'\u2600':'\u25D0';}
-      paint();
-      if(btn)btn.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';paint();});
+<!-- ── LOGO / CERTIFICATION STRIP ── -->
+<div class="logo-strip">
+  <p class="logo-strip-label">Industry certifications &amp; standards we uphold</p>
+  <div class="marquee-track" aria-hidden="true">
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Florida Licensed Contractor</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Engineering Licensed</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Fully Insured</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>FL Building Code Compliant</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Financing Available</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Insurance Claim Experts</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>24/7 Emergency Response</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Florida Licensed Contractor</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Engineering Licensed</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Fully Insured</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>FL Building Code Compliant</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Financing Available</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Insurance Claim Experts</div>
+    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>24/7 Emergency Response</div>
+  </div>
+</div>
 
-      // Form
-      const form=document.getElementById('contactForm');
-      const notice=document.getElementById('formNotice');
-      if(form&&notice){form.addEventListener('submit',function(e){e.preventDefault();notice.style.display='block';form.reset();setTimeout(function(){notice.style.display='none';},8000);});}
+<!-- ── ENGINEERING DIFFERENTIATOR ── -->
+<section class="eng-band">
+  <div class="wrap eng-band-inner">
+    <div>
+      <div class="eyebrow" style="color:rgba(184,145,42,.8)"><span class="eyebrow-line"></span>What Sets Us Apart</div>
+      <h2>Engineering Oversight on Every Single Job</h2>
+      <p>Most roofing contractors are licensed to install. Caliber Construction Group holds an engineering license — which means every project benefits from structural analysis, load calculations, and code compliance checks that go far beyond what a standard roofing contractor can provide.</p>
+      <p style="margin-top:.75rem">The result: a roof that performs to a higher standard, carries greater insurance value, and stands up to Central Florida's hurricanes, heat, and storms better than any standard installation.</p>
+    </div>
+    <div class="eng-band-features">
+      <div class="eng-feat">
+        <div class="eng-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V10l8-6 8 6v10"/><rect x="9" y="14" width="6" height="6"/></svg></div>
+        <div class="eng-feat-body"><strong>Structural Load Analysis</strong><span>Engineering calculations verify your roof structure before and after installation</span></div>
+      </div>
+      <div class="eng-feat">
+        <div class="eng-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="eng-feat-body"><strong>Florida Building Code Expert</strong><span>We don't interpret the code — we helped study it. Every install is code-verified</span></div>
+      </div>
+      <div class="eng-feat">
+        <div class="eng-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="eng-feat-body"><strong>Hurricane Wind Uplift Certification</strong><span>Engineered fastening patterns designed for 150+ mph Florida wind events</span></div>
+      </div>
+      <div class="eng-feat">
+        <div class="eng-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="eng-feat-body"><strong>Licensed Engineering Sign-Off</strong><span>Full documentation available for insurance, HOA, and property records</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      // Scroll reveal
-      if('IntersectionObserver' in window){
-        const els=document.querySelectorAll('.reveal');
-        const obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
-        els.forEach(function(el){obs.observe(el);});
-      }else{
-        document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
-      }
-    })();
-  </script>
+<!-- ── OPENING COUNTDOWN ── -->
+<section class="opening-band">
+  <div class="wrap opening-inner">
+    <div class="opening-text">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Opening Soon</div>
+      <h2>Caliber is Coming to Central Florida</h2>
+      <p>We're 4–6 weeks from opening our doors. Get on our early access list and receive founding client pricing locked in for your first project — regardless of when you schedule.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1.25rem">
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><span class="cd-num" id="cd-d">42</span><span class="cd-label">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-label">Mins</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Secs</span></div>
+      </div>
+      <a href="#contact" class="btn-navy">Join Early Access List</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Our Services</div>
+      <h2>Complete Roofing Solutions</h2>
+      <p style="max-width:560px;margin:0 auto;font-size:1rem">From single-family homes to commercial complexes — every service backed by engineering precision.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="sc-visual">
+          <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-construction-workers-installing-roof-tiles-4810-large.mp4" type="video/mp4">
+          </video>
+          <div class="sc-visual-overlay"></div>
+          <span class="sc-tag">Most Popular</span>
+        </div>
+        <div class="sc-body">
+          <h3>Residential Roofing</h3>
+          <p>Full replacements, re-roofs, and repairs for single-family homes, townhomes, and condos. All materials. All styles.</p>
+          <div class="sc-features">
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Asphalt, Tile, Metal & Flat</div>
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Engineering-verified installation</div>
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Permit management included</div>
+          </div>
+          <a href="services.html#residential" class="sc-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-d1">
+        <div class="sc-visual">
+          <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-commercial-building-under-construction-2-1197-large.mp4" type="video/mp4">
+          </video>
+          <div class="sc-visual-overlay"></div>
+          <span class="sc-tag">Commercial</span>
+        </div>
+        <div class="sc-body">
+          <h3>Commercial Roofing</h3>
+          <p>Low-slope, membrane, and specialty commercial roofing systems installed to code with full engineering documentation.</p>
+          <div class="sc-features">
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>TPO, EPDM, Modified Bitumen</div>
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Minimal business disruption</div>
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Warranty-backed systems</div>
+          </div>
+          <a href="services.html#commercial" class="sc-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-d2">
+        <div class="sc-visual">
+          <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-strong-storm-over-a-city-4263-large.mp4" type="video/mp4">
+          </video>
+          <div class="sc-visual-overlay"></div>
+          <span class="sc-tag">Emergency</span>
+        </div>
+        <div class="sc-body">
+          <h3>Storm Damage & Restoration</h3>
+          <p>24/7 emergency response, thorough damage documentation, and expert insurance claim navigation from start to finish.</p>
+          <div class="sc-features">
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Same-day emergency tarping</div>
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full photo documentation</div>
+            <div class="sc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Insurance adjuster liaison</div>
+          </div>
+          <a href="services.html#storm" class="sc-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="services.html" class="btn-navy">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROOFING MATERIALS ── -->
+<section style="padding:4rem 0;background:var(--off)">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="eyebrow"><span class="eyebrow-line"></span>Materials</div>
+      <h2>Every Roofing System, Mastered</h2>
+    </div>
+    <div class="materials-grid">
+      <div class="mat-card reveal">
+        <video autoplay muted loop playsinline aria-hidden="true"><source src="https://assets.mixkit.co/videos/preview/mixkit-workers-on-the-roof-of-a-house-4809-large.mp4" type="video/mp4"></video>
+        <div class="mat-label">Asphalt Shingle<span class="mat-sub">Impact & algae-resistant options</span></div>
+      </div>
+      <div class="mat-card reveal reveal-d1">
+        <video autoplay muted loop playsinline aria-hidden="true"><source src="https://assets.mixkit.co/videos/preview/mixkit-construction-workers-installing-roof-tiles-4810-large.mp4" type="video/mp4"></video>
+        <div class="mat-label">Clay & Concrete Tile<span class="mat-sub">Spanish, flat & barrel profiles</span></div>
+      </div>
+      <div class="mat-card reveal reveal-d2">
+        <video autoplay muted loop playsinline aria-hidden="true"><source src="https://assets.mixkit.co/videos/preview/mixkit-exterior-of-a-modern-house-5010-large.mp4" type="video/mp4"></video>
+        <div class="mat-label">Standing Seam Metal<span class="mat-sub">Maximum longevity & wind resistance</span></div>
+      </div>
+      <div class="mat-card reveal reveal-d3">
+        <video autoplay muted loop playsinline aria-hidden="true"><source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-commercial-building-under-construction-2-1197-large.mp4" type="video/mp4"></video>
+        <div class="mat-label">Low-Slope & Flat<span class="mat-sub">TPO, EPDM & modified bitumen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process-bg" id="process">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="eyebrow"><span class="eyebrow-line"></span>How It Works</div>
+      <h2>Our Proven 5-Step Process</h2>
+      <p style="max-width:520px;margin:0 auto">From first call to final walk-through — a transparent, stress-free experience every time.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h3>Free Inspection</h3>
+        <p>We assess your roof at no cost, document every issue with photos, and give you an honest written report.</p>
+      </div>
+      <div class="step-card reveal reveal-d1">
+        <div class="step-num">2</div>
+        <h3>Engineering Review</h3>
+        <p>Our licensed engineer reviews structural conditions and specifies the correct system for your build and climate zone.</p>
+      </div>
+      <div class="step-card reveal reveal-d2">
+        <div class="step-num">3</div>
+        <h3>Transparent Quote</h3>
+        <p>You receive a clear, itemized estimate — no hidden fees, no pressure. We walk you through every line item.</p>
+      </div>
+      <div class="step-card reveal reveal-d3">
+        <div class="step-num">4</div>
+        <h3>Precision Installation</h3>
+        <p>Our trained crews install to engineering specifications, Florida code, and manufacturer requirements.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:.4s">
+        <div class="step-num">5</div>
+        <h3>Final Walk-Through</h3>
+        <p>We inspect every detail with you before sign-off, and provide full warranty and permit documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORM EMERGENCY BAND ── -->
+<section class="storm-band">
+  <div class="wrap storm-inner">
+    <div>
+      <div class="eyebrow" style="color:rgba(255,255,255,.5)"><span class="eyebrow-line"></span>24/7 Emergency Service</div>
+      <h2>Storm Damage? We Respond Fast.</h2>
+      <p>Central Florida's severe weather season demands a contractor who answers the phone at 2am. We provide same-day emergency tarping, full storm damage documentation, and a team that understands the insurance claims process inside and out.</p>
+    </div>
+    <div class="storm-actions">
+      <a href="tel:+14074391200" class="btn-white">Call Now: (407) 439-1200</a>
+      <a href="contact.html" class="btn-outline-white2">Request Emergency Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSURANCE & FINANCING ── -->
+<section id="insurance">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="eyebrow"><span class="eyebrow-line"></span>We Handle the Hard Parts</div>
+      <h2>Insurance Claims &amp; Financing</h2>
+    </div>
+    <div class="insurance-grid">
+      <div class="ins-card reveal">
+        <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Insurance Claim Navigation</h3>
+        <p>We work directly with your insurance adjuster, document every detail, and fight to ensure you receive the full value of your claim — not just what the first offer says.</p>
+        <div class="ins-steps">
+          <div class="ins-step"><span class="ins-step-num">1</span>Free storm damage inspection & photo documentation</div>
+          <div class="ins-step"><span class="ins-step-num">2</span>We file and support your insurance claim</div>
+          <div class="ins-step"><span class="ins-step-num">3</span>We meet your adjuster on-site and advocate for you</div>
+          <div class="ins-step"><span class="ins-step-num">4</span>Full restoration once claim is approved</div>
+        </div>
+      </div>
+      <div class="ins-card reveal reveal-d1">
+        <div class="ins-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3>Flexible Financing Options</h3>
+        <p>A new roof is a significant investment. We've partnered with leading lenders to offer financing options that make quality roofing accessible to every homeowner — regardless of budget timing.</p>
+        <div class="ins-steps">
+          <div class="ins-step"><span class="ins-step-num">1</span>0% interest options available (subject to approval)</div>
+          <div class="ins-step"><span class="ins-step-num">2</span>Low monthly payment plans for qualified homeowners</div>
+          <div class="ins-step"><span class="ins-step-num">3</span>My Safe Florida Home Program eligible contractor</div>
+          <div class="ins-step"><span class="ins-step-num">4</span>Quick approval — same-day financing decisions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CALIBER ── -->
+<section style="background:var(--off)">
+  <div class="wrap">
+    <div class="section-header center reveal">
+      <div class="eyebrow"><span class="eyebrow-line"></span>The Caliber Standard</div>
+      <h2>Why Discerning Homeowners Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:var(--navy-lite)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--navy)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Engineering-Licensed</h3>
+        <p>The only roofing contractor in our market with a licensed engineer on every project. Your roof is calculated, not guessed.</p>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <div class="why-icon" style="background:#faf3e0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Boutique Attention</h3>
+        <p>We deliberately limit our project volume so every client receives the undivided focus of our senior team — not a subcontractor crew you've never met.</p>
+      </div>
+      <div class="why-card reveal reveal-d2">
+        <div class="why-icon" style="background:var(--navy-lite)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--navy)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3>Full Transparency</h3>
+        <p>Itemized quotes, documented inspections, and permit records — you always know exactly what is happening with your project and why.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#faf3e0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Rapid Emergency Response</h3>
+        <p>Florida storms don't wait for business hours. We have crews available 24/7 for emergency tarping, leak mitigation, and damage assessment.</p>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <div class="why-icon" style="background:var(--navy-lite)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--navy)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Premium Warranty Coverage</h3>
+        <p>Material and labor warranties that stand behind our work long after the crew leaves your property.</p>
+      </div>
+      <div class="why-card reveal reveal-d2">
+        <div class="why-icon" style="background:#faf3e0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Local, Family-Owned</h3>
+        <p>Central Florida is our home. We live in the communities we serve, and our reputation is built one rooftop at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LEAD CAPTURE FORM ── -->
+<section class="lead-section" id="contact">
+  <div class="wrap lead-inner">
+    <div class="lead-copy">
+      <div class="eyebrow" style="color:rgba(184,145,42,.7)"><span class="eyebrow-line"></span>Get Started</div>
+      <h2>Request Your Free Roof Inspection</h2>
+      <p>No pressure, no obligation. One of our roofing specialists will contact you within 24 hours to schedule your free inspection at a time that works for you.</p>
+      <div class="lead-trust">
+        <div class="lead-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Free inspection — no cost, no obligation
+        </div>
+        <div class="lead-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Licensed engineer on every inspection
+        </div>
+        <div class="lead-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Written report with photo documentation
+        </div>
+        <div class="lead-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          We handle insurance claims end-to-end
+        </div>
+        <div class="lead-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Founding client pricing — available now
+        </div>
+      </div>
+    </div>
+    <div class="lead-form">
+      <form id="heroForm" onsubmit="submitHeroForm(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="hf-fname">First Name *</label>
+            <input type="text" id="hf-fname" required placeholder="Jane">
+          </div>
+          <div class="form-field">
+            <label for="hf-lname">Last Name *</label>
+            <input type="text" id="hf-lname" required placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="hf-phone">Phone Number *</label>
+          <input type="tel" id="hf-phone" required placeholder="(407) 555-0100">
+        </div>
+        <div class="form-field">
+          <label for="hf-email">Email Address *</label>
+          <input type="email" id="hf-email" required placeholder="jane@email.com">
+        </div>
+        <div class="form-field">
+          <label for="hf-addr">Property Address *</label>
+          <input type="text" id="hf-addr" required placeholder="123 Main St, Orlando, FL">
+        </div>
+        <div class="form-field">
+          <label for="hf-service">Service Needed</label>
+          <select id="hf-service">
+            <option value="">Select a service…</option>
+            <option>Roof Replacement</option>
+            <option>Roof Repair</option>
+            <option>Storm Damage Inspection</option>
+            <option>Insurance Claim Support</option>
+            <option>Commercial Roofing</option>
+            <option>Free General Inspection</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">Schedule Free Inspection →</button>
+        <p class="form-note">By submitting, you agree to be contacted by Caliber Construction Group. We never share your information.</p>
+        <div class="form-success" id="heroSuccess">✓ Thank you! We'll be in touch within 24 hours to schedule your inspection.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-main">Caliber Construction Group</span>
+          <span class="logo-sub">Engineering-Grade Roofing</span>
+        </div>
+        <p class="footer-tagline">Central Florida's boutique roofing contractor — backed by an engineering license, committed to a higher standard on every project.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="about.html#engineering">Engineering License</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <div class="footer-links">
+          <a href="services.html#residential">Residential Roofing</a>
+          <a href="services.html#commercial">Commercial Roofing</a>
+          <a href="services.html#storm">Storm Damage</a>
+          <a href="services.html#insurance">Insurance Claims</a>
+          <a href="services.html#inspection">Free Inspection</a>
+          <a href="services.html#financing">Financing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>(407) 439-1200</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>info@caliberconstructiongroup.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Central Florida — Serving Orange, Seminole, Osceola &amp; Lake Counties</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon–Fri 7am–6pm · 24/7 Emergency</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caliber Construction Group. All rights reserved. Licensed Roofing &amp; Engineering Contractor — Florida. License numbers to be published upon opening.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA (mobile) -->
+<a href="tel:+14074391200" class="float-cta" aria-label="Call us">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+</a>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+(function(){
+  // ── Theme ──
+  var html=document.documentElement;
+  var stored=localStorage.getItem('ccg-theme')||'light';
+  html.setAttribute('data-theme',stored);
+  var sun=document.getElementById('sunIcon'),moon=document.getElementById('moonIcon');
+  function applyTheme(t){if(t==='dark'){sun.style.display='none';moon.style.display='block';}else{sun.style.display='block';moon.style.display='none';}}
+  applyTheme(stored);
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var t=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    html.setAttribute('data-theme',t);
+    localStorage.setItem('ccg-theme',t);
+    applyTheme(t);
+  });
+
+  // ── Mobile menu ──
+  var menu=document.getElementById('mobileMenu');
+  var ham=document.getElementById('hamBtn');
+  var close=document.getElementById('drawerClose');
+  var overlay=document.getElementById('mobileOverlay');
+  function openMenu(){menu.classList.add('open');ham.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeMenu(){menu.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  ham.addEventListener('click',openMenu);
+  close.addEventListener('click',closeMenu);
+  overlay.addEventListener('click',closeMenu);
+
+  // ── Countdown ──
+  var launch=new Date();
+  launch.setDate(launch.getDate()+42);
+  function tick(){
+    var now=new Date();
+    var diff=Math.max(0,launch-now);
+    var d=Math.floor(diff/864e5);
+    var h=Math.floor((diff%864e5)/36e5);
+    var m=Math.floor((diff%36e5)/6e4);
+    var s=Math.floor((diff%6e4)/1e3);
+    var pad=function(n){return String(n).padStart(2,'0');};
+    document.getElementById('cd-d').textContent=pad(d);
+    document.getElementById('cd-h').textContent=pad(h);
+    document.getElementById('cd-m').textContent=pad(m);
+    document.getElementById('cd-s').textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+
+  // ── Form submit ──
+  window.submitHeroForm=function(e){
+    e.preventDefault();
+    document.getElementById('heroSuccess').style.display='block';
+    e.target.reset();
+    setTimeout(function(){document.getElementById('heroSuccess').style.display='none';},12000);
+  };
+
+  // ── Back to top ──
+  var bt=document.getElementById('backTop');
+  window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>400);});
+  bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // ── Reveal ──
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+    },{threshold:.07});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+  }
+})();
+</script>
 </body>
 </html>
