@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Careers | Caliber Construction Group</title>
-  <meta name="description" content="Join the Caliber team. We're hiring a Field Specialist in Central Florida. Apply today and build your career with a boutique roofing and construction firm." />
+  <meta name="description" content="Join Caliber Construction Group. View open positions in Central Florida — roofing, construction, sales, and operations. Apply today." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
       --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
       --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
       --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
       --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
       --color-bg:#ffffff;
       --color-surface:#f5f8fc;
@@ -62,348 +63,148 @@
     .container{width:min(1180px,calc(100% - 2rem));margin-inline:auto}
     .container-narrow{width:min(860px,calc(100% - 2rem));margin-inline:auto}
     .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:var(--color-primary);color:#fff;padding:.75rem 1rem;border-radius:var(--radius-md);z-index:999}
-    .eyebrow{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.9rem;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.18em;color:var(--color-accent);font-weight:700;font-family:var(--font-body)}
-    .eyebrow::before{content:'';display:block;width:1.4rem;height:2px;background:var(--color-accent);border-radius:2px}
+    .eyebrow{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.9rem;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.18em;color:var(--color-accent);font-weight:600}
+    .eyebrow-line{width:28px;height:2px;background:currentColor;border-radius:2px}
 
-    /* NAV */
-    header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--color-bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-divider)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;min-height:72px}
-    .brand{display:flex;align-items:center;gap:.9rem;cursor:pointer}
-    .brand-mark{width:48px;height:48px;padding:9px;border-radius:14px;background:var(--color-primary);color:#fff;flex-shrink:0;box-shadow:var(--shadow-md)}
-    .brand-copy small{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-text-faint)}
-    .brand-copy strong{display:block;font-family:var(--font-display);font-size:1.3rem;font-weight:700;line-height:1.1}
-    .nav-links{display:flex;align-items:center;gap:1.4rem}
-    .nav-links a{font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);transition:color .15s}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--color-primary)}
-    .nav-cta{display:flex;align-items:center;gap:.75rem}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.75rem 1.4rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;cursor:pointer;transition:.18s ease;border:none}
-    .btn-primary{background:var(--color-primary);color:#fff}.btn-primary:hover{background:var(--color-primary-hover)}
-    .btn-accent{background:var(--color-accent);color:#fff}.btn-accent:hover{background:var(--color-accent-hover)}
-    .btn-ghost{background:transparent;border:1.5px solid var(--color-border);color:var(--color-text)}.btn-ghost:hover{background:var(--color-surface)}
-    .theme-btn{width:44px;height:44px;border-radius:var(--radius-full);background:var(--color-surface);border:1px solid var(--color-border);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+    /* ── HEADER ── */
+    header{position:sticky;top:0;z-index:100;background:var(--color-bg);border-bottom:1px solid var(--color-border);backdrop-filter:blur(8px)}
+    .nav{display:flex;align-items:center;gap:var(--space-6);padding:var(--space-4) 0;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:1.05rem;color:var(--color-primary)}
+    .brand-mark{width:36px;height:36px;color:var(--color-primary)}
+    .brand-copy small{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--color-text-faint);font-weight:500;line-height:1}
+    .brand-copy strong{display:block;font-family:var(--font-display);font-size:1.15rem;color:var(--color-primary);line-height:1.1}
+    .nav-links{display:flex;align-items:center;gap:var(--space-6);font-size:.875rem;font-weight:500}
+    .nav-links a{color:var(--color-text-muted);transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--color-primary)}
+    .nav-cta{background:var(--color-accent);color:#fff !important;padding:.5rem 1.1rem;border-radius:var(--radius-full);transition:background .2s !important}
+    .nav-cta:hover{background:var(--color-accent-hover) !important}
+    .nav-actions{display:flex;align-items:center;gap:.75rem}
+    .theme-toggle{background:none;border:1px solid var(--color-border);border-radius:var(--radius-full);width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);transition:all .2s}
+    .theme-toggle:hover{border-color:var(--color-primary);color:var(--color-primary)}
+    .hamburger{display:none;background:none;border:1px solid var(--color-border);border-radius:var(--radius-md);padding:.4rem .5rem;cursor:pointer;flex-direction:column;gap:4px}
+    .hamburger span{display:block;width:20px;height:2px;background:var(--color-text);border-radius:2px;transition:all .25s}
+    .mobile-nav{display:none;flex-direction:column;padding:var(--space-4) 0;border-top:1px solid var(--color-border);gap:.25rem}
+    .mobile-nav a{padding:.65rem var(--space-3);border-radius:var(--radius-md);color:var(--color-text-muted);font-size:.9rem;transition:all .2s}
+    .mobile-nav a:hover{background:var(--color-surface);color:var(--color-primary)}
+    @media(max-width:768px){.nav-links,.nav-actions .nav-cta{display:none}.hamburger{display:flex}}
 
-    /* HERO BANNER */
-    .careers-hero{
-      background:linear-gradient(160deg,#0f3460 0%,#0a2244 60%,#1a0a0e 100%);
-      padding:clamp(3.5rem,8vw,6.5rem) 0 clamp(2.5rem,5vw,5rem);
-      position:relative;
-      overflow:hidden;
-    }
-    .careers-hero::before{
-      content:'';
-      position:absolute;inset:0;
-      background:radial-gradient(ellipse at 80% 40%, rgba(139,26,42,.18) 0%, transparent 60%);
-      pointer-events:none;
-    }
-    .careers-hero::after{
-      content:'';
-      position:absolute;
-      bottom:0;left:0;right:0;
-      height:3px;
-      background:linear-gradient(90deg,transparent,rgba(139,26,42,.6),transparent);
-    }
-    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;}
-    .hero-text .eyebrow{color:#f0b8c1}
-    .hero-text .eyebrow::before{background:#f0b8c1}
-    .hero-text h1{color:#fff;margin-bottom:1rem}
-    .hero-text p{color:rgba(255,255,255,.78);font-size:var(--text-lg);max-width:56ch;margin:0}
-    .hero-badge{
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding:1.5rem 2rem;
-      background:rgba(255,255,255,.07);
-      border:1.5px solid rgba(255,255,255,.14);
-      border-radius:var(--radius-xl);
-      text-align:center;
-      min-width:160px;
-    }
-    .hero-badge strong{display:block;font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;line-height:1}
-    .hero-badge span{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.6);margin-top:.4rem}
+    /* ── HERO ── */
+    .hero{background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-16) 0;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hero-inner{position:relative;z-index:1;max-width:700px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.6);margin-bottom:1.2rem;font-weight:600}
+    .hero-eyebrow-line{width:24px;height:1.5px;background:currentColor;border-radius:2px}
+    .hero h1{font-size:var(--text-2xl);color:#fff;margin-bottom:1rem;line-height:1.08}
+    .hero p{color:rgba(255,255,255,.72);font-size:var(--text-lg);margin-bottom:1.8rem;max-width:560px}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.65rem}
+    .pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.88);padding:.45rem .95rem;border-radius:var(--radius-full);font-size:.8rem;font-weight:500}
+    .pill svg{width:14px;height:14px;flex-shrink:0}
 
-    /* WHY JOIN US */
-    .perks-section{padding:clamp(3.5rem,7vw,6rem) 0}
-    .perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
-    .perk-card{
-      background:var(--color-surface);
-      border:1.5px solid var(--color-border);
-      border-radius:var(--radius-xl);
-      padding:1.75rem 1.5rem;
-      box-shadow:var(--shadow-sm);
-      transition:box-shadow .2s,transform .2s;
-    }
-    .perk-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-    .perk-icon{
-      width:2.8rem;height:2.8rem;
-      border-radius:var(--radius-md);
-      background:var(--color-accent-soft);
-      display:flex;align-items:center;justify-content:center;
-      margin-bottom:1.1rem;
-    }
-    .perk-card h3{
-      font-family:var(--font-body);
-      font-size:var(--text-base);
-      font-weight:800;
-      color:var(--color-text);
-      margin-bottom:.5rem;
-    }
-    .perk-card p{font-size:var(--text-sm);margin:0}
+    /* ── WHY JOIN ── */
+    .why{padding:var(--space-16) 0;background:var(--color-surface)}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:var(--space-8)}
+    .why-card{background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);transition:box-shadow .2s,transform .2s}
+    .why-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .why-icon{width:44px;height:44px;border-radius:var(--radius-md);background:var(--color-accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4)}
+    .why-icon svg{width:22px;height:22px;color:var(--color-accent)}
+    .why-card h3{font-size:1.1rem;margin-bottom:.4rem}
+    .why-card p{font-size:.875rem;margin:0}
 
-    /* OPEN ROLE */
-    .role-section{padding:clamp(3rem,6vw,5.5rem) 0;background:var(--color-surface-2)}
-    .role-header{
-      display:flex;justify-content:space-between;align-items:flex-start;
-      gap:1.5rem;flex-wrap:wrap;
-      margin-bottom:2rem;
-    }
-    .role-card{
-      background:var(--color-bg);
-      border:1.5px solid var(--color-border);
-      border-radius:var(--radius-xl);
-      overflow:hidden;
-      box-shadow:var(--shadow-md);
-    }
-    .role-top{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:1.5rem;
-      align-items:start;
-      padding:2rem 2.25rem 1.5rem;
-      border-bottom:1px solid var(--color-divider);
-    }
-    .role-title-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.75rem}
-    .role-title-row h3{
-      font-family:var(--font-display);
-      font-size:var(--text-xl);
-      margin:0;
-      color:var(--color-text);
-    }
-    .badge{
-      display:inline-flex;align-items:center;
-      padding:.3rem .85rem;
-      border-radius:var(--radius-full);
-      font-size:var(--text-xs);
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.1em;
-    }
-    .badge-open{background:rgba(67,122,34,.12);color:#2e5c10;border:1px solid rgba(67,122,34,.25)}
-    .badge-ft{background:var(--color-surface-offset);color:var(--color-text-muted);border:1px solid var(--color-border)}
-    .role-meta{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:0}
-    .meta-tag{
-      display:inline-flex;align-items:center;gap:.35rem;
-      font-size:var(--text-xs);
-      color:var(--color-text-muted);
-      background:var(--color-surface);
-      border:1px solid var(--color-border);
-      border-radius:var(--radius-full);
-      padding:.35rem .85rem;
-      font-weight:600;
-    }
-    .apply-quick{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
-    .apply-quick .btn{white-space:nowrap}
-    .role-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-    .role-col{padding:1.75rem 2.25rem}
-    .role-col+.role-col{border-left:1px solid var(--color-divider)}
-    .role-col h4{
-      font-family:var(--font-body);
-      font-size:var(--text-sm);
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:var(--color-primary);
-      margin-bottom:1rem;
-    }
-    .role-col ul li{
-      display:flex;
-      gap:.7rem;
-      align-items:flex-start;
-      font-size:var(--text-sm);
-      color:var(--color-text-muted);
-      padding:.45rem 0;
-      border-bottom:1px solid var(--color-divider);
-      line-height:1.5;
-    }
-    .role-col ul li:last-child{border-bottom:none}
-    .li-dot{
-      display:block;
-      width:.45rem;height:.45rem;
-      min-width:.45rem;
-      border-radius:999px;
-      background:var(--color-accent);
-      margin-top:.5rem;
-    }
+    /* ── OPEN POSITIONS ── */
+    .positions{padding:var(--space-16) 0}
+    .positions-header{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:var(--space-8);flex-wrap:wrap}
+    .positions-count{font-size:.875rem;color:var(--color-text-faint);background:var(--color-surface);border:1px solid var(--color-border);padding:.35rem .85rem;border-radius:var(--radius-full)}
+    .job-list{display:flex;flex-direction:column;gap:.75rem}
 
-    /* DIVIDER */
-    .section-divider{height:1px;background:var(--color-divider)}
+    /* ── JOB ACCORDION ── */
+    .job-item{border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow .2s}
+    .job-item.open{box-shadow:var(--shadow-md)}
+    .job-trigger{width:100%;background:var(--color-bg);border:none;cursor:pointer;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;text-align:left;transition:background .15s}
+    .job-trigger:hover{background:var(--color-surface)}
+    .job-item.open .job-trigger{background:var(--color-surface)}
+    .job-badge{flex-shrink:0;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .75rem;border-radius:var(--radius-full);border:1.5px solid}
+    .badge-hiring{color:#16a34a;border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.08)}
+    .badge-soon{color:var(--color-accent);border-color:rgba(139,26,42,.25);background:var(--color-accent-soft)}
+    .job-info{flex:1}
+    .job-title{font-family:var(--font-display);font-size:clamp(1.1rem,.9rem + .5vw,1.4rem);color:var(--color-text);font-weight:600;margin:0 0 .25rem;line-height:1.1}
+    .job-meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;font-size:.8rem;color:var(--color-text-faint)}
+    .job-meta span{display:flex;align-items:center;gap:.3rem}
+    .job-meta svg{width:13px;height:13px}
+    .job-chevron{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);transition:transform .3s,background .2s}
+    .job-item.open .job-chevron{transform:rotate(180deg);background:var(--color-primary);border-color:var(--color-primary);color:#fff}
 
-    /* APPLICATION FORM */
-    .apply-section{padding:clamp(3.5rem,7vw,6rem) 0}
-    .apply-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:start}
-    .apply-info h2{margin-bottom:.75rem}
-    .apply-info p{margin-bottom:1.5rem}
-    .value-list{display:grid;gap:.85rem;margin-top:1.5rem}
-    .value-item{
-      display:flex;gap:.85rem;align-items:flex-start;
-      padding:1rem 1.1rem;
-      background:var(--color-surface);
-      border:1px solid var(--color-border);
-      border-radius:var(--radius-lg);
-    }
-    .value-num{
-      display:inline-flex;width:2rem;height:2rem;min-width:2rem;
-      align-items:center;justify-content:center;
-      border-radius:var(--radius-full);
-      background:var(--color-primary);
-      color:#fff;
-      font-size:var(--text-xs);
-      font-weight:800;
-      flex-shrink:0;
-    }
-    .value-item strong{display:block;font-size:var(--text-sm);font-weight:800;color:var(--color-text);margin-bottom:.2rem}
-    .value-item p{margin:0;font-size:var(--text-sm)}
-    .form-card{
-      background:var(--color-surface);
-      border:1.5px solid var(--color-border);
-      border-radius:var(--radius-xl);
-      padding:clamp(1.5rem,4vw,2.5rem);
-      box-shadow:var(--shadow-md);
-    }
-    .form-card h3{
-      font-family:var(--font-display);
-      font-size:var(--text-xl);
-      margin-bottom:1.5rem;
-      color:var(--color-text);
-    }
-    .field{margin-bottom:1rem}
-    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    label{display:block;font-size:var(--text-sm);font-weight:700;color:var(--color-text);margin-bottom:.4rem}
-    .req{color:var(--color-accent);margin-left:.15rem}
-    input,select,textarea{
-      width:100%;padding:.95rem 1rem;
-      border-radius:.85rem;
-      border:1.5px solid var(--color-border);
-      background:var(--color-bg);
-      color:var(--color-text);
-      transition:border-color .15s,box-shadow .15s;
-      outline:none;
-    }
-    input:focus,select:focus,textarea:focus{
-      border-color:var(--color-primary);
-      box-shadow:0 0 0 3px color-mix(in srgb,var(--color-primary) 14%,transparent);
-    }
-    textarea{min-height:130px;resize:vertical}
-    .file-label{
-      display:flex;align-items:center;justify-content:center;
-      gap:.6rem;
-      min-height:56px;
-      border:1.5px dashed var(--color-border);
-      border-radius:.85rem;
-      background:var(--color-surface);
-      cursor:pointer;
-      font-size:var(--text-sm);
-      color:var(--color-text-muted);
-      font-weight:600;
-      transition:border-color .15s,background .15s;
-      padding:.75rem 1rem;
-      text-align:center;
-    }
-    .file-label:hover{border-color:var(--color-primary);background:var(--color-surface-2)}
-    input[type="file"]{display:none}
-    .form-consent{
-      display:flex;gap:.75rem;align-items:flex-start;
-      padding:1rem;
-      background:var(--color-surface-2);
-      border-radius:var(--radius-md);
-      border:1px solid var(--color-divider);
-      margin-bottom:1.25rem;
-    }
-    .form-consent input[type="checkbox"]{width:auto;min-height:auto;margin-top:.3rem;accent-color:var(--color-primary)}
-    .form-consent label{font-size:var(--text-xs);font-weight:400;color:var(--color-text-muted);margin:0;cursor:pointer}
-    .form-notice{
-      display:none;margin-top:1rem;
-      padding:1rem 1.1rem;
-      border-radius:.85rem;
-      background:rgba(67,122,34,.1);
-      font-size:var(--text-sm);
-      color:#2e5c10;
-      border:1px solid rgba(67,122,34,.25);
-      font-weight:600;
-    }
-    [data-theme="dark"] .form-notice{color:#6daa45;background:rgba(67,122,34,.15)}
+    .job-body{display:none;border-top:1px solid var(--color-divider)}
+    .job-item.open .job-body{display:block}
+    .job-body-inner{padding:1.75rem 1.5rem;display:grid;grid-template-columns:1fr 320px;gap:2rem}
+    @media(max-width:700px){.job-body-inner{grid-template-columns:1fr}}
+    .job-desc p{font-size:.9rem;color:var(--color-text-muted);margin-bottom:1rem}
+    .job-desc p:last-child{margin-bottom:0}
+    .detail-group{margin-bottom:1.25rem}
+    .detail-group:last-child{margin-bottom:0}
+    .detail-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-faint);margin-bottom:.55rem}
+    .detail-list{display:flex;flex-direction:column;gap:.35rem}
+    .detail-item{display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem;color:var(--color-text-muted)}
+    .detail-item svg{width:14px;height:14px;color:var(--color-accent);flex-shrink:0;margin-top:.2rem}
 
-    /* CULTURE STRIP */
-    .culture-strip{
-      padding:clamp(3rem,6vw,5.5rem) 0;
-      background:linear-gradient(160deg,#0f3460 0%,#0a2244 100%);
-      position:relative;overflow:hidden;
-    }
-    .culture-strip::before{
-      content:'';
-      position:absolute;inset:0;
-      background:radial-gradient(ellipse at 20% 60%,rgba(139,26,42,.2) 0%,transparent 55%);
-      pointer-events:none;
-    }
-    .culture-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-    .culture-inner h2{color:#fff;margin-bottom:1rem}
-    .culture-inner p{color:rgba(255,255,255,.8);margin-bottom:0}
-    .culture-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .c-stat{
-      padding:1.25rem;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:var(--radius-xl);
-      text-align:center;
-    }
-    .c-stat strong{
-      display:block;
-      font-family:var(--font-display);
-      font-size:var(--text-xl);
-      color:#fff;
-      margin-bottom:.3rem;
-    }
-    .c-stat span{font-size:var(--text-xs);color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.1em}
+    /* ── APPLY PANEL ── */
+    .apply-panel{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.5rem;align-self:start;position:sticky;top:100px}
+    .apply-panel h4{font-family:var(--font-display);font-size:1.2rem;margin-bottom:.35rem}
+    .apply-panel p{font-size:.85rem;color:var(--color-text-muted);margin-bottom:1.25rem}
+    .form-field{margin-bottom:.85rem}
+    .form-field label{display:block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:.35rem}
+    .form-field input,.form-field textarea,.form-field select{width:100%;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:.65rem .85rem;font-size:.875rem;color:var(--color-text);transition:border-color .2s,box-shadow .2s;outline:none}
+    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(15,52,96,.1)}
+    .form-field textarea{resize:vertical;min-height:80px}
+    .file-upload{border:1.5px dashed var(--color-border);border-radius:var(--radius-md);padding:1rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;background:var(--color-bg)}
+    .file-upload:hover{border-color:var(--color-primary);background:var(--color-surface-2)}
+    .file-upload input{display:none}
+    .file-upload-label{display:flex;flex-direction:column;align-items:center;gap:.4rem;cursor:pointer;color:var(--color-text-muted);font-size:.8rem}
+    .file-upload-label svg{width:22px;height:22px;color:var(--color-text-faint)}
+    .file-name{font-size:.75rem;color:var(--color-primary);margin-top:.25rem;word-break:break-all}
+    .btn-apply{width:100%;background:var(--color-accent);color:#fff;border:none;border-radius:var(--radius-full);padding:.85rem;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s,transform .15s;margin-top:.25rem}
+    .btn-apply:hover{background:var(--color-accent-hover);transform:translateY(-1px)}
+    .apply-success{display:none;background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.25);border-radius:var(--radius-md);padding:.85rem 1rem;font-size:.85rem;color:#15803d;text-align:center;margin-top:.75rem}
 
-    /* FOOTER */
-    footer{padding:2.5rem 0 3rem;border-top:1px solid var(--color-divider)}
-    .footer-row{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
-    .footer-brand strong{font-family:var(--font-display);font-size:var(--text-lg);display:block;margin-bottom:.35rem}
-    .footer-brand p{font-size:var(--text-sm);max-width:40ch;margin:0}
-    .footer-nav{display:flex;flex-direction:column;gap:.55rem}
-    .footer-nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
-    .footer-nav a:hover{color:var(--color-primary)}
-    .footer-bottom{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--color-divider);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-    .footer-bottom span{font-size:var(--text-xs);color:var(--color-text-faint)}
+    /* ── CULTURE STRIP ── */
+    .culture{padding:var(--space-16) 0;background:var(--color-primary);color:var(--color-text-inverse);text-align:center}
+    .culture h2{color:#fff;margin-bottom:.75rem}
+    .culture p{color:rgba(255,255,255,.7);max-width:580px;margin:0 auto var(--space-8)}
+    .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-12)}
+    .stat-item{text-align:center}
+    .stat-num{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1;margin-bottom:.3rem}
+    .stat-label{font-size:.8rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em}
 
-    /* REVEAL */
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+    /* ── FOOTER ── */
+    footer{background:var(--color-text);color:var(--color-text-inverse);padding:var(--space-12) 0 var(--space-6)}
+    .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:var(--space-8);margin-bottom:var(--space-8)}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand{font-family:var(--font-display);font-size:1.4rem;color:#fff;margin-bottom:.6rem}
+    .footer-tagline{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.6;max-width:260px}
+    .footer-heading{font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.35);margin-bottom:.85rem;font-weight:600}
+    .footer-links{display:flex;flex-direction:column;gap:.5rem}
+    .footer-links a{font-size:.875rem;color:rgba(255,255,255,.55);transition:color .2s}
+    .footer-links a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:var(--space-6);display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:.75rem;font-size:.8rem;color:rgba(255,255,255,.35)}
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
     .reveal.visible{opacity:1;transform:none}
 
-    /* RESPONSIVE */
-    @media(max-width:1024px){
-      .perks-grid{grid-template-columns:1fr 1fr}
-      .apply-grid{grid-template-columns:1fr}
-      .culture-inner{grid-template-columns:1fr}
-      .hero-inner{grid-template-columns:1fr}
-      .hero-badge{display:none}
-      .role-body{grid-template-columns:1fr}
-      .role-col+.role-col{border-left:none;border-top:1px solid var(--color-divider)}
-      .nav-links{display:none}
-    }
-    @media(max-width:640px){
-      .perks-grid{grid-template-columns:1fr}
-      .field-row{grid-template-columns:1fr}
-      .role-top{grid-template-columns:1fr}
-      .apply-quick{align-items:flex-start}
-      .culture-stats{grid-template-columns:1fr 1fr}
-      .role-title-row{flex-direction:column;align-items:flex-start}
-    }
+    /* ── NO POSITIONS STATE ── */
+    .no-positions{text-align:center;padding:var(--space-10) var(--space-6);background:var(--color-surface);border:1px dashed var(--color-border);border-radius:var(--radius-lg)}
+    .no-positions svg{width:40px;height:40px;color:var(--color-text-faint);margin:0 auto var(--space-4)}
+    .no-positions h3{font-size:1.1rem;margin-bottom:.5rem}
+    .no-positions p{font-size:.9rem;max-width:380px;margin:0 auto}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#positions">Skip to open positions</a>
 
+  <!-- HEADER -->
   <header>
     <div class="container nav">
-      <a href="index.html" class="brand" aria-label="Caliber home">
+      <a href="index.html" class="brand" aria-label="Caliber Construction Group home">
         <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M14 46L26 14h12l12 32" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M22 34h20" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
@@ -411,375 +212,515 @@
         </svg>
         <div class="brand-copy">
           <small>Central Florida</small>
-          <strong>Caliber</strong>
+          <strong>Caliber Construction Group</strong>
         </div>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#process">Process</a>
-        <a href="index.html#about">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="careers.html" aria-current="page">Careers</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="careers.html" class="active">Careers</a>
+        <a href="contact.html" class="nav-cta">Free Inspection</a>
       </nav>
-      <div class="nav-cta">
-        <a href="#apply" class="btn btn-accent">Apply Now</a>
-        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">&#9680;</button>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode" id="themeBtn">
+          <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" aria-label="Open menu" id="hamburger" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
+    <div class="container">
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Free Inspection</a>
+      </nav>
     </div>
   </header>
 
-  <main id="main">
-
-    <!-- HERO BANNER -->
-    <section class="careers-hero" aria-labelledby="careers-heading">
+  <main>
+    <!-- HERO -->
+    <section class="hero">
       <div class="container">
         <div class="hero-inner">
-          <div class="hero-text">
-            <span class="eyebrow">We&rsquo;re hiring &mdash; Central Florida</span>
-            <h1 id="careers-heading">Build your career with a team that does the work right.</h1>
-            <p>Caliber is a boutique roofing and construction firm. We move deliberately, treat every project seriously, and hold our people to a higher standard &mdash; because our clients expect it and our reputation demands it.</p>
-          </div>
-          <div class="hero-badge" aria-hidden="true">
-            <strong>1</strong>
-            <span>Open position</span>
+          <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Join Our Team</div>
+          <h1>Build Your Career with Caliber Construction Group</h1>
+          <p>We're growing fast and looking for driven, skilled people who take pride in their craft. Competitive pay, real advancement, and work that makes a difference for Central Florida homeowners.</p>
+          <div class="hero-pills">
+            <span class="pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Comprehensive Training
+            </span>
+            <span class="pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Competitive Benefits
+            </span>
+            <span class="pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Performance Bonuses
+            </span>
+            <span class="pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              Clear Advancement Path
+            </span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY JOIN US -->
-    <section class="perks-section" aria-labelledby="perks-heading">
+    <!-- WHY JOIN -->
+    <section class="why">
       <div class="container">
-        <span class="eyebrow">Why Caliber</span>
-        <h2 id="perks-heading">A place where craft and standards matter.</h2>
-        <div class="perks-grid">
-
-          <article class="perk-card reveal">
-            <div class="perk-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="eyebrow"><span class="eyebrow-line"></span>Why Caliber</div>
+        <h2>More Than a Job — A Career</h2>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
-            <h3>Dual-licensed firm</h3>
-            <p>Work for a company that holds both a Florida roofing contractor license and an engineering license. Your work is backed by real credentials and real standards.</p>
-          </article>
-
-          <article class="perk-card reveal">
-            <div class="perk-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <h3>Paid Training</h3>
+            <p>Every new hire goes through structured onboarding and ongoing field training — no experience required for entry-level roles.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
             </div>
-            <h3>Boutique team, real ownership</h3>
-            <p>We take on fewer projects by design. That means each team member carries real responsibility and real visibility &mdash; not just tasks assigned by a crew foreman at a volume shop.</p>
-          </article>
-
-          <article class="perk-card reveal">
-            <div class="perk-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <h3>Performance Bonuses</h3>
+            <p>We reward results. Top performers earn bonuses tied directly to closed jobs, referrals, and customer satisfaction scores.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3>Competitive compensation</h3>
-            <p>We pay for the level of quality we expect. Field Specialists at Caliber are compensated to reflect the skill, reliability, and professionalism the role requires.</p>
-          </article>
-
-          <article class="perk-card reveal">
-            <div class="perk-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <h3>Tight-Knit Team</h3>
+            <p>Small enough to know every colleague by name. Big enough to offer real opportunity. Family-operated and community-rooted.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
-            <h3>Premium project portfolio</h3>
-            <p>Our clients are Central Florida homeowners and property managers with high standards. The work is higher caliber &mdash; coastal estates, large residential builds, and selective commercial accounts.</p>
-          </article>
-
-          <article class="perk-card reveal">
-            <div class="perk-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <h3>Career Growth</h3>
+            <p>Field reps become project managers. Sales associates become territory leads. We promote from within — always.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
             </div>
-            <h3>Growth path</h3>
-            <p>As Caliber grows, so does the team. Field Specialists who demonstrate reliability and skill have a clear path into lead roles and expanded responsibilities.</p>
-          </article>
-
-          <article class="perk-card reveal">
-            <div class="perk-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h3>Flexible Schedule</h3>
+            <p>Monday–Friday core with weekend flexibility. We respect work-life balance and adapt schedules around project needs.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <h3>Central Florida based</h3>
-            <p>All work is local. No extended travel, no out-of-market assignments. You work in the community you live in, on properties you can take pride in finishing.</p>
-          </article>
-
+            <h3>Central Florida Based</h3>
+            <p>Local routes, local clients, local impact. No long hauls or relocation — work in the community you call home.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- OPEN ROLE -->
-    <section class="role-section" id="role" aria-labelledby="role-heading">
-      <div class="container">
-        <div class="role-header">
+    <!-- OPEN POSITIONS -->
+    <section class="positions" id="positions">
+      <div class="container-narrow">
+        <div class="positions-header reveal">
           <div>
-            <span class="eyebrow">Open position</span>
-            <h2 id="role-heading">Current openings at Caliber.</h2>
+            <div class="eyebrow"><span class="eyebrow-line"></span>Open Positions</div>
+            <h2>We're Hiring</h2>
           </div>
-          <a href="#apply" class="btn btn-accent">Apply for this role</a>
+          <span class="positions-count">4 positions open</span>
         </div>
 
-        <div class="role-card reveal">
-          <div class="role-top">
-            <div>
-              <div class="role-title-row">
-                <h3>Field Specialist</h3>
-                <span class="badge badge-open">&#10003; Now Hiring</span>
-                <span class="badge badge-ft">Full-Time</span>
+        <div class="job-list">
+
+          <!-- JOB 1: Field Sales Specialist -->
+          <div class="job-item reveal" id="job-1">
+            <button class="job-trigger" aria-expanded="false" onclick="toggleJob('job-1')">
+              <span class="job-badge badge-hiring">Hiring Now</span>
+              <div class="job-info">
+                <div class="job-title">Field Sales Specialist</div>
+                <div class="job-meta">
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Central Florida</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Full-Time</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Commission + Base</span>
+                </div>
               </div>
-              <div class="role-meta">
-                <span class="meta-tag">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Central Florida
-                </span>
-                <span class="meta-tag">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-                  Field / On-Site
-                </span>
-                <span class="meta-tag">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  Mon &ndash; Fri + select weekends
-                </span>
-                <span class="meta-tag">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-                  Competitive pay
-                </span>
+              <div class="job-chevron" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
               </div>
-            </div>
-            <div class="apply-quick">
-              <a href="#apply" class="btn btn-primary">Apply now</a>
-              <span style="font-size:var(--text-xs);color:var(--color-text-faint);text-align:right;">Response within 2 business days</span>
+            </button>
+            <div class="job-body" role="region">
+              <div class="job-body-inner">
+                <div class="job-desc">
+                  <p>Caliber Construction Group is seeking confident, driven Field Sales Specialists to join our growing Central Florida team. You'll be our boots-on-the-ground — knocking doors, setting appointments, and helping homeowners navigate roof repairs, replacements, and storm restoration.</p>
+                  <p>No two days are the same. You'll work designated territories, build relationships with homeowners, and support them through the insurance claims process from start to finish. If you thrive on results and like the freedom of field work, this is your role.</p>
+                  <div class="detail-group">
+                    <div class="detail-label">Qualifications</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>3+ years sales experience (roofing preferred)</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Valid Florida driver's license</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Strong communication & self-motivation</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Reliable transportation</div>
+                    </div>
+                  </div>
+                  <div class="detail-group">
+                    <div class="detail-label">Benefits</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Base + uncapped commission</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Performance bonuses & referral program</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Flexible Monday–Friday schedule</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Paid training & onboarding</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="apply-panel">
+                  <h4>Apply for This Role</h4>
+                  <p>Field Sales Specialist — Central Florida</p>
+                  <form onsubmit="submitApp(event,'job-1')">
+                    <div class="form-field">
+                      <label for="name-1">Full Name *</label>
+                      <input type="text" id="name-1" required placeholder="Jane Smith">
+                    </div>
+                    <div class="form-field">
+                      <label for="phone-1">Phone Number *</label>
+                      <input type="tel" id="phone-1" required placeholder="(407) 555-0100">
+                    </div>
+                    <div class="form-field">
+                      <label for="email-1">Email Address *</label>
+                      <input type="email" id="email-1" required placeholder="jane@email.com">
+                    </div>
+                    <div class="form-field">
+                      <label>Resume (PDF or DOC)</label>
+                      <div class="file-upload">
+                        <label class="file-upload-label" for="resume-1">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                          <span>Click to upload your resume</span>
+                          <span class="file-name" id="fname-1"></span>
+                        </label>
+                        <input type="file" id="resume-1" accept=".pdf,.doc,.docx" onchange="showFile('resume-1','fname-1')">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn-apply">Submit Application</button>
+                    <div class="apply-success" id="success-job-1">
+                      ✓ Application received! We'll be in touch within 2 business days.
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="role-body">
-            <div class="role-col">
-              <h4>What you&rsquo;ll do</h4>
-              <ul>
-                <li><span class="li-dot"></span>Execute roof installations, repairs, and storm restoration work on residential and selective commercial properties across Central Florida.</li>
-                <li><span class="li-dot"></span>Perform pre-installation inspections and document existing conditions with photos and written notes.</li>
-                <li><span class="li-dot"></span>Install shingle, tile, metal, and flat roofing systems per manufacturer specs and Florida building code.</li>
-                <li><span class="li-dot"></span>Coordinate on-site with the project lead, engineering team, and occasionally insurance adjusters during storm restoration projects.</li>
-                <li><span class="li-dot"></span>Maintain a clean, organized, and safe job site at all times &mdash; Caliber projects are held to a higher standard of site professionalism.</li>
-                <li><span class="li-dot"></span>Complete post-installation walkthroughs and assist with final documentation before client sign-off.</li>
-              </ul>
-            </div>
-            <div class="role-col">
-              <h4>What we&rsquo;re looking for</h4>
-              <ul>
-                <li><span class="li-dot"></span>Minimum 2 years of hands-on roofing field experience in Florida or comparable climate conditions.</li>
-                <li><span class="li-dot"></span>Demonstrated experience with at least two of the following: architectural shingles, concrete or clay tile, standing seam metal, TPO or modified bitumen flat roofing.</li>
-                <li><span class="li-dot"></span>OSHA 10 certification required; OSHA 30 preferred. Safety harness and fall protection compliance is non-negotiable.</li>
-                <li><span class="li-dot"></span>Valid Florida driver&rsquo;s license and reliable transportation to job sites in the Central Florida area.</li>
-                <li><span class="li-dot"></span>Ability to work outdoors in Florida weather conditions, including heat, humidity, and post-storm environments.</li>
-                <li><span class="li-dot"></span>Strong communication and reliability. We run a boutique operation &mdash; if you&rsquo;re committed, we&rsquo;re committed to you.</li>
-              </ul>
+          <!-- JOB 2: Roofing Project Manager -->
+          <div class="job-item reveal" id="job-2">
+            <button class="job-trigger" aria-expanded="false" onclick="toggleJob('job-2')">
+              <span class="job-badge badge-hiring">Hiring Now</span>
+              <div class="job-info">
+                <div class="job-title">Roofing Project Manager</div>
+                <div class="job-meta">
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Central Florida</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Full-Time</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>$55K–$80K + Bonus</span>
+                </div>
+              </div>
+              <div class="job-chevron" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="job-body" role="region">
+              <div class="job-body-inner">
+                <div class="job-desc">
+                  <p>We're looking for an experienced Roofing Project Manager to oversee residential and commercial roofing projects from contract signing through final inspection. You'll coordinate crews, manage timelines, communicate with homeowners, and ensure every job meets Caliber's quality standard.</p>
+                  <p>This is a key leadership role with direct impact on customer satisfaction and company reputation. The right candidate takes ownership, communicates clearly, and knows the roofing trade inside and out.</p>
+                  <div class="detail-group">
+                    <div class="detail-label">Requirements</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>3+ years roofing project management</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Knowledge of Florida building codes</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Experience managing subcontractors</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Valid FL driver's license + reliable vehicle</div>
+                    </div>
+                  </div>
+                  <div class="detail-group">
+                    <div class="detail-label">Benefits</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Salary $55K–$80K based on experience</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Quarterly performance bonuses</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Company vehicle allowance</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Direct path to Operations Director</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="apply-panel">
+                  <h4>Apply for This Role</h4>
+                  <p>Roofing Project Manager — Central Florida</p>
+                  <form onsubmit="submitApp(event,'job-2')">
+                    <div class="form-field"><label for="name-2">Full Name *</label><input type="text" id="name-2" required placeholder="John Doe"></div>
+                    <div class="form-field"><label for="phone-2">Phone Number *</label><input type="tel" id="phone-2" required placeholder="(407) 555-0100"></div>
+                    <div class="form-field"><label for="email-2">Email Address *</label><input type="email" id="email-2" required placeholder="john@email.com"></div>
+                    <div class="form-field">
+                      <label>Resume (PDF or DOC)</label>
+                      <div class="file-upload"><label class="file-upload-label" for="resume-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span>Click to upload resume</span><span class="file-name" id="fname-2"></span></label><input type="file" id="resume-2" accept=".pdf,.doc,.docx" onchange="showFile('resume-2','fname-2')"></div>
+                    </div>
+                    <button type="submit" class="btn-apply">Submit Application</button>
+                    <div class="apply-success" id="success-job-2">✓ Application received! We'll be in touch within 2 business days.</div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- JOB 3: Insurance Restoration Coordinator -->
+          <div class="job-item reveal" id="job-3">
+            <button class="job-trigger" aria-expanded="false" onclick="toggleJob('job-3')">
+              <span class="job-badge badge-hiring">Hiring Now</span>
+              <div class="job-info">
+                <div class="job-title">Insurance Restoration Coordinator</div>
+                <div class="job-meta">
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Central Florida / Hybrid</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Full-Time</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>$40K–$55K</span>
+                </div>
+              </div>
+              <div class="job-chevron" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="job-body" role="region">
+              <div class="job-body-inner">
+                <div class="job-desc">
+                  <p>As an Insurance Restoration Coordinator you'll be the bridge between our clients, insurance adjusters, and field teams — guiding homeowners through storm damage claims from initial inspection all the way to final sign-off. Organization, empathy, and attention to detail are your superpowers.</p>
+                  <div class="detail-group">
+                    <div class="detail-label">Requirements</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Experience with insurance claims or restoration</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Proficiency in Xactimate a plus</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Excellent written & verbal communication</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Highly organized, detail-oriented</div>
+                    </div>
+                  </div>
+                  <div class="detail-group">
+                    <div class="detail-label">Benefits</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>$40K–$55K salary</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Hybrid work arrangement available</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Paid training on insurance workflows</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="apply-panel">
+                  <h4>Apply for This Role</h4>
+                  <p>Insurance Restoration Coordinator</p>
+                  <form onsubmit="submitApp(event,'job-3')">
+                    <div class="form-field"><label for="name-3">Full Name *</label><input type="text" id="name-3" required placeholder="Jane Smith"></div>
+                    <div class="form-field"><label for="phone-3">Phone Number *</label><input type="tel" id="phone-3" required placeholder="(407) 555-0100"></div>
+                    <div class="form-field"><label for="email-3">Email Address *</label><input type="email" id="email-3" required placeholder="jane@email.com"></div>
+                    <div class="form-field"><label>Resume (PDF or DOC)</label><div class="file-upload"><label class="file-upload-label" for="resume-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span>Click to upload resume</span><span class="file-name" id="fname-3"></span></label><input type="file" id="resume-3" accept=".pdf,.doc,.docx" onchange="showFile('resume-3','fname-3')"></div></div>
+                    <button type="submit" class="btn-apply">Submit Application</button>
+                    <div class="apply-success" id="success-job-3">✓ Application received! We'll be in touch within 2 business days.</div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- JOB 4: Roofing Crew Lead -->
+          <div class="job-item reveal" id="job-4">
+            <button class="job-trigger" aria-expanded="false" onclick="toggleJob('job-4')">
+              <span class="job-badge badge-hiring">Hiring Now</span>
+              <div class="job-info">
+                <div class="job-title">Roofing Crew Lead</div>
+                <div class="job-meta">
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Central Florida</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Full-Time</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>$22–$32/hr</span>
+                </div>
+              </div>
+              <div class="job-chevron" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="job-body" role="region">
+              <div class="job-body-inner">
+                <div class="job-desc">
+                  <p>Lead a skilled roofing crew on residential and light commercial projects across Central Florida. You'll direct daily operations on job sites, ensure safety compliance, maintain quality standards, and serve as the primary point of contact between the crew and project managers.</p>
+                  <div class="detail-group">
+                    <div class="detail-label">Requirements</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>5+ years roofing experience</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Prior crew leadership experience</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>OSHA 10 certification (or willingness to obtain)</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Valid FL driver's license</div>
+                    </div>
+                  </div>
+                  <div class="detail-group">
+                    <div class="detail-label">Benefits</div>
+                    <div class="detail-list">
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>$22–$32/hr based on experience</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Weekly pay</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tools & safety equipment provided</div>
+                      <div class="detail-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Advancement to PM track available</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="apply-panel">
+                  <h4>Apply for This Role</h4>
+                  <p>Roofing Crew Lead — Central Florida</p>
+                  <form onsubmit="submitApp(event,'job-4')">
+                    <div class="form-field"><label for="name-4">Full Name *</label><input type="text" id="name-4" required placeholder="John Doe"></div>
+                    <div class="form-field"><label for="phone-4">Phone Number *</label><input type="tel" id="phone-4" required placeholder="(407) 555-0100"></div>
+                    <div class="form-field"><label for="email-4">Email Address *</label><input type="email" id="email-4" required placeholder="john@email.com"></div>
+                    <div class="form-field"><label>Resume (PDF or DOC)</label><div class="file-upload"><label class="file-upload-label" for="resume-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span>Click to upload resume</span><span class="file-name" id="fname-4"></span></label><input type="file" id="resume-4" accept=".pdf,.doc,.docx" onchange="showFile('resume-4','fname-4')"></div></div>
+                    <button type="submit" class="btn-apply">Submit Application</button>
+                    <div class="apply-success" id="success-job-4">✓ Application received! We'll be in touch within 2 business days.</div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </section>
 
-    <!-- CULTURE STRIP -->
-    <section class="culture-strip" aria-label="Our culture">
-      <div class="container">
-        <div class="culture-inner">
+        <!-- General Application -->
+        <div style="margin-top:2rem;padding:1.5rem 2rem;background:var(--color-surface);border:1px dashed var(--color-border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem" class="reveal">
           <div>
-            <span class="eyebrow" style="color:#f0b8c1">&#8203;</span>
-            <span class="eyebrow" style="color:#f0b8c1;margin-bottom:.9rem">Our culture</span>
-            <h2>We do fewer projects. We do them better.</h2>
-            <p>Caliber is intentionally boutique. That means every person on the team matters more, every project gets more attention, and every client gets more communication than they&rsquo;d receive at a volume roofing company. If that sounds like where you want to work, we want to hear from you.</p>
+            <div style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:.3rem">Don't see your role?</div>
+            <p style="margin:0;font-size:.875rem">Send us a general application — we're always looking for great people.</p>
           </div>
-          <div class="culture-stats">
-            <div class="c-stat reveal"><strong>Boutique</strong><span>Selective project intake</span></div>
-            <div class="c-stat reveal"><strong>Dual</strong><span>Licensed roofing + engineering</span></div>
-            <div class="c-stat reveal"><strong>Local</strong><span>Central Florida only</span></div>
-            <div class="c-stat reveal"><strong>Premium</strong><span>Coastal &amp; luxury residential</span></div>
-          </div>
+          <a href="contact.html" style="background:var(--color-primary);color:#fff;padding:.75rem 1.5rem;border-radius:var(--radius-full);font-size:.875rem;font-weight:600;white-space:nowrap">Get in Touch</a>
         </div>
       </div>
     </section>
 
-    <!-- APPLICATION FORM -->
-    <section class="apply-section" id="apply" aria-labelledby="apply-heading">
+    <!-- CULTURE / STATS -->
+    <section class="culture">
       <div class="container">
-        <div class="apply-grid">
-          <div class="apply-info">
-            <span class="eyebrow">Apply today</span>
-            <h2 id="apply-heading">Ready to join the team?</h2>
-            <p>Fill out the form and we&rsquo;ll review your application and be in touch within two business days. No recruiters, no call centers &mdash; you&rsquo;ll hear directly from our team.</p>
-            <div class="value-list">
-              <div class="value-item">
-                <span class="value-num">1</span>
-                <div>
-                  <strong>Submit your application</strong>
-                  <p>Tell us about your experience, certifications, and what you&rsquo;re looking for in your next role.</p>
-                </div>
-              </div>
-              <div class="value-item">
-                <span class="value-num">2</span>
-                <div>
-                  <strong>We review &amp; reach out</strong>
-                  <p>A team member reviews every application personally. We respond within two business days to qualified candidates.</p>
-                </div>
-              </div>
-              <div class="value-item">
-                <span class="value-num">3</span>
-                <div>
-                  <strong>Field interview</strong>
-                  <p>If it looks like a fit, we&rsquo;ll schedule a conversation and potentially a working interview on an active job site.</p>
-                </div>
-              </div>
-              <div class="value-item">
-                <span class="value-num">4</span>
-                <div>
-                  <strong>Start building</strong>
-                  <p>Onboarded quickly. No months-long process. If you&rsquo;re the right fit, we move fast to get you on the team.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-card reveal">
-            <h3>Field Specialist Application</h3>
-            <form id="applyForm" novalidate>
-              <div class="field field-row">
-                <div>
-                  <label for="fname">First name<span class="req" aria-hidden="true">*</span></label>
-                  <input id="fname" type="text" placeholder="First" required autocomplete="given-name">
-                </div>
-                <div>
-                  <label for="lname">Last name<span class="req" aria-hidden="true">*</span></label>
-                  <input id="lname" type="text" placeholder="Last" required autocomplete="family-name">
-                </div>
-              </div>
-              <div class="field">
-                <label for="email">Email address<span class="req" aria-hidden="true">*</span></label>
-                <input id="email" type="email" placeholder="you@email.com" required autocomplete="email">
-              </div>
-              <div class="field">
-                <label for="phone">Phone number<span class="req" aria-hidden="true">*</span></label>
-                <input id="phone" type="tel" placeholder="(407) 000-0000" required autocomplete="tel">
-              </div>
-              <div class="field">
-                <label for="experience">Years of roofing experience<span class="req" aria-hidden="true">*</span></label>
-                <select id="experience" required>
-                  <option value="">Select&hellip;</option>
-                  <option>1 &ndash; 2 years</option>
-                  <option>3 &ndash; 5 years</option>
-                  <option>6 &ndash; 10 years</option>
-                  <option>10+ years</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="rooftype">Roofing systems you have experience with</label>
-                <select id="rooftype">
-                  <option value="">Select primary system&hellip;</option>
-                  <option>Architectural shingles</option>
-                  <option>Concrete or clay tile</option>
-                  <option>Standing seam metal</option>
-                  <option>TPO / flat roofing</option>
-                  <option>Multiple systems</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="osha">OSHA certification</label>
-                <select id="osha">
-                  <option value="">Select&hellip;</option>
-                  <option>OSHA 10</option>
-                  <option>OSHA 30</option>
-                  <option>Not yet certified</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="resume">Resume or work history (optional)</label>
-                <label class="file-label" for="resume" id="fileLabel">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                  <span id="fileLabelText">Upload resume (PDF, DOC &mdash; optional)</span>
-                </label>
-                <input id="resume" type="file" accept=".pdf,.doc,.docx" aria-label="Upload resume">
-              </div>
-              <div class="field">
-                <label for="message">Anything else you&rsquo;d like us to know?</label>
-                <textarea id="message" placeholder="Previous employers, notable projects, availability, or anything that helps us get to know you."></textarea>
-              </div>
-              <div class="form-consent">
-                <input type="checkbox" id="consent" name="consent" required>
-                <label for="consent">I confirm that the information provided is accurate and I consent to Caliber Construction Group retaining my application details for hiring purposes.</label>
-              </div>
-              <button class="btn btn-primary" type="submit" style="width:100%;font-size:var(--text-base)">Submit application</button>
-              <div class="form-notice" id="applyNotice" role="alert">&#10003;&nbsp; Application received. We&rsquo;ll review it and be in touch within two business days. Thank you for your interest in joining Caliber.</div>
-            </form>
-          </div>
+        <div class="eyebrow" style="justify-content:center;color:rgba(255,255,255,.5)"><span class="eyebrow-line"></span>Our Team</div>
+        <h2>Built on People Who Care</h2>
+        <p>Caliber Construction Group is more than a company — it's a team of Central Florida locals who take pride in protecting the homes and families in our community.</p>
+        <div class="stats">
+          <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Projects Completed</div></div>
+          <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">Avg. Customer Rating</div></div>
+          <div class="stat-item"><div class="stat-num">48hr</div><div class="stat-label">Avg. Claim Response</div></div>
+          <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Licensed & Insured</div></div>
         </div>
       </div>
     </section>
-
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="footer-row">
-        <div class="footer-brand">
-          <strong>Caliber Construction Group</strong>
-          <p>Boutique roofing and construction for Central Florida. Licensed roofing contractor with engineering-led oversight.</p>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Caliber Construction Group</div>
+          <p class="footer-tagline">Central Florida's trusted roofing and restoration contractor. Licensed · Insured · Local.</p>
         </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html#services">Services</a>
-          <a href="index.html#process">Process</a>
-          <a href="index.html#about">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="careers.html">Careers</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="careers.html">Careers</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <div class="footer-links">
+            <a href="services.html">Roof Replacement</a>
+            <a href="services.html">Storm Restoration</a>
+            <a href="services.html">Insurance Claims</a>
+            <a href="services.html">Inspections</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <div class="footer-links">
+            <a href="tel:4074391200">(407) 439-1200</a>
+            <a href="mailto:info@caliberconstructiongroup.com">info@caliberconstructiongroup.com</a>
+            <a href="contact.html">Central Florida</a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Caliber Construction Group. All rights reserved.</span>
-        <span>Central Florida &mdash; Licensed &amp; Insured</span>
+        <span>Licensed Roofing Contractor · Florida</span>
       </div>
     </div>
   </footer>
 
   <script>
   (function(){
-    // Theme toggle
-    const root=document.documentElement;
-    const btn=document.getElementById('themeToggle');
-    let theme=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
-    function paint(){root.setAttribute('data-theme',theme);btn.textContent=theme==='dark'?'\u2600':'\u25D0';}
-    paint();
-    if(btn)btn.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';paint();});
+    // Dark mode
+    var btn=document.getElementById('themeBtn');
+    var sun=document.getElementById('iconSun');
+    var moon=document.getElementById('iconMoon');
+    var stored=localStorage.getItem('theme')||'light';
+    document.documentElement.setAttribute('data-theme',stored);
+    if(stored==='dark'){sun.style.display='none';moon.style.display='block';}
+    btn.addEventListener('click',function(){
+      var t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+      document.documentElement.setAttribute('data-theme',t);
+      localStorage.setItem('theme',t);
+      if(t==='dark'){sun.style.display='none';moon.style.display='block';}
+      else{sun.style.display='block';moon.style.display='none';}
+    });
 
-    // File label
-    const fileInput=document.getElementById('resume');
-    const fileLabelText=document.getElementById('fileLabelText');
-    if(fileInput&&fileLabelText){
-      fileInput.addEventListener('change',function(){
-        fileLabelText.textContent=this.files[0]?this.files[0].name:'Upload resume (PDF, DOC — optional)';
+    // Hamburger
+    var ham=document.getElementById('hamburger');
+    var mNav=document.getElementById('mobileNav');
+    ham.addEventListener('click',function(){
+      var open=mNav.style.display==='flex';
+      mNav.style.display=open?'none':'flex';
+      ham.setAttribute('aria-expanded',String(!open));
+    });
+
+    // Job accordion
+    window.toggleJob=function(id){
+      var item=document.getElementById(id);
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.job-item').forEach(function(j){
+        j.classList.remove('open');
+        j.querySelector('.job-trigger').setAttribute('aria-expanded','false');
       });
-    }
+      if(!isOpen){
+        item.classList.add('open');
+        item.querySelector('.job-trigger').setAttribute('aria-expanded','true');
+        setTimeout(function(){item.scrollIntoView({behavior:'smooth',block:'nearest'});},50);
+      }
+    };
+
+    // File upload label
+    window.showFile=function(inputId,labelId){
+      var f=document.getElementById(inputId).files[0];
+      document.getElementById(labelId).textContent=f?f.name:'';
+    };
 
     // Form submit
-    const form=document.getElementById('applyForm');
-    const notice=document.getElementById('applyNotice');
-    if(form&&notice){
-      form.addEventListener('submit',function(e){
-        e.preventDefault();
-        notice.style.display='block';
-        form.reset();
-        if(fileLabelText)fileLabelText.textContent='Upload resume (PDF, DOC — optional)';
-        setTimeout(function(){notice.style.display='none';},10000);
-      });
-    }
+    window.submitApp=function(e,jobId){
+      e.preventDefault();
+      var success=document.getElementById('success-'+jobId);
+      if(success){success.style.display='block';}
+      e.target.reset();
+      document.querySelectorAll('.file-name').forEach(function(el){el.textContent='';});
+      setTimeout(function(){if(success)success.style.display='none';},10000);
+    };
 
     // Scroll reveal
     if('IntersectionObserver' in window){
-      const els=document.querySelectorAll('.reveal');
-      const obs=new IntersectionObserver(function(entries){
+      var obs=new IntersectionObserver(function(entries){
         entries.forEach(function(e){
           if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
         });
       },{threshold:.08});
-      els.forEach(function(el){obs.observe(el);});
+      document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
     } else {
       document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
     }
