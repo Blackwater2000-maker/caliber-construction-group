@@ -1,147 +1,601 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roofing Services | Caliber Construction Group</title>
-  <meta name="description" content="Complete residential, commercial, storm damage, and insurance roofing services in Central Florida — backed by an Florida roofing license.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Roofing Services | Caliber Construction Group — Central Florida</title>
+<meta name="description" content="Complete residential and commercial roofing services in Central Florida. Shingle, tile, stone-coated metal tile, standing seam metal, flat roofs, storm damage, and insurance claims."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c1f3f;--navy-deep:#071429;--navy-mid:#1a3a6b;--navy-lite:#e8edf8;--navy-hint:#f3f6fc;
+  --gold:#b8912a;--gold-lite:#faf3e0;--gold-mid:#d4a843;
+  --white:#ffffff;--off:#f7f8fa;--surface:#f0f3f9;
+  --text:#0c1a2e;--text2:#3d5068;--text3:#7a8fa6;--text4:#b0bfce;
+  --border:rgba(12,31,63,.09);--border2:rgba(12,31,63,.16);
+  --r-sm:.4rem;--r-md:.75rem;--r-lg:1rem;--r-xl:1.5rem;--r-full:999px;
+  --sh-sm:0 1px 4px rgba(12,31,63,.07);--sh-md:0 6px 24px rgba(12,31,63,.1);--sh-lg:0 16px 48px rgba(12,31,63,.14);
+  --font-d:'Cormorant Garamond',Georgia,serif;--font-b:'Inter',Arial,sans-serif;
+  --nav-h:72px;
+}
+[data-theme="dark"]{
+  --navy:#6fa3d8;--navy-deep:#0b1220;--navy-mid:#91bbdf;--navy-lite:#1a2f4a;--navy-hint:#111d2e;
+  --white:#0b1220;--off:#101c30;--surface:#162438;
+  --text:#e8f0fa;--text2:#a8b8cc;--text3:#6a7f96;--text4:#405060;
+  --border:rgba(232,240,250,.09);--border2:rgba(232,240,250,.18);
+}
+*,:before,:after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font-b);font-size:16px;line-height:1.65;background:var(--white);color:var(--text);transition:background .25s,color .25s}
+img,svg{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:none;background:none}
+h1,h2,h3,h4{font-family:var(--font-d);line-height:1.06;color:var(--text)}
+h1{font-size:clamp(2.2rem,1.2rem+3vw,4.5rem);font-weight:600}
+h2{font-size:clamp(1.7rem,.9rem+2.2vw,3rem);font-weight:600}
+h3{font-size:clamp(1.1rem,.85rem+.8vw,1.6rem);font-weight:500}
+p{color:var(--text2);line-height:1.78}
+ul{list-style:none}
+.wrap{width:min(1200px,calc(100% - 2.5rem));margin-inline:auto}
+.wrap-sm{width:min(860px,calc(100% - 2.5rem));margin-inline:auto}
+
+/* NAV */
+.nav-bar{position:sticky;top:0;z-index:200;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center}
+[data-theme="dark"] .nav-bar{background:rgba(11,18,32,.97)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;width:100%}
+.logo{display:flex;align-items:center;gap:.85rem;flex-shrink:0}
+.logo-box{width:40px;height:40px;background:var(--navy-deep);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-box svg{width:22px;height:22px;color:#fff}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-main{font-family:var(--font-d);font-size:1.15rem;font-weight:700;color:var(--navy-deep);letter-spacing:-.01em}
+[data-theme="dark"] .logo-main{color:#e8f0fa}
+.logo-sub{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:.15rem;flex:1;justify-content:center}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:.28rem;padding:.5rem .85rem;border-radius:var(--r-md);font-size:.85rem;font-weight:500;color:var(--text2);transition:color .2s,background .2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--navy-deep);background:var(--navy-hint)}
+[data-theme="dark"] .nav-link:hover{color:#e8f0fa;background:rgba(255,255,255,.07)}
+.nav-link svg{width:12px;height:12px;transition:transform .25s;flex-shrink:0}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+/* NAVY DROPDOWN */
+.nav-drop{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--navy-deep);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);box-shadow:0 20px 60px rgba(7,20,41,.55);min-width:230px;padding:.5rem;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,transform .2s;z-index:300}
+.nav-item:hover .nav-drop{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.nav-dd{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;border-radius:var(--r-md);font-size:.855rem;color:rgba(255,255,255,.65);transition:all .15s;font-weight:400}
+.nav-dd:hover{background:rgba(255,255,255,.09);color:#fff}
+.nav-dd svg{width:15px;height:15px;color:var(--gold-mid);flex-shrink:0}
+.nav-dd-div{height:1px;background:rgba(255,255,255,.1);margin:.3rem 0}
+.nav-dd-cat{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.28);padding:.5rem 1rem .15rem}
+.nav-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.nav-phone{display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;color:var(--text2);padding:.42rem .75rem;border-radius:var(--r-full);border:1px solid var(--border);transition:all .2s;white-space:nowrap}
+.nav-phone:hover{border-color:var(--navy-deep);color:var(--navy-deep)}
+.nav-phone svg{width:13px;height:13px}
+.nav-cta{background:var(--navy-deep);color:#fff;padding:.52rem 1.15rem;border-radius:var(--r-full);font-size:.85rem;font-weight:600;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--navy-mid);transform:translateY(-1px)}
+.theme-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);transition:all .2s;cursor:pointer}
+.theme-btn:hover{border-color:var(--navy-deep);color:var(--navy-deep)}
+.ham{display:none;flex-direction:column;gap:5px;width:36px;height:36px;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:var(--r-md);cursor:pointer}
+.ham span{display:block;width:18px;height:1.5px;background:var(--text);border-radius:2px;transition:all .25s}
+/* MOBILE */
+.mob-menu{display:none;position:fixed;inset:0;z-index:400;pointer-events:none}
+.mob-menu.open{pointer-events:all}
+.mob-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .3s}
+.mob-menu.open .mob-overlay{opacity:1}
+.mob-drawer{position:absolute;top:0;right:0;bottom:0;width:290px;background:var(--navy-deep);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:1.5rem}
+.mob-menu.open .mob-drawer{transform:none}
+.mob-close-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.mob-brand{font-family:var(--font-d);font-size:1rem;font-weight:600;color:#fff}
+.mob-x{width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,.7)}
+.mob-sect{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.3);padding:.75rem .5rem .25rem}
+.mob-link{display:block;padding:.65rem .75rem;font-size:.9rem;color:rgba(255,255,255,.65);border-radius:var(--r-md);transition:all .2s}
+.mob-link:hover{background:rgba(255,255,255,.08);color:#fff}
+.mob-link.top{font-size:.95rem;color:rgba(255,255,255,.8);font-weight:500}
+.mob-cta{display:block;background:var(--gold);color:var(--navy-deep);text-align:center;padding:.85rem;border-radius:var(--r-full);font-weight:700;font-size:.9rem;margin-top:1.5rem}
+/* EYEBROW */
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:.9rem}
+.eyebrow-line{width:26px;height:1.5px;background:currentColor;border-radius:2px;flex-shrink:0}
+/* BUTTONS */
+.btn-navy{background:var(--navy-deep);color:#fff;padding:.8rem 1.75rem;border-radius:var(--r-full);font-weight:600;font-size:.9rem;transition:all .2s;display:inline-block}
+.btn-navy:hover{background:var(--navy-mid);transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--navy-deep);padding:.8rem 1.75rem;border-radius:var(--r-full);font-weight:700;font-size:.9rem;transition:all .2s;display:inline-block}
+.btn-gold:hover{background:var(--gold-mid);transform:translateY(-1px);box-shadow:0 8px 24px rgba(184,145,42,.3)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:.8rem 1.75rem;border-radius:var(--r-full);font-size:.9rem;font-weight:500;transition:all .2s;display:inline-block}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+/* PANEL */
+.panel{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--sh-sm);overflow:hidden}
+[data-theme="dark"] .panel{background:var(--surface)}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+/* FOOTER */
+.footer{background:var(--navy-deep);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand-name{font-family:var(--font-d);font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+.footer-tagline{font-size:.85rem;color:rgba(255,255,255,.42);line-height:1.7;max-width:260px;margin-top:.5rem}
+.footer-h{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.28);margin-bottom:.9rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,.48);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-contact-row{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.7rem;font-size:.85rem;color:rgba(255,255,255,.52)}
+.footer-contact-row svg{width:14px;height:14px;color:var(--gold-mid);flex-shrink:0;margin-top:.18rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.footer-bottom p{font-size:.78rem;line-height:1.6;max-width:700px}
+.footer-legal{display:flex;gap:1.25rem;flex-shrink:0}
+.footer-legal a{font-size:.78rem;color:rgba(255,255,255,.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+/* BACK TOP / FLOAT */
+.back-top{position:fixed;bottom:1.5rem;left:1.5rem;z-index:150;background:var(--white);border:1px solid var(--border);color:var(--text2);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-sm);opacity:0;pointer-events:none;transition:all .3s;cursor:pointer}
+.back-top.show{opacity:1;pointer-events:all}
+.float-call{display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:150;background:var(--navy-deep);color:#fff;width:54px;height:54px;border-radius:50%;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(12,31,63,.35);transition:transform .2s}
+.float-call:hover{transform:scale(1.08)}
+@media(max-width:768px){.nav-links,.nav-phone{display:none}.ham{display:flex}.float-call{display:flex}}
+@media(max-width:1060px){.nav-links{display:none}.ham{display:flex}}
+/* PAGE HERO INNER */
+.page-hero{background:var(--navy-deep);padding:5rem 0 4rem;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E")}
+.page-hero-inner{position:relative;z-index:1}
+.page-hero-tag{display:inline-flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.5);margin-bottom:1rem;border:1px solid rgba(255,255,255,.12);padding:.35rem .9rem;border-radius:var(--r-full);background:rgba(255,255,255,.05)}
+.page-hero h1{color:#fff;margin-bottom:.9rem;max-width:680px}
+.page-hero p{color:rgba(255,255,255,.65);font-size:clamp(.95rem,.85rem+.3vw,1.15rem);max-width:560px}
+/* SECTION */
+section{padding:5rem 0}
+.section-hdr{margin-bottom:3rem}
+.section-hdr.center{text-align:center}
+.section-hdr.center .eyebrow{justify-content:center}
+/* CARD */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:1.75rem;box-shadow:var(--sh-sm);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}
+[data-theme="dark"] .card{background:var(--surface)}
+/* TAG */
+.tag{display:inline-flex;align-items:center;font-size:.72rem;font-weight:600;padding:.3rem .8rem;border-radius:var(--r-full)}
+.tag-navy{background:var(--navy-lite);color:var(--navy-mid)}
+.tag-gold{background:var(--gold-lite);color:#7a5a10}
+.tag-green{background:#dcfce7;color:#16a34a}
+.tag-red{background:#fee2e2;color:#dc2626}
+</style>
+<style>
+.page-hero{background:var(--navy-deep);padding:5rem 0 4rem;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E")}
+.page-hero-inner{position:relative;z-index:1}
+.svc-detail{display:grid;grid-template-columns:1fr 360px;gap:3.5rem;align-items:start;padding:4rem 0;border-bottom:1px solid var(--border)}
+.svc-detail:last-of-type{border-bottom:none}
+.svc-detail.flip{direction:rtl}.svc-detail.flip > *{direction:ltr}
+@media(max-width:780px){.svc-detail,.svc-detail.flip{grid-template-columns:1fr;direction:ltr}}
+.svc-detail-eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:.75rem}
+.svc-detail-eyebrow span{width:22px;height:1.5px;background:currentColor;border-radius:2px}
+.svc-detail h2{font-size:clamp(1.5rem,.9rem+1.6vw,2.2rem);margin-bottom:.85rem}
+.svc-detail p{font-size:.93rem;line-height:1.78;margin-bottom:1.1rem}
+.svc-checks{display:flex;flex-direction:column;gap:.55rem;margin:1.25rem 0}
+.svc-check{display:flex;align-items:flex-start;gap:.6rem;font-size:.875rem;color:var(--text2)}
+.svc-check svg{width:15px;height:15px;color:var(--gold);flex-shrink:0;margin-top:.15rem}
+.svc-panel{background:var(--navy-deep);border-radius:var(--r-xl);padding:2rem;align-self:start}
+.svc-panel h4{font-family:var(--font-d);font-size:1.2rem;color:#fff;margin-bottom:.5rem}
+.svc-panel p{color:rgba(255,255,255,.6);font-size:.86rem;margin-bottom:1.25rem;line-height:1.7}
+.svc-panel .tag-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.svc-tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.72);font-size:.73rem;font-weight:600;padding:.28rem .8rem;border-radius:var(--r-full)}
+.svc-cta{display:block;background:var(--gold);color:var(--navy-deep);text-align:center;padding:.8rem;border-radius:var(--r-full);font-weight:700;font-size:.88rem;transition:all .2s;text-decoration:none}
+.svc-cta:hover{background:var(--gold-mid);transform:translateY(-1px)}
+.metal-profiles{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
+.mp-card{background:var(--navy-lite);border-radius:var(--r-lg);padding:1rem}
+.mp-card strong{display:block;font-size:.9rem;color:var(--navy-deep);margin-bottom:.2rem;font-family:var(--font-d)}
+.mp-card span{font-size:.78rem;color:var(--text2)}
+section{padding:4rem 0}
+</style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header style="position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(12,31,63,.09);height:72px;display:flex;align-items:center">
-    <div style="width:min(1200px,calc(100% - 2.5rem));margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;width:100%">
-      <a href="index.html" style="display:flex;align-items:center;gap:.85rem;text-decoration:none" aria-label="Caliber Construction Group home">
-        <div style="width:42px;height:42px;background:#0c1f3f;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div style="display:flex;flex-direction:column;line-height:1">
-          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.18rem;font-weight:700;color:#0c1f3f;letter-spacing:-.01em">Caliber Construction Group</span>
-          <span style="font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#b8912a;margin-top:2px">Premier Roofing Contractor</span>
+
+  <header class="nav-bar">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="logo" aria-label="Caliber Construction Group">
+        <div class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="logo-text">
+          <span class="logo-main">Caliber Construction Group</span>
+          <span class="logo-sub">Boutique Roofing · Central Florida</span>
         </div>
       </a>
-      <nav style="display:flex;align-items:center;gap:.25rem" aria-label="Primary">
-        <div class="nav-item" style="position:relative">
-          <a href="about.html" class="nav-link" style="display:flex;align-items:center;gap:.3rem;padding:.55rem .9rem;border-radius:8px;font-size:.875rem;font-weight:500;color:#3d5068;text-decoration:none;transition:color .2s,background .2s;white-space:nowrap">About <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform .2s"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown">
-            <a href="about.html" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5.5 20a8.38 8.38 0 0113 0"/></svg>Our Story</a>
-            <div class="nav-dd-divider"></div>
-            <a href="careers.html" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Careers — We're Hiring</a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="nav-item">
+          <a href="about.html" class="nav-link ">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-drop">
+            <a href="about.html" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5.5 20a8.38 8.38 0 0113 0"/></svg>Our Story</a>
+            <a href="about.html#values" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Our Standard</a>
+            <div class="nav-dd-div"></div>
+            <a href="careers.html" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Careers — We're Hiring</a>
           </div>
         </div>
-        <div class="nav-item" style="position:relative">
-          <a href="services.html" class="nav-link" style="display:flex;align-items:center;gap:.3rem;padding:.55rem .9rem;border-radius:8px;font-size:.875rem;font-weight:500;color:#3d5068;text-decoration:none;transition:color .2s,background .2s;white-space:nowrap">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform .2s"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown" style="min-width:260px">
-            <a href="services.html#residential" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Residential Roofing</a>
-            <a href="services.html#commercial" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V8h8v13M2 9h20"/></svg>Commercial Roofing</a>
-            <a href="services.html#storm" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 16.9A5 5 0 0014 8h-1.26A8 8 0 102 16.29"/><polyline points="13 11 9 17 15 17 11 23"/></svg>Storm Damage &amp; Restoration</a>
-            <a href="services.html#insurance" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Insurance Claims Support</a>
-            <div class="nav-dd-divider"></div>
-            <a href="contact.html" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Free Roof Inspection</a>
-            <a href="services.html#financing" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Financing Options</a>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link active">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-drop" style="min-width:270px">
+            <div class="nav-dd-cat">Residential</div>
+            <a href="services.html#shingle" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Asphalt Shingle Roofing</a>
+            <a href="services.html#tile" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V8l8-6 8 6v12"/></svg>Clay &amp; Concrete Tile</a>
+            <a href="services.html#metal-tile" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg>Stone-Coated Metal Tile</a>
+            <a href="services.html#metal" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>Standing Seam Metal</a>
+            <div class="nav-dd-div"></div>
+            <div class="nav-dd-cat">Commercial &amp; Specialty</div>
+            <a href="services.html#commercial" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V8h8v13M2 9h20"/></svg>Commercial Roofing</a>
+            <a href="services.html#flat" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><path d="M3 6h18M3 18h18"/></svg>Flat &amp; Low-Slope</a>
+            <div class="nav-dd-div"></div>
+            <div class="nav-dd-cat">Storm &amp; Insurance</div>
+            <a href="services.html#storm" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 16.9A5 5 0 0014 8h-1.26A8 8 0 102 16.29"/><polyline points="13 11 9 17 15 17 11 23"/></svg>Storm Damage Restoration</a>
+            <a href="services.html#insurance" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Insurance Claims Support</a>
           </div>
         </div>
-        <div class="nav-item" style="position:relative">
-          <a href="#" class="nav-link" style="display:flex;align-items:center;gap:.3rem;padding:.55rem .9rem;border-radius:8px;font-size:.875rem;font-weight:500;color:#3d5068;text-decoration:none;transition:color .2s,background .2s;white-space:nowrap">Resources <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform .2s"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown">
-            <a href="faq.html" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQs</a>
-            <a href="projects.html" class="nav-dd-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Project Gallery</a>
+        <div class="nav-item">
+          <a href="#" class="nav-link">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-drop">
+            <a href="faq.html" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Frequently Asked Questions</a>
+            <a href="projects.html" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Project Gallery</a>
+            <div class="nav-dd-div"></div>
+            <a href="services.html#financing" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Financing Options</a>
+            <a href="services.html#warranty" class="nav-dd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Warranties &amp; Guarantees</a>
           </div>
         </div>
-        <a href="contact.html" style="display:flex;align-items:center;padding:.55rem .9rem;border-radius:8px;font-size:.875rem;font-weight:500;color:#3d5068;text-decoration:none;transition:color .2s,background .2s">Contact</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
       </nav>
-      <div style="display:flex;align-items:center;gap:.75rem;flex-shrink:0">
-        <a href="tel:+14074391200" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:#3d5068;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(12,31,63,.09);text-decoration:none;white-space:nowrap">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          (407) 439-1200
-        </a>
-        <a href="contact.html" style="background:#0c1f3f;color:#fff;padding:.55rem 1.2rem;border-radius:999px;font-size:.875rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s">Free Inspection</a>
+      <div class="nav-actions">
+        <a href="tel:+14074391200" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(407) 439-1200</a>
+        <a href="contact.html" class="nav-cta">Free Inspection</a>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          <svg id="sunIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="moonIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="ham" id="hamBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
-
-<main id="main">
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow">What we do</div>
-      <h1>Roofing systems and specialty construction services for premium Florida clients.</h1>
-      <p class="lead">Every service we offer reflects the Caliber standard — premium materials, meticulous installation, and a team that treats your home like their own, and a boutique project management model built for discerning property owners.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="eyebrow">Residential roofing</div>
-      <h2>Premium systems for high-value homes across Central Florida.</h2>
-      <div class="services-grid">
-        <article class="service">
-          <h3>Tile roofing</h3>
-          <p>Concrete and clay tile installation, repair, and full replacement. Ideal for Central Florida estates and Mediterranean-style architecture. Craftsmanship review included for load compliance.</p>
-        </article>
-        <article class="service">
-          <h3>Standing seam metal</h3>
-          <p>Premium standing seam metal systems for modern, contemporary, and high-wind-rated applications. Exceptional longevity with minimal maintenance requirements.</p>
-        </article>
-        <article class="service">
-          <h3>Designer shingles</h3>
-          <p>Architectural and impact-rated shingle systems from leading manufacturers. Strong insurance premium reductions and Florida product approval compliance.</p>
-        </article>
-        <article class="service">
-          <h3>Flat and low-slope</h3>
-          <p>TPO, modified bitumen, and built-up systems for flat roofs on homes, additions, and commercial properties. Proper drainage design and warranty documentation.</p>
-        </article>
-        <article class="service">
-          <h3>Repair and leak response</h3>
-          <p>Emergency and scheduled repair services for all roof types. Detailed diagnostics, photo documentation, and written scope before any work begins.</p>
-        </article>
-        <article class="service">
-          <h3>Storm restoration</h3>
-          <p>Full insurance claim support including inspection, wind damage documentation, adjuster coordination, and rebuild to pre-storm or improved condition.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-offset">
-    <div class="container">
-      <div class="eyebrow">Commercial and specialty</div>
-      <h2>Selective commercial roofing for boutique clients.</h2>
-      <div class="services-grid">
-        <article class="service">
-          <h3>HOA and multi-family</h3>
-          <p>Coordinated replacement programs, reserve study support, and consistent quality standards for homeowner associations and multi-family communities.</p>
-        </article>
-        <article class="service">
-          <h3>Hospitality and commercial</h3>
-          <p>Boutique hotels, restaurants, churches, and professional office buildings. Minimal disruption scheduling and premium material options.</p>
-        </article>
-        <article class="service">
-          <h3>Maintenance programs</h3>
-          <p>Annual inspection and maintenance memberships to extend roof life, catch problems early, and maintain warranty compliance on premium roofing systems.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-row">
-    <div>
-      <div class="brand-name">Caliber Construction Group</div>
-      <p>Boutique roofing and construction for Central Florida. Licensed roofing contractor — Florida</p>
-    </div>
-    <nav>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+  <div class="mob-menu" id="mobMenu">
+    <div class="mob-overlay" id="mobOverlay"></div>
+    <nav class="mob-drawer">
+      <div class="mob-close-row"><span class="mob-brand">Caliber</span><button class="mob-x" id="mobClose"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <a href="index.html" class="mob-link top">Home</a>
+      <div class="mob-sect">About</div>
+      <a href="about.html" class="mob-link">Our Story</a>
+      <a href="about.html#values" class="mob-link">Our Standard</a>
+      <a href="careers.html" class="mob-link">Careers — We're Hiring</a>
+      <div class="mob-sect">Services</div>
+      <a href="services.html#shingle" class="mob-link">Asphalt Shingle</a>
+      <a href="services.html#tile" class="mob-link">Clay &amp; Concrete Tile</a>
+      <a href="services.html#metal-tile" class="mob-link">Stone-Coated Metal Tile</a>
+      <a href="services.html#metal" class="mob-link">Standing Seam Metal</a>
+      <a href="services.html#commercial" class="mob-link">Commercial Roofing</a>
+      <a href="services.html#storm" class="mob-link">Storm Damage</a>
+      <a href="services.html#insurance" class="mob-link">Insurance Claims</a>
+      <div class="mob-sect">Resources</div>
+      <a href="faq.html" class="mob-link">FAQs</a>
+      <a href="projects.html" class="mob-link">Project Gallery</a>
+      <a href="services.html#financing" class="mob-link">Financing</a>
+      <a href="services.html#warranty" class="mob-link">Warranties</a>
+      <a href="contact.html" class="mob-link top" style="margin-top:.5rem">Contact</a>
+      <a href="contact.html" class="mob-cta">Get Free Inspection</a>
     </nav>
   </div>
-</footer>
+<section class="page-hero">
+  <div class="wrap page-hero-inner">
+    <span class="page-hero-tag">Caliber Construction Group</span>
+    <h1 style="color:#fff;margin-bottom:.9rem">Complete Roofing Solutions</h1>
+    <p style="color:rgba(255,255,255,.65);font-size:clamp(.95rem,.85rem+.3vw,1.1rem);max-width:560px">Every roofing system available in Florida — installed with dedicated on-site management, premium materials, and backed by manufacturer warranties.</p>
+  </div>
+</section>
 
-<script src="assets/main.js"></script>
+<section>
+  <div class="wrap">
+    <!-- SHINGLE -->
+    <div class="svc-detail reveal" id="shingle">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Most Popular</div>
+        <h2>Asphalt Shingle Roofing</h2>
+        <p>The most widely installed roofing system in Florida — and for good reason. Modern architectural and impact-resistant shingles offer excellent durability, a wide range of aesthetics, and strong value at every budget level.</p>
+        <p>Caliber installs premium shingle systems from leading manufacturers, with options including algae-resistant, impact-rated (Class 4), and SBS-modified shingles designed for Florida's UV intensity and storm exposure.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Architectural, dimensional &amp; impact-resistant options</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Algae &amp; mold-resistant coatings standard</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>25–50 year manufacturer warranties available</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Wind mitigation eligible — insurance savings potential</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Permits managed — we handle the paperwork</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Get a Free Shingle Estimate</a>
+      </div>
+      <div class="svc-panel">
+        <h4>System Options</h4>
+        <div class="tag-list">
+          <span class="svc-tag">3-Tab Shingle</span>
+          <span class="svc-tag">Architectural / Dimensional</span>
+          <span class="svc-tag">Class 4 Impact-Resistant</span>
+          <span class="svc-tag">SBS-Modified</span>
+          <span class="svc-tag">Designer Series</span>
+        </div>
+        <p>Best for homeowners seeking excellent value, a wide range of color options, and a system that qualifies for Florida wind mitigation credits.</p>
+        <a href="contact.html" class="svc-cta">Schedule Inspection</a>
+      </div>
+    </div>
+
+    <!-- TILE -->
+    <div class="svc-detail flip reveal" id="tile">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Florida Classic</div>
+        <h2>Clay &amp; Concrete Tile Roofing</h2>
+        <p>Tile roofing is the signature aesthetic of Florida architecture — and for good reason. Clay and concrete tile systems offer exceptional longevity (50+ years with proper maintenance), superior thermal performance, and a prestige appearance that adds real property value.</p>
+        <p>We install all profiles — barrel, flat, S-tile, and low-profile — and work with leading tile manufacturers. Proper installation and flashing detail are where tile roofs succeed or fail. Our crews specialize in getting it right.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Barrel, flat, S-tile &amp; low-profile options</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>50+ year system lifespan with proper care</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Superior thermal mass — lower cooling loads</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>High-wind rated — Florida Product Approved</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Increases property value</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Get a Free Tile Estimate</a>
+      </div>
+      <div class="svc-panel">
+        <h4>Tile Profiles</h4>
+        <div class="tag-list">
+          <span class="svc-tag">Barrel / Spanish</span>
+          <span class="svc-tag">Flat Profile</span>
+          <span class="svc-tag">S-Tile</span>
+          <span class="svc-tag">Low Profile</span>
+          <span class="svc-tag">Clay</span>
+          <span class="svc-tag">Concrete</span>
+        </div>
+        <p>Best for homeowners who prioritize longevity, Florida aesthetics, and premium property presentation. Pairs beautifully with Mediterranean, Spanish Colonial, and contemporary architecture.</p>
+        <a href="contact.html" class="svc-cta">Schedule Inspection</a>
+      </div>
+    </div>
+
+    <!-- METAL TILE -->
+    <div class="svc-detail reveal" id="metal-tile">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Premium Specialty</div>
+        <h2>Stone-Coated Metal Tile</h2>
+        <p>The most advanced roofing system for Florida homeowners who want the look of clay tile without the weight, brittleness, and maintenance. Stone-coated metal tile — from brands like Boral Steel, DECRA, and Gerard — uses a structural steel core coated in natural stone granules to replicate the profile of Spanish barrel tile, Mediterranean flat tile, or wood shake.</p>
+        <p>75% lighter than concrete tile, hurricane-tested to Florida Product Approval standards, and backed by 50-year warranties. Qualifies for wind mitigation insurance discounts.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Boral Steel, DECRA &amp; Gerard profiles available</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>75% lighter than concrete — no extra framing</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Hurricane-tested — Florida Product Approved</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>50+ year lifespan — outlasts asphalt 2:1</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Wind mitigation eligible — insurance premium savings</div>
+        </div>
+        <div class="metal-profiles">
+          <div class="mp-card"><strong>Barrel Vault</strong><span>Classic Spanish tile profile</span></div>
+          <div class="mp-card"><strong>Pacific Tile</strong><span>Mediterranean flat aesthetic</span></div>
+          <div class="mp-card"><strong>Pine Crest Shake</strong><span>Wood shake appearance</span></div>
+          <div class="mp-card"><strong>Granite Ridge</strong><span>Stone-like shingle profile</span></div>
+          <div class="mp-card"><strong>Cottage Shingle</strong><span>High-profile classic shingle</span></div>
+          <div class="mp-card"><strong>Villa Tile</strong><span>DECRA Mediterranean style</span></div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:1.5rem">Get a Metal Tile Estimate</a>
+      </div>
+      <div class="svc-panel">
+        <h4>Why Metal Tile for Florida?</h4>
+        <div class="tag-list">
+          <span class="svc-tag">Boral Steel®</span>
+          <span class="svc-tag">DECRA®</span>
+          <span class="svc-tag">Gerard®</span>
+          <span class="svc-tag">Metro Tile®</span>
+        </div>
+        <p>Florida's storm environment makes stone-coated steel the smartest long-term choice for homeowners who want the tile aesthetic. Won't crack under hail, won't break underfoot during maintenance, and performs where clay tile fails in hurricanes.</p>
+        <a href="contact.html" class="svc-cta">Schedule Inspection</a>
+      </div>
+    </div>
+
+    <!-- METAL -->
+    <div class="svc-detail flip reveal" id="metal">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Maximum Longevity</div>
+        <h2>Standing Seam Metal Roofing</h2>
+        <p>Standing seam metal is the highest-performing roofing system available for residential and commercial properties. A concealed fastener panel system that expands and contracts with Florida's temperature extremes — no exposed screws to back out, no penetrations to leak.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>40–70 year system lifespan</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Concealed fasteners — no penetration leaks</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Energy Star rated options available</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>High wind uplift resistance</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Aluminum, Galvalume &amp; steel options</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Get a Metal Roof Estimate</a>
+      </div>
+      <div class="svc-panel">
+        <h4>System Options</h4>
+        <div class="tag-list">
+          <span class="svc-tag">Standing Seam</span>
+          <span class="svc-tag">Exposed Fastener</span>
+          <span class="svc-tag">R-Panel</span>
+          <span class="svc-tag">Aluminum</span>
+          <span class="svc-tag">Galvalume Steel</span>
+        </div>
+        <p>Best for homeowners who want the longest-lasting roof available with the lowest lifetime maintenance cost. Ideal for low-slope residential and all commercial applications.</p>
+        <a href="contact.html" class="svc-cta">Schedule Inspection</a>
+      </div>
+    </div>
+
+    <!-- COMMERCIAL -->
+    <div class="svc-detail reveal" id="commercial">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Commercial</div>
+        <h2>Commercial Roofing</h2>
+        <p>Flat, low-slope, and specialty commercial roofing systems for office buildings, retail centers, warehouses, multi-family properties, and HOA communities. We minimize business disruption while delivering code-compliant, warranty-backed installations.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>TPO, EPDM &amp; modified bitumen systems</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Minimal business disruption scheduling</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full permit management</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Manufacturer warranty documentation</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Request Commercial Quote</a>
+      </div>
+      <div class="svc-panel">
+        <h4>System Options</h4>
+        <div class="tag-list">
+          <span class="svc-tag">TPO Membrane</span>
+          <span class="svc-tag">EPDM</span>
+          <span class="svc-tag">Modified Bitumen</span>
+          <span class="svc-tag">Standing Seam</span>
+          <span class="svc-tag">Flat &amp; Low-Slope</span>
+        </div>
+        <p>Best for commercial property owners who need a licensed, insured contractor capable of handling the permitting, scheduling, and documentation requirements of commercial roofing projects.</p>
+        <a href="contact.html" class="svc-cta">Schedule Site Visit</a>
+      </div>
+    </div>
+
+    <!-- STORM -->
+    <div class="svc-detail flip reveal" id="storm">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Storm Response</div>
+        <h2>Storm Damage &amp; Restoration</h2>
+        <p>Central Florida averages a significant hurricane or tropical storm impact every 2–3 years. When storm damage hits, the quality of your roofing contractor determines whether your insurance claim is settled fairly or not.</p>
+        <p>We respond promptly, document everything thoroughly, and advocate directly with your insurance adjuster to ensure you receive the full settlement your damage warrants.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Emergency tarping to prevent further damage</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full photo documentation for insurance</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>On-site adjuster meeting and advocacy</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Supplemental claim support when needed</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Complete restoration under one contract</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Request Damage Assessment</a>
+      </div>
+      <div class="svc-panel">
+        <h4>Storm Services</h4>
+        <div class="tag-list">
+          <span class="svc-tag">Emergency Tarping</span>
+          <span class="svc-tag">Damage Documentation</span>
+          <span class="svc-tag">Insurance Filing</span>
+          <span class="svc-tag">Adjuster Liaison</span>
+          <span class="svc-tag">Full Restoration</span>
+        </div>
+        <p>Don't sign anything with your insurance company before speaking with us. We've seen homeowners accept far less than their damage was worth — we help prevent that.</p>
+        <a href="tel:+14074391200" class="svc-cta">Call (407) 439-1200</a>
+      </div>
+    </div>
+
+    <!-- INSURANCE -->
+    <div class="svc-detail reveal" id="insurance">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Claims Support</div>
+        <h2>Insurance Claims Support</h2>
+        <p>Most homeowners don't know they can have their roofing contractor present during the insurance adjuster's inspection — and most adjusters are counting on that. Caliber is present at every adjuster meeting to ensure nothing is missed and your claim reflects the true scope of damage.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>We attend adjuster inspections with you</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>We document every item of damage thoroughly</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>We file supplemental claims when initial offers are low</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>No hidden fees — we work within your approved claim</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Start Your Claim Process</a>
+      </div>
+      <div class="svc-panel">
+        <h4>We Work With All Major Carriers</h4>
+        <div class="tag-list">
+          <span class="svc-tag">Citizens Property</span>
+          <span class="svc-tag">Universal Property</span>
+          <span class="svc-tag">Heritage Insurance</span>
+          <span class="svc-tag">State Farm</span>
+          <span class="svc-tag">All Carriers Welcome</span>
+        </div>
+        <p>Don't accept the first settlement offer without getting a second opinion on the scope. We've helped homeowners recover significantly more than the initial adjuster estimate.</p>
+        <a href="contact.html" class="svc-cta">Free Claim Review</a>
+      </div>
+    </div>
+
+    <!-- FINANCING -->
+    <div class="svc-detail flip reveal" id="financing">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Financing</div>
+        <h2>Flexible Financing Options</h2>
+        <p>A roof replacement is rarely a planned expense. We've partnered with leading lenders to offer financing options that make it possible to move forward immediately — protecting your home without waiting for budget timing to align.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>0% interest promotional periods available</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Low monthly payment plans</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>My Safe Florida Home Program — up to $10,000 in grants</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Same-day financing decisions for most applicants</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>No down payment required to start in many cases</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Discuss Financing Options</a>
+      </div>
+      <div class="svc-panel">
+        <h4>My Safe Florida Home</h4>
+        <p style="font-size:.86rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:1.25rem">Florida's My Safe Florida Home Program offers qualifying homeowners free wind inspections and matching grants up to $10,000 for hurricane-hardening improvements including roof upgrades. Caliber is a registered participating contractor.</p>
+        <a href="contact.html" class="svc-cta">Check Your Eligibility</a>
+      </div>
+    </div>
+
+    <!-- WARRANTY -->
+    <div class="svc-detail reveal" id="warranty">
+      <div>
+        <div class="svc-detail-eyebrow"><span></span>Warranties</div>
+        <h2>Warranties &amp; Our Guarantee</h2>
+        <p>Every Caliber project includes both a manufacturer material warranty and our own workmanship guarantee. We stand behind the quality of every installation — because the roof we put on your home reflects our name.</p>
+        <div class="svc-checks">
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Manufacturer warranties up to 50 years non-prorated</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Caliber workmanship guarantee on every project</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full warranty documentation provided at completion</div>
+          <div class="svc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Post-installation follow-up inspection included</div>
+        </div>
+        <a href="contact.html" class="btn-navy" style="margin-top:.5rem">Learn More About Our Guarantee</a>
+      </div>
+      <div class="svc-panel">
+        <h4>Coverage Summary</h4>
+        <div class="tag-list">
+          <span class="svc-tag">Material Warranty</span>
+          <span class="svc-tag">Workmanship Guarantee</span>
+          <span class="svc-tag">Up to 50-Year Coverage</span>
+          <span class="svc-tag">Non-Prorated Options</span>
+        </div>
+        <p>Warranty terms vary by manufacturer and system selected. We walk every client through their specific coverage at project completion so there are no surprises down the road.</p>
+        <a href="contact.html" class="svc-cta">Discuss Your Warranty Options</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Caliber Construction Group</div>
+        <div class="logo-sub" style="margin-top:4px">Boutique Roofing · Central Florida</div>
+        <p class="footer-tagline">Premium roofing delivered with the precision and personal attention that large contractors simply cannot offer. Every project. Every time.</p>
+      </div>
+      <div>
+        <div class="footer-h">Company</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="about.html#values">Our Standard</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Services</div>
+        <div class="footer-links">
+          <a href="services.html#shingle">Shingle Roofing</a>
+          <a href="services.html#tile">Clay &amp; Concrete Tile</a>
+          <a href="services.html#metal-tile">Stone-Coated Metal Tile</a>
+          <a href="services.html#metal">Standing Seam Metal</a>
+          <a href="services.html#commercial">Commercial</a>
+          <a href="services.html#storm">Storm Damage</a>
+          <a href="services.html#insurance">Insurance Claims</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Contact</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(407) 439-1200</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@caliberconstructiongroup.com</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Orange · Seminole · Osceola · Lake Counties</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Fri 7am–6pm · Emergency services available</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caliber Construction Group. All rights reserved. Licensed Roofing Contractor — Florida. <span style="color:rgba(100,160,255,.75)">Our permit holder is also a licensed Florida Civil Engineer.</span> License numbers to be published upon opening.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<a href="tel:+14074391200" class="float-call" aria-label="Call us"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+<button class="back-top" id="backTop" aria-label="Back to top"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script>
+(function(){var html=document.documentElement,t=localStorage.getItem('ccg-t')||'light';html.setAttribute('data-theme',t);var sun=document.getElementById('sunIcon'),moon=document.getElementById('moonIcon');function applyT(v){if(v==='dark'){if(sun)sun.style.display='none';if(moon)moon.style.display='block';}else{if(sun)sun.style.display='block';if(moon)moon.style.display='none';}}applyT(t);var tb=document.getElementById('themeBtn');if(tb)tb.addEventListener('click',function(){var v=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',v);localStorage.setItem('ccg-t',v);applyT(v);});var ham=document.getElementById('hamBtn'),mob=document.getElementById('mobMenu'),cl=document.getElementById('mobClose'),ov=document.getElementById('mobOverlay');function openM(){if(mob){mob.classList.add('open');if(ham)ham.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}}function closeM(){if(mob){mob.classList.remove('open');if(ham)ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}}if(ham)ham.addEventListener('click',openM);if(cl)cl.addEventListener('click',closeM);if(ov)ov.addEventListener('click',closeM);var bt=document.getElementById('backTop');if(bt){window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>400);});bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:.07});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});}} )();
+</script>
 </body>
 </html>
