@@ -163,6 +163,11 @@ section{padding:5rem 0}
 /* ── HERO ── */
 .hero{position:relative;min-height:calc(100svh - 72px);display:flex;align-items:center;background:var(--navy-deep);overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E");opacity:.6}
+.hero-mark{position:absolute;top:50%;right:-8%;transform:translateY(-50%);width:min(720px,72%);max-height:90%;opacity:.22;pointer-events:none;z-index:0}
+.hero-mark svg{width:100%;height:100%;display:block}
+.hero-content{position:relative;z-index:2}
+@media(max-width:900px){.hero-mark{right:-20%;width:90%;opacity:.13}}
+@media(max-width:540px){.hero-mark{right:-30%;width:120%;opacity:.1}}
 .hero-content{position:relative;z-index:1;padding:5.5rem 0 5rem}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(184,145,42,.12);border:1px solid rgba(184,145,42,.28);color:var(--gold-mid);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;padding:.4rem 1rem;border-radius:var(--r-full);margin-bottom:1.75rem}
 .hero-dot{width:6px;height:6px;background:var(--gold-mid);border-radius:50%;animation:blink 2s infinite}
@@ -389,6 +394,24 @@ section{padding:5rem 0}
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-mark" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="heroMarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e4c673" stop-opacity="0.95"/>
+          <stop offset="50%" stop-color="#c69e3a" stop-opacity="0.88"/>
+          <stop offset="100%" stop-color="#9a7820" stop-opacity="0.78"/>
+        </linearGradient>
+      </defs>
+      <path d="M25 145 L100 35 L175 145" fill="none" stroke="url(#heroMarkGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M48 145 L100 65 L152 145" fill="none" stroke="url(#heroMarkGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+      <rect x="48" y="145" width="104" height="30" fill="none" stroke="url(#heroMarkGrad)" stroke-width="2"/>
+      <rect x="88" y="155" width="24" height="20" fill="none" stroke="url(#heroMarkGrad)" stroke-width="1.5" rx="2"/>
+      <line x1="100" y1="50" x2="100" y2="145" stroke="url(#heroMarkGrad)" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="100" cy="35" r="3.5" fill="url(#heroMarkGrad)"/>
+      <circle cx="100" cy="35" r="6" fill="none" stroke="url(#heroMarkGrad)" stroke-width="0.8" opacity="0.5"/>
+    </svg>
+  </div>
   <div class="wrap hero-content">
     <div class="hero-tag"><span class="hero-dot"></span>Now Serving Central Florida — Opening Soon</div>
     <h1>Central Florida's <em>Premier Boutique</em><br>Roofing Contractor</h1>
