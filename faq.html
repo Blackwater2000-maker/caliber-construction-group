@@ -175,22 +175,32 @@ section{padding:4.5rem 0}
 .vc h3{font-size:1.05rem;margin-bottom:.45rem}
 .vc p{font-size:.875rem;margin:0}
 /* FAQ */
-.faq-item{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:.75rem;box-shadow:var(--sh-sm)}
-.faq-item.open{box-shadow:var(--sh-md)}
-.faq-trigger{width:100%;background:var(--white);border:none;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;font-family:var(--font-d);font-size:clamp(1rem,.9rem+.3vw,1.2rem);font-weight:600;color:var(--text);transition:background .15s;gap:1rem}
-.faq-trigger:hover{background:var(--navy-hint)}
-[data-theme="dark"] .faq-trigger{background:var(--surface)}
-[data-theme="dark"] .faq-trigger:hover{background:rgba(255,255,255,.07)}
-.faq-item.open .faq-trigger{background:var(--navy-hint)}
-.faq-icon{width:30px;height:30px;border-radius:50%;background:var(--navy-lite);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .2s}
-.faq-icon svg{width:14px;height:14px;color:var(--navy-mid)}
-.faq-item.open .faq-icon{transform:rotate(180deg);background:var(--navy-deep)}
-.faq-item.open .faq-icon svg{color:#fff}
-.faq-body{display:none;padding:1rem 1.5rem 1.4rem;font-size:.9rem;color:var(--text2);line-height:1.78;border-top:1px solid var(--border);background:var(--white)}
-[data-theme="dark"] .faq-body{background:var(--surface)}
-.faq-item.open .faq-body{display:block}
-.faq-cat{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin:2.5rem 0 1rem;display:flex;align-items:center;gap:.5rem}
+.faq-cat{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin:2.5rem 0 1.1rem;display:flex;align-items:center;gap:.65rem}
 .faq-cat::after{content:'';flex:1;height:1px;background:var(--border)}
+.faq-cat:first-of-type{margin-top:0}
+.faq-item{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:.75rem;box-shadow:var(--sh-sm);background:var(--white);transition:box-shadow .2s,border-color .2s}
+[data-theme="dark"] .faq-item{background:var(--surface)}
+.faq-item:hover{border-color:var(--border2)}
+.faq-item.open{box-shadow:var(--sh-md);border-color:rgba(184,145,42,.35)}
+.faq-trigger{width:100%;background:transparent;border:none;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;font-family:var(--font-d);font-size:clamp(1rem,.9rem+.3vw,1.2rem);font-weight:600;color:var(--text);transition:background .15s;gap:1rem}
+.faq-trigger > span{flex:1}
+.faq-trigger:hover{background:var(--navy-hint)}
+[data-theme="dark"] .faq-trigger:hover{background:rgba(255,255,255,.05)}
+.faq-item.open .faq-trigger{background:var(--navy-hint)}
+[data-theme="dark"] .faq-item.open .faq-trigger{background:rgba(255,255,255,.05)}
+.faq-icon{width:32px;height:32px;border-radius:50%;background:var(--navy-lite);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s ease,background .2s}
+.faq-icon svg{width:14px;height:14px;color:var(--navy-mid);transition:color .2s}
+.faq-item.open .faq-icon{transform:rotate(180deg);background:var(--navy-deep)}
+.faq-item.open .faq-icon svg{color:var(--gold-mid)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;border-top:0 solid transparent}
+.faq-item.open .faq-body{max-height:1200px;border-top:1px solid var(--border)}
+.faq-body > *:first-child{padding-top:1rem}
+.faq-body > *{padding-left:1.5rem;padding-right:1.5rem}
+.faq-body > *:last-child{padding-bottom:1.4rem}
+.faq-body p{font-size:.92rem;color:var(--text2);line-height:1.78;margin-bottom:.75rem}
+.faq-body p:last-child{margin-bottom:0}
+.faq-body strong{color:var(--text);font-weight:600}
+
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;align-items:start}
 @media(max-width:780px){.contact-grid{grid-template-columns:1fr}}
@@ -229,6 +239,7 @@ section{padding:4.5rem 0}
 .proj-notice p{max-width:480px;margin:0 auto 1.5rem;font-size:.95rem}
 </style>
 </head>
+<body>
 <body>
 
     <header class="nav-bar">
@@ -316,93 +327,226 @@ section{padding:4.5rem 0}
     </nav>
   </div>
 /div>
+
+
 <section class="page-hero">
   <div class="wrap page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg><span style="color:rgba(255,255,255,.7)">FAQs</span></div>
     <span class="page-tag">FAQ</span>
     <h1>Questions &amp; Answers</h1>
-    <p>Everything homeowners and property owners ask us — answered plainly and honestly.</p>
+    <p>Florida-specific answers to the questions Central Florida homeowners and property owners ask us most. Researched, accurate, and grounded in current Florida Building Code where it applies.</p>
   </div>
 </section>
-<section>
+
+<section style="padding:4rem 0">
   <div class="wrap-sm">
+
     <div class="faq-cat">General</div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What makes Caliber different from other roofing contractors?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Every job we take gets a dedicated on-site manager — not just a crew dropped off and left to work unsupervised. Our lean operating model means more of your dollar goes toward skilled labor and premium materials rather than marketing overhead. We're a boutique contractor with highly trained, well-managed crews — capable of handling the same project volume as our larger competitors, while delivering the kind of focused client experience the big names simply cannot.</div>
-    </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">Is Caliber licensed and insured in Florida?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Yes. Caliber Construction Group is a Florida-licensed roofing contractor, fully insured with general liability and workers' compensation coverage. License numbers will be published upon our opening. Our permit holder also holds a Florida civil engineering license, which adds an additional layer of qualification to every project.</div>
-    </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What counties do you serve?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">We serve homeowners and commercial property owners throughout Central Florida including Orange, Seminole, Osceola, Lake, Polk, Volusia, and Brevard counties. Not sure if you're in our service area? Give us a call or submit the contact form — we'll let you know right away.</div>
-    </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">When are you opening?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">We are opening within the next 4–6 weeks. We are currently accepting early access inquiries and locking in founding client pricing for homeowners who submit before our public launch. Fill out the contact form to get on the list.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What makes Caliber different from other roofing contractors?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Every job gets a dedicated on-site manager — not just a crew dropped off and left to work unsupervised. Our lean operating model means more of your investment goes toward skilled labor and premium materials rather than marketing overhead. We're a boutique contractor with highly trained, well-managed crews — capable of handling the same project volume as our larger competitors, while delivering the focused client experience the big names simply cannot.</p>
+      </div>
     </div>
 
-    <div class="faq-cat">Roof Replacement</div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">How do I know if I need a repair or a full replacement?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">The honest answer depends on the age of your roof, the extent of damage, and the roofing system in place. A roof under 10 years old with isolated damage is often a strong repair candidate. A roof over 20 years old with widespread wear, granule loss, or multiple leak areas usually warrants replacement — especially in Florida's climate. We'll tell you what we actually see at your free inspection, not what generates the most revenue.</div>
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>Is Caliber licensed and insured in Florida?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Yes. Caliber Construction Group is a Florida-licensed roofing contractor, fully insured with general liability and workers' compensation coverage. License numbers will be published upon our opening. Our permit holder also holds a Florida civil engineering license, which adds an additional layer of qualification to every project.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">How long does a roof replacement take?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Most residential replacements are completed in 1–3 days depending on the size of the home, the roofing system selected, and weather. We schedule with a buffer for Florida afternoon rains and don't rush installation to hit a daily quota. Your job gets the time it needs.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What counties do you serve?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>We serve homeowners and commercial property owners throughout Central Florida including Orange, Seminole, Osceola, Lake, Polk, Volusia, and Brevard counties. Not sure if you're in our service area? Give us a call or submit the contact form — we'll let you know right away.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What permits do you pull?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">We pull all required roofing permits with the appropriate county or municipality. Permit management is included in every full replacement. You receive copies of all permits and the final inspection sign-off at project completion. Never let a contractor skip the permit — an unpermitted roof replacement can create serious issues when you sell your home.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>When are you opening?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>We're opening within the next 4–6 weeks. We're currently accepting early access inquiries and locking in founding client pricing for homeowners who submit before our public launch. Fill out the contact form to get on the list.</p>
+      </div>
+    </div>
+
+    <div class="faq-cat">Roof Replacement &amp; Repair</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>How do I know if I need a repair or a full replacement?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>The honest answer depends on three things: the age of your roof, the extent of the damage, and what year your roof was originally permitted under the Florida Building Code.</p>
+        <p>Under Florida Statute 553.844, if your roof was permitted to the 2007 Florida Building Code or later (effective March 1, 2009), you can typically repair more than 25% of the roof without triggering a full replacement — provided the existing roof is under 10 years old, the damage isn't from normal wear and tear, and a licensed contractor confirms in writing that the repair won't compromise structural integrity. If your roof was permitted before March 1, 2009 and has never been replaced, the legacy "25% rule" still applies — meaning if damage or work exceeds 25% of the roof section in any 12-month period, the entire roof must be brought up to current code.</p>
+        <p>At your free inspection we'll tell you exactly which situation applies to your home and what the smartest path forward is — not what generates the most revenue for us.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What is Florida's "25% rule" and does it still apply to me?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>The 25% rule is found in Section 706.1.1 of the Florida Building Code — Existing Building, 7th Edition (2020). It historically required that if more than 25% of a roof section was being repaired or replaced within a 12-month period, the entire roof section had to be brought up to current code.</p>
+        <p>Senate Bill 4-D, signed in May 2022, modified this rule via Florida Statute 553.844(5). For homes whose roofs were permitted to the 2007 Florida Building Code or later (March 1, 2009 onward), the rule no longer automatically requires a full replacement — homeowners can repair the damaged portion only, provided specific conditions are met (roof under 10 years old, damage not from wear and tear, written sign-off from a licensed contractor or engineer).</p>
+        <p>For roofs permitted before March 1, 2009 with no subsequent replacement, the original 25% rule still applies. Note that the "25%" is calculated on the area being torn off and replaced — not the area being patched. A small leak patch does not count toward the threshold.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>How long does a roof replacement take?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Most residential shingle replacements take 1–3 days. Tile and metal tile replacements typically take 3–7 days due to material weight, profile complexity, and required underlayment detail. Commercial flat roofs vary widely based on building size — typically 1–3 weeks. We schedule with a buffer for Florida afternoon thunderstorms and don't rush installation to hit a daily quota. Your job gets the time it needs to be done right.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What permits do you pull, and why does it matter?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>We pull all required roofing permits with the appropriate Central Florida county or municipality — Orange, Seminole, Osceola, Lake, Polk, Volusia, or Brevard. Florida law requires a permit for any roof replacement (and most significant repairs). Permit management is included in every full replacement; you receive copies of the permit and the final inspection sign-off at project completion.</p>
+        <p>Never let a contractor skip the permit. An unpermitted roof replacement can void your homeowner's insurance coverage, complicate future claims, create issues at the closing table when you sell the home, and in some cases expose you to fines from the local building department.</p>
+      </div>
     </div>
 
     <div class="faq-cat">Materials &amp; Systems</div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What roofing systems do you install?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">We install every major roofing system: asphalt shingles (architectural, dimensional, impact-resistant), clay tile, concrete tile, stone-coated metal tile (Boral Steel, DECRA, Gerard), standing seam metal, TPO, EPDM, and modified bitumen flat roofing. We'll recommend the right system for your home, budget, and aesthetic goals — not just the easiest one for us to install.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What roofing systems do you install?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>We install every major roofing system used in Florida: asphalt shingles (architectural, dimensional, Class 4 impact-resistant), clay tile, concrete tile, stone-coated metal tile (Boral Steel, DECRA, Gerard), standing seam metal, and commercial flat systems (TPO, EPDM, modified bitumen). Every system we install carries a valid Florida Product Approval for wind and wind-driven rain resistance. We recommend the right system for your home, budget, HOA requirements, and aesthetic goals — not just the easiest one for us to install.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What is stone-coated metal tile and why does it make sense for Florida?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Stone-coated metal tile uses a structural steel core coated in natural stone granules to replicate the look of Spanish barrel tile, Mediterranean flat tile, or wood shake — while delivering the strength and longevity of steel. It weighs 75% less than concrete tile (meaning no extra framing is needed), is Florida Product Approved for wind and wind-driven rain resistance, and carries 50+ year warranties. In Florida's storm climate, it's the smartest long-term choice for homeowners who want the tile aesthetic without tile's fragility.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What is stone-coated metal tile and why does it make sense for Florida?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Stone-coated metal tile uses a structural steel core coated in natural stone granules to replicate the look of Spanish barrel tile, Mediterranean flat tile, or wood shake — while delivering the strength and longevity of steel. It weighs roughly 75% less than concrete tile, so no additional framing is required, and it's Florida Product Approved for high-wind and wind-driven rain resistance.</p>
+        <p>For Central Florida's storm climate, stone-coated metal tile is one of the smartest long-term roofing investments: 50+ year manufacturer warranties, won't crack underfoot during maintenance, doesn't shatter from hail or wind-driven debris, and qualifies for wind mitigation insurance credits that can meaningfully reduce your annual homeowner's premium.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">How do Boral Steel, DECRA, and Gerard compare?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">All three are leading stone-coated steel manufacturers under the Westlake Royal Roofing Solutions umbrella. Boral Steel offers five profiles including Barrel Vault and Pacific Tile. DECRA (the original stone-coated steel system, 50+ years of R&D) offers Villa Tile and Tile profiles with a hidden fastener system. Gerard offers Pacific Tile and Barrel Vault profiles with excellent color range. We'll walk you through the right choice for your home's profile, budget, and HOA requirements at your free inspection.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>How do Boral Steel, DECRA, and Gerard compare?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>All three are leading stone-coated steel manufacturers, now operating under the Westlake Royal Roofing Solutions umbrella. <strong>Boral Steel</strong> offers five core profiles including Barrel Vault (Spanish tile look) and Pacific Tile (Mediterranean flat). <strong>DECRA</strong> is the original stone-coated steel system with 50+ years of R&amp;D — known for its hidden fastener system and Villa Tile profile. <strong>Gerard</strong> offers Barrel Vault and Pacific Tile profiles with the broadest color range and strong Florida coastal performance.</p>
+        <p>All three carry Florida Product Approval and 50-year manufacturer warranties. The right choice depends on your home's architecture, HOA requirements, available color palette, and budget — we walk every client through the comparison at the free inspection.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What warranties come with a new roof from Caliber?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Every Caliber project includes a manufacturer material warranty (up to 50 years non-prorated, depending on system selected) and our own workmanship guarantee. You receive full warranty documentation at project completion. We also conduct a post-installation follow-up inspection to confirm everything is performing as expected.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What warranties come with a new roof from Caliber?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Every Caliber project includes two separate warranties:</p>
+        <p><strong>Caliber 5-year workmanship warranty</strong> — covers defects in our installation labor for 5 years after project completion. This is our guarantee, separate from the material.</p>
+        <p><strong>Manufacturer material warranty</strong> — covers defects in the roofing product itself, provided directly by the manufacturer (Owens Corning, GAF, Boral, DECRA, Gerard, etc.). Length and terms vary by system: shingles typically 25–50 years, stone-coated metal tile 50 years, standing seam metal 25–40 years, clay and concrete tile often lifetime limited, flat membranes 10–20 years.</p>
+        <p>You receive full warranty documentation and registration at project completion.</p>
+      </div>
     </div>
 
     <div class="faq-cat">Storm Damage &amp; Insurance</div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What should I do immediately after storm damage?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Document what you can safely from the ground — photos and video. Then call us before you call your insurance company. We'll conduct a thorough damage assessment, document everything properly, and help you understand the full scope of damage before you file. This puts you in a much stronger position when the adjuster shows up. Don't accept a quick settlement offer without having a qualified roofing contractor review the scope first.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What should I do immediately after storm damage?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Document what you can safely from the ground — photos and video. Do not climb onto a wet, damaged, or structurally compromised roof. If there's active water intrusion, mitigate further interior damage if it's safe to do so (buckets, tarps over indoor belongings).</p>
+        <p>Then call us before you call your insurance company. We'll conduct a thorough damage assessment, document everything properly with photo evidence, and help you understand the full scope of damage before you file the claim. This puts you in a far stronger position when the adjuster shows up. Florida law gives you up to one year from the date of loss to file a hurricane claim — there's no need to rush a decision under pressure.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">Can Caliber help me with my insurance claim?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Yes — and this is one of the most important services we provide. We document all damage with photos and written reports, help you file your claim, and physically attend the insurance adjuster's inspection to ensure nothing is missed. When initial settlement offers are too low, we support supplemental claims. We work with all major Florida carriers including Citizens, Universal, Heritage, and State Farm.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>Can Caliber help me with my insurance claim?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Yes — and this is one of the most important services we provide. We document all damage with photos and a written report, help you file the claim, and physically attend the insurance adjuster's inspection to ensure nothing gets missed or undervalued. When initial settlement offers don't reflect the true scope of damage, we support supplemental claims.</p>
+        <p>We work with all major Florida carriers including Citizens Property Insurance, Universal Property &amp; Casualty, Heritage Insurance, State Farm, and others. There is no additional charge for our claims support — we work within the scope of your approved claim.</p>
+      </div>
     </div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">What is the My Safe Florida Home Program?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">The My Safe Florida Home Program, administered by the Florida Department of Financial Services, provides qualifying homeowners with a free wind inspection and matching grants of up to $10,000 for hurricane-hardening home improvements — including roof upgrades. For every dollar you invest in qualifying improvements, the state matches with additional funding. Caliber is a registered participating contractor. Contact us to check your eligibility.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>What is the My Safe Florida Home Program?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>The My Safe Florida Home Program (MSFH), administered by the Florida Department of Financial Services, provides qualifying homeowners with a free wind mitigation inspection and matching grants up to $10,000 for hurricane-hardening home improvements — including roof-to-wall connector reinforcement, roof-deck attachment strengthening, secondary water resistance, opening protection (impact windows, shutters), and reinforced exterior and garage doors.</p>
+        <p>For the 2025–2026 program cycle, the state matches $2 for every $1 the homeowner invests in eligible upgrades, capped at a $10,000 grant. Low-income homeowners may qualify for the full grant with no matching requirement. Core eligibility includes: an active Florida homestead exemption, an insured home value of $700,000 or less, and a building permit issued before January 1, 2008.</p>
+        <p><strong>Critical:</strong> Do not start work before grant approval — starting early automatically disqualifies the application. Caliber is a participating contractor; contact us to check your eligibility and coordinate with the program.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>Will a new roof reduce my homeowner's insurance premium?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Often, yes — sometimes meaningfully. Florida insurance carriers offer wind mitigation credits documented on Form OIR-B1-1802 (the standardized wind mitigation inspection form). Credits commonly apply to roof age, roof shape (hip roofs receive larger discounts than gable), roof-to-wall connection type, roof-deck attachment (nail spacing and ring-shank vs. smooth shank), secondary water resistance, and opening protection.</p>
+        <p>A brand-new roof installed to current Florida Building Code with proper nailing patterns and a secondary water barrier typically maxes out the available roofing-related credits. Industry data from the My Safe Florida Home program suggests homeowners who fully mitigate their homes save on average around 39% on their wind insurance premium. After your new roof is installed, request an updated wind mitigation inspection and submit the new form to your insurer.</p>
+      </div>
     </div>
 
     <div class="faq-cat">Financing</div>
-    <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <button class="faq-trigger">Do you offer financing?<div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div></button>
-      <div class="faq-body">Yes. We offer flexible financing options including 0% interest promotional periods, low monthly payment plans, and access to the My Safe Florida Home grant program. Most applicants receive same-day decisions. A new roof shouldn't have to wait for budget timing to align — contact us to discuss your financing options.</div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" type="button">
+        <span>Do you offer financing?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </button>
+      <div class="faq-body">
+        <p>Yes. We offer flexible financing options including 0% interest promotional periods, low monthly payment plans, and access to the My Safe Florida Home grant program. Most applicants receive same-day financing decisions. A new roof shouldn't have to wait for budget timing to align — contact us to discuss your options.</p>
+      </div>
     </div>
+
   </div>
 </section>
+
 <section style="background:var(--navy-deep);padding:3.5rem 0">
   <div class="wrap" style="text-align:center">
     <h2 style="color:#fff;margin-bottom:.75rem;font-size:clamp(1.3rem,.9rem+1.2vw,2rem)">Still Have Questions?</h2>
-    <p style="color:rgba(255,255,255,.6);max-width:440px;margin:0 auto 1.75rem;font-size:.95rem">We're happy to talk through anything before you commit to anything. No pressure.</p>
+    <p style="color:rgba(255,255,255,.6);max-width:440px;margin:0 auto 1.75rem;font-size:.95rem">We're happy to talk through anything before you commit. No pressure.</p>
     <a href="contact.html" class="btn-gold">Contact Us</a>
   </div>
 </section>
+
 
 <footer class="footer">
   <div class="wrap">
@@ -481,5 +625,27 @@ section{padding:4.5rem 0}
   }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});}
 })();
 </script>
+
+<script>
+(function(){
+  document.querySelectorAll('.faq-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(it){
+        if(it !== item) it.classList.remove('open');
+      });
+      if(wasOpen){
+        item.classList.remove('open');
+      } else {
+        item.classList.add('open');
+      }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
