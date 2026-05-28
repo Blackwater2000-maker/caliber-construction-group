@@ -200,6 +200,9 @@ section{padding:4.5rem 0}
 .msfh-band p{color:rgba(255,255,255,.62);font-size:.9rem;line-height:1.78;margin-bottom:.75rem}
 </style>
 
+
+
+
 <style id="ccg-agent-css">
 /* AI Agent — Caliber Concierge */
 .ccg-agent-launcher{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;background:linear-gradient(135deg,#071429 0%,#1a3a6b 100%);color:#fff;border:1px solid rgba(212,168,67,.35);border-radius:999px;padding:.65rem 1.1rem .65rem .85rem;display:none;align-items:center;gap:.55rem;cursor:pointer;box-shadow:0 8px 28px rgba(7,20,41,.45);font-family:'Inter',Arial,sans-serif;font-size:.85rem;font-weight:600;transition:transform .2s,box-shadow .2s;animation:ccg-launcher-pulse 2.5s ease-in-out infinite}
@@ -521,6 +524,26 @@ body.ccg-agent-open .float-call{display:none!important}
   }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});}
 })();
 </script>
+
+    <button class="ccg-agent-close" id="ccgAgentClose" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="ccg-agent-body" id="ccgAgentBody"></div>
+  <div class="ccg-agent-foot">
+    <form class="ccg-input-row" id="ccgAgentForm">
+      <input class="ccg-input" id="ccgAgentInput" type="text" placeholder="Ask anything about Caliber…" autocomplete="off">
+      <button class="ccg-send" type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+    <div class="ccg-foot-note">Caliber Concierge uses our website content only · No external data</div>
+  </div>
+</div>
+
+
+
+
 
 <!-- CCG AI Concierge Agent -->
 <button class="ccg-agent-launcher" id="ccgAgentLauncher" aria-label="Open Caliber Concierge">
