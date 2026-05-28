@@ -228,6 +228,110 @@ section{padding:4.5rem 0}
 .proj-notice h2{margin-bottom:.75rem}
 .proj-notice p{max-width:480px;margin:0 auto 1.5rem;font-size:.95rem}
 </style>
+
+<style id="ccg-agent-css">
+/* AI Agent — Caliber Concierge */
+.ccg-agent-launcher{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;background:linear-gradient(135deg,#071429 0%,#1a3a6b 100%);color:#fff;border:1px solid rgba(212,168,67,.35);border-radius:999px;padding:.65rem 1.1rem .65rem .85rem;display:none;align-items:center;gap:.55rem;cursor:pointer;box-shadow:0 8px 28px rgba(7,20,41,.45);font-family:'Inter',Arial,sans-serif;font-size:.85rem;font-weight:600;transition:transform .2s,box-shadow .2s;animation:ccg-launcher-pulse 2.5s ease-in-out infinite}
+.ccg-agent-launcher:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(7,20,41,.55)}
+.ccg-agent-launcher.show{display:inline-flex}
+.ccg-agent-launcher .ccg-launcher-orb{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#e4c673,#9a7820);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ccg-agent-launcher .ccg-launcher-orb svg{width:14px;height:14px;color:#071429}
+.ccg-agent-launcher .ccg-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:ccg-pulse 1.8s ease-in-out infinite}
+@keyframes ccg-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+@keyframes ccg-launcher-pulse{0%,100%{box-shadow:0 8px 28px rgba(7,20,41,.45),0 0 0 0 rgba(212,168,67,.4)}50%{box-shadow:0 8px 28px rgba(7,20,41,.45),0 0 0 10px rgba(212,168,67,0)}}
+
+/* Panel */
+.ccg-agent-panel{position:fixed;bottom:1.5rem;right:1.5rem;z-index:250;width:min(380px,calc(100vw - 2rem));height:min(560px,calc(100vh - 2rem));background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(7,20,41,.35);display:none;flex-direction:column;overflow:hidden;font-family:'Inter',Arial,sans-serif;border:1px solid rgba(12,31,63,.1);opacity:0;transform:translateY(15px) scale(.98);transition:opacity .25s ease,transform .25s ease}
+[data-theme="dark"] .ccg-agent-panel{background:#101c30;border-color:rgba(255,255,255,.08)}
+.ccg-agent-panel.open{display:flex;opacity:1;transform:none}
+
+/* Header */
+.ccg-agent-head{background:linear-gradient(135deg,#071429 0%,#1a3a6b 100%);padding:1.1rem 1.25rem;display:flex;align-items:center;gap:.75rem;color:#fff;position:relative;flex-shrink:0}
+.ccg-agent-head::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,.5),transparent)}
+.ccg-agent-orb{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#e4c673,#9a7820);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(212,168,67,.3)}
+.ccg-agent-orb svg{width:18px;height:18px;color:#071429}
+.ccg-agent-id{flex:1;min-width:0}
+.ccg-agent-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.ccg-agent-status{display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:500;color:rgba(255,255,255,.6);margin-top:2px}
+.ccg-status-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;box-shadow:0 0 8px #4ade80;animation:ccg-pulse 1.8s ease-in-out infinite}
+.ccg-agent-close{width:32px;height:32px;background:rgba(255,255,255,.1);border:none;border-radius:50%;color:rgba(255,255,255,.75);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;flex-shrink:0}
+.ccg-agent-close:hover{background:rgba(255,255,255,.18);color:#fff}
+
+/* Body */
+.ccg-agent-body{flex:1;overflow-y:auto;padding:1.25rem;background:#f7f8fa;scroll-behavior:smooth}
+[data-theme="dark"] .ccg-agent-body{background:#0b1220}
+.ccg-msg{margin-bottom:.85rem;animation:ccg-fadeIn .25s ease}
+@keyframes ccg-fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ccg-msg-bot{display:flex;gap:.55rem;align-items:flex-start}
+.ccg-msg-bot .ccg-bubble-icon{width:26px;height:26px;border-radius:50%;background:#071429;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.ccg-msg-bot .ccg-bubble-icon svg{width:13px;height:13px;color:#d4a843}
+.ccg-bubble{background:#fff;border:1px solid rgba(12,31,63,.08);border-radius:14px;border-top-left-radius:4px;padding:.75rem .95rem;font-size:.875rem;line-height:1.6;color:#0c1a2e;box-shadow:0 1px 3px rgba(12,31,63,.05);max-width:calc(100% - 40px)}
+[data-theme="dark"] .ccg-bubble{background:#1a2638;border-color:rgba(255,255,255,.07);color:#e8f0fa}
+.ccg-msg-user{display:flex;justify-content:flex-end}
+.ccg-msg-user .ccg-bubble{background:#071429;color:#fff;border:none;border-radius:14px;border-top-right-radius:4px;max-width:80%}
+.ccg-bubble strong{color:#1a3a6b;font-weight:600}
+[data-theme="dark"] .ccg-bubble strong{color:#d4a843}
+.ccg-bubble a{color:#1a3a6b;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+[data-theme="dark"] .ccg-bubble a{color:#d4a843}
+
+/* Action chips inside bubble */
+.ccg-chip-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.65rem}
+.ccg-chip{background:rgba(12,31,63,.04);border:1px solid rgba(12,31,63,.12);color:#1a3a6b;font-size:.78rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;cursor:pointer;transition:all .15s;font-family:inherit}
+.ccg-chip:hover{background:#071429;color:#fff;border-color:#071429;transform:translateY(-1px)}
+[data-theme="dark"] .ccg-chip{background:rgba(255,255,255,.05);color:#d4a843;border-color:rgba(255,255,255,.12)}
+[data-theme="dark"] .ccg-chip:hover{background:#d4a843;color:#071429;border-color:#d4a843}
+.ccg-nav-btn{background:#071429;color:#fff;border:none;border-radius:999px;padding:.45rem .85rem;font-size:.78rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;margin-top:.55rem;transition:all .15s;font-family:inherit}
+.ccg-nav-btn:hover{background:#1a3a6b;transform:translateY(-1px)}
+.ccg-nav-btn svg{width:13px;height:13px}
+
+/* Typing indicator */
+.ccg-typing{display:flex;gap:3px;align-items:center;padding:.5rem 0}
+.ccg-typing span{width:5px;height:5px;background:#7a8fa6;border-radius:50%;animation:ccg-typing-dot 1.2s ease-in-out infinite}
+.ccg-typing span:nth-child(2){animation-delay:.15s}
+.ccg-typing span:nth-child(3){animation-delay:.3s}
+@keyframes ccg-typing-dot{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+
+/* Footer / Input */
+.ccg-agent-foot{padding:.75rem 1rem 1rem;background:#fff;border-top:1px solid rgba(12,31,63,.08);flex-shrink:0}
+[data-theme="dark"] .ccg-agent-foot{background:#101c30;border-top-color:rgba(255,255,255,.07)}
+.ccg-input-row{display:flex;gap:.5rem;align-items:center;background:#f7f8fa;border:1px solid rgba(12,31,63,.08);border-radius:999px;padding:.3rem .3rem .3rem 1rem;transition:border-color .15s}
+[data-theme="dark"] .ccg-input-row{background:#1a2638;border-color:rgba(255,255,255,.08)}
+.ccg-input-row:focus-within{border-color:rgba(12,31,63,.2)}
+.ccg-input{flex:1;background:transparent;border:none;outline:none;font-family:inherit;font-size:.875rem;color:#0c1a2e;padding:.45rem 0}
+[data-theme="dark"] .ccg-input{color:#e8f0fa}
+.ccg-input::placeholder{color:#7a8fa6}
+.ccg-send{background:#071429;color:#fff;border:none;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,transform .15s}
+.ccg-send:hover{background:#1a3a6b;transform:scale(1.05)}
+.ccg-send svg{width:14px;height:14px;margin-left:-1px}
+.ccg-foot-note{font-size:.7rem;color:#7a8fa6;text-align:center;margin-top:.55rem}
+
+/* Quick-start grid for first interaction */
+.ccg-quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.7rem}
+.ccg-quick-card{background:#fff;border:1px solid rgba(12,31,63,.08);border-radius:10px;padding:.7rem .8rem;font-size:.78rem;font-weight:600;color:#0c1a2e;cursor:pointer;transition:all .15s;text-align:left;line-height:1.4;font-family:inherit}
+[data-theme="dark"] .ccg-quick-card{background:#1a2638;color:#e8f0fa;border-color:rgba(255,255,255,.07)}
+.ccg-quick-card:hover{border-color:#b8912a;background:#faf3e0;transform:translateY(-1px)}
+[data-theme="dark"] .ccg-quick-card:hover{background:rgba(212,168,67,.1)}
+.ccg-quick-card span{display:block;color:#b8912a;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}
+
+/* Mobile */
+@media(max-width:480px){
+  .ccg-agent-panel{width:calc(100vw - 1.5rem);height:calc(100vh - 1.5rem);bottom:.75rem;right:.75rem;border-radius:14px}
+  .ccg-agent-launcher{bottom:.85rem;right:.85rem;padding:.55rem .9rem .55rem .65rem}
+  .ccg-agent-launcher .ccg-launcher-orb{width:24px;height:24px}
+}
+
+/* Nav button */
+.ccg-nav-link-btn{display:flex;align-items:center;gap:.35rem;padding:.5rem .85rem;border-radius:8px;font-size:.85rem;font-weight:600;color:#1a3a6b;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.25);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit;text-decoration:none}
+.ccg-nav-link-btn:hover{background:rgba(212,168,67,.2);color:#0c1f3f}
+[data-theme="dark"] .ccg-nav-link-btn{color:#d4a843;background:rgba(212,168,67,.08)}
+.ccg-nav-link-btn svg{width:13px;height:13px}
+@media(max-width:1060px){.ccg-nav-link-btn{display:none}}
+
+/* Hide float-call when agent is shown so they don't overlap */
+.ccg-agent-launcher.show ~ .float-call{display:none!important}
+body.ccg-agent-open .float-call{display:none!important}
+</style>
+
 </head>
 <body>
 
@@ -276,6 +380,7 @@ section{padding:4.5rem 0}
           </div>
         </div>
         <a href="contact.html" class="nav-link">Contact</a>
+        <button class="ccg-nav-link-btn" data-ccg-agent-open type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Ask Caliber</button>
       </nav>
       <div class="nav-actions">
         <a href="tel:+14074391200" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(407) 439-1200</a>
@@ -448,5 +553,337 @@ section{padding:4.5rem 0}
   }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});}
 })();
 </script>
+
+<!-- CCG AI Concierge Agent -->
+<button class="ccg-agent-launcher" id="ccgAgentLauncher" aria-label="Open Caliber Concierge">
+  <div class="ccg-launcher-orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
+  <span>Ask Caliber</span>
+  <span class="ccg-dot"></span>
+</button>
+
+<div class="ccg-agent-panel" id="ccgAgentPanel" role="dialog" aria-label="Caliber Concierge">
+  <div class="ccg-agent-head">
+    <div class="ccg-agent-orb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+    <div class="ccg-agent-id">
+      <div class="ccg-agent-name">Caliber Concierge</div>
+      <div class="ccg-agent-status"><span class="ccg-status-dot"></span>Here to help — online</div>
+    </div>
+    <button class="ccg-agent-close" id="ccgAgentClose" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="ccg-agent-body" id="ccgAgentBody"></div>
+  <div class="ccg-agent-foot">
+    <form class="ccg-input-row" id="ccgAgentForm">
+      <input class="ccg-input" id="ccgAgentInput" type="text" placeholder="Ask anything about Caliber…" autocomplete="off">
+      <button class="ccg-send" type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+    <div class="ccg-foot-note">Caliber Concierge uses our website content only · No external data</div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  // ============ KNOWLEDGE BASE — Caliber site content only ============
+  var KB = {
+    greeting: "Hi! I'm the Caliber Concierge. I can help you explore our services, answer roofing questions based on our website, or guide you to any page. What can I help you with?",
+
+    intents: [
+      // === NAVIGATION INTENTS ===
+      {keys:['contact','call','phone','reach','talk','speak','email','inspection','quote','estimate','schedule','book','appointment','free inspection'],
+       reply:"You can reach us at <strong>(407) 439-1200</strong> or info@caliberconstructiongroup.com. The fastest way to get started is requesting a free inspection — no cost, no obligation, and we respond within one business day.",
+       nav:[{label:"Contact Page",url:"contact.html"},{label:"Call Now",url:"tel:+14074391200"}]},
+
+      {keys:['faq','question','common questions','frequently'],
+       reply:"Our FAQ page covers Florida-specific questions — the 25% rule, My Safe Florida Home Program, materials, warranties, insurance claims, and more.",
+       nav:[{label:"Go to FAQs",url:"faq.html"}]},
+
+      {keys:['about','who are','your story','company','history'],
+       reply:"Caliber Construction Group is a Central Florida boutique roofing contractor. We focus on premium craftsmanship, dedicated on-site management, and highly trained crews — delivering boutique-level service while handling the same project volume as larger competitors.",
+       nav:[{label:"About Us",url:"about.html"}]},
+
+      {keys:['career','job','hire','hiring','employment','work for','sales','associate','apply'],
+       reply:"We're actively hiring a <strong>Roofing Sales Associate</strong> in Central Florida — base plus uncapped commission, paid training, and a ground-floor opportunity. Full job description and application form on the Careers page.",
+       nav:[{label:"Careers Page",url:"careers.html"}]},
+
+      {keys:['services','what do you do','offerings','solutions','what kind of roof'],
+       reply:"We install every major roofing system in Florida: asphalt shingle, clay &amp; concrete tile, stone-coated metal tile (Boral, DECRA, Gerard), standing seam metal, commercial flat (TPO, EPDM, modified bitumen), plus storm damage restoration and insurance claims support.",
+       nav:[{label:"View All Services",url:"services.html"}]},
+
+      {keys:['gallery','project','portfolio','example','past work'],
+       reply:"Our project gallery is launching as we begin completing client work. We chose not to use stock photography — when the gallery launches, every photo will be a real Caliber project.",
+       nav:[{label:"Project Gallery",url:"projects.html"}]},
+
+      // === SERVICE-SPECIFIC INTENTS ===
+      {keys:['shingle','asphalt','3-tab','architectural','dimensional','class 4','impact resistant','impact-resistant'],
+       reply:"Asphalt shingle roofing is our most popular system. We install architectural, dimensional, and Class 4 impact-resistant shingles — all algae-resistant and Florida high-wind rated. Class 4 impact-resistant shingles can qualify you for homeowner's insurance discounts.",
+       nav:[{label:"Shingle Details",url:"shingle-roofing.html"}]},
+
+      {keys:['clay tile','concrete tile','spanish tile','barrel','s-tile'],
+       reply:"Clay and concrete tile is the signature Florida aesthetic — 50+ year lifespan with proper installation. We install all profiles (barrel, flat, S-tile, low-profile) in both clay and concrete. Florida Product Approved, high-wind rated.",
+       nav:[{label:"Tile Roofing Details",url:"tile-roofing.html"}]},
+
+      {keys:['metal tile','stone-coated','stone coated','boral','decra','gerard','metro tile'],
+       reply:"Stone-coated metal tile combines the look of Spanish or Mediterranean clay tile with the strength of structural steel. It's 75% lighter than concrete tile, hurricane-rated, Florida Product Approved, and carries 50-year manufacturer warranties. We install Boral Steel, DECRA, Gerard, and Metro Tile systems.",
+       nav:[{label:"Stone-Coated Metal Tile",url:"metal-tile-roofing.html"}]},
+
+      {keys:['standing seam','metal roof','metal roofing'],
+       reply:"Standing seam metal is the highest-performing roofing system available — 40 to 70 year lifespan, concealed fasteners (no screws to back out), and excellent handling of Florida's thermal expansion. Available in aluminum, Galvalume steel, and Energy Star rated finishes.",
+       nav:[{label:"Standing Seam Metal",url:"metal-roofing.html"}]},
+
+      {keys:['commercial','office','retail','warehouse','business roof','multi-family','hoa'],
+       reply:"We handle commercial roofing for office buildings, retail centers, warehouses, multi-family properties, and HOA communities. TPO, EPDM, and modified bitumen systems, with minimal business disruption scheduling and full permit management.",
+       nav:[{label:"Commercial Roofing",url:"commercial-roofing.html"}]},
+
+      {keys:['flat roof','low slope','low-slope','tpo','epdm','modified bitumen','membrane'],
+       reply:"Flat and low-slope roofing systems for residential additions and commercial properties. TPO (heat-welded, energy efficient), EPDM (proven rubber membrane), and modified bitumen (torch or cold-applied asphalt). All Florida wind-rated.",
+       nav:[{label:"Flat &amp; Low-Slope",url:"flat-roofing.html"}]},
+
+      {keys:['storm','damage','hurricane','wind damage','tarp','emergency','leak'],
+       reply:"For storm damage: document what you can safely from the ground, then call us <strong>before</strong> you call your insurance company. We provide emergency tarping, full damage documentation, and adjuster meeting support. Florida law gives you up to one year from the date of loss to file a hurricane claim — no need to rush under pressure.",
+       nav:[{label:"Storm Damage Page",url:"storm-damage.html"},{label:"Call Now",url:"tel:+14074391200"}]},
+
+      {keys:['insurance','claim','adjuster','settlement','citizens','universal','heritage','state farm'],
+       reply:"We document, file, and physically attend insurance adjuster inspections to ensure your claim reflects the true scope of damage. We work with all major Florida carriers including Citizens, Universal Property &amp; Casualty, Heritage Insurance, and State Farm. No additional charge — we work within your approved claim.",
+       nav:[{label:"Insurance Claims Support",url:"insurance-claims.html"}]},
+
+      // === RESOURCE INTENTS ===
+      {keys:['warranty','warranties','guarantee','coverage'],
+       reply:"Two warranties come with every Caliber roof: our <strong>5-year workmanship warranty</strong> (covers our installation labor) plus the <strong>manufacturer material warranty</strong> (covers the product itself — typically 25 to 50 years, varies by system).",
+       nav:[{label:"Warranty Details",url:"warranty.html"}]},
+
+      {keys:['financing','finance','payment','monthly','0%','zero interest','afford','msfh','my safe florida','grant'],
+       reply:"We offer 0% interest promotional periods, low monthly payment plans, and participation in the My Safe Florida Home Program (grants up to $10,000 for qualifying homeowners). Most applicants get same-day financing decisions.",
+       nav:[{label:"Financing Options",url:"financing.html"}]},
+
+      // === ROOFING KNOWLEDGE INTENTS (from our FAQ) ===
+      {keys:['25%','25 percent','twenty five percent','repair vs replace','repair or replace'],
+       reply:"Florida's 25% rule (Section 706.1.1 of the Florida Building Code) was modified by Senate Bill 4-D in 2022. For homes permitted to the 2007 Florida Building Code or later (March 1, 2009 onward), you can typically repair more than 25% of the roof without triggering a full replacement — provided the existing roof is under 10 years old, damage isn't from wear and tear, and a licensed contractor confirms it in writing. Homes permitted before March 2009 with no prior replacement still follow the original rule.",
+       nav:[{label:"More in our FAQ",url:"faq.html"}]},
+
+      {keys:['how long','roof take','days','timeline','duration'],
+       reply:"Most residential shingle replacements take 1–3 days. Tile and metal tile replacements take 3–7 days due to material complexity. Commercial flat roofs typically 1–3 weeks. We schedule with a buffer for Florida afternoon storms and don't rush installation to hit a daily quota.",
+       nav:[{label:"View FAQs",url:"faq.html"}]},
+
+      {keys:['permit','permits','permitted','permitting'],
+       reply:"We pull all required roofing permits with the appropriate Central Florida county or municipality (Orange, Seminole, Osceola, Lake, Polk, Volusia, or Brevard). Permits are included in every full replacement. Never let a contractor skip the permit — it voids insurance coverage and complicates future home sales.",
+       nav:[{label:"FAQ on Permits",url:"faq.html"}]},
+
+      {keys:['licensed','license','insured','insurance coverage','liability'],
+       reply:"Yes — Caliber is a Florida-licensed roofing contractor, fully insured with general liability and workers' compensation. License numbers will be published upon our opening. Our permit holder also holds a Florida civil engineering license.",
+       nav:[{label:"About Caliber",url:"about.html"}]},
+
+      {keys:['county','counties','area','service area','where','location','locations','orlando','seminole','osceola','lake','polk','volusia','brevard'],
+       reply:"We serve Central Florida — Orange, Seminole, Osceola, Lake, Polk, Volusia, and Brevard counties. Not sure if you're in our area? Submit the contact form and we'll let you know right away.",
+       nav:[{label:"Contact Us",url:"contact.html"}]},
+
+      {keys:['opening','when open','launch','available'],
+       reply:"We're opening within the next 4–6 weeks in Central Florida. We're currently accepting early access inquiries and locking in founding client pricing for homeowners who submit before our public launch.",
+       nav:[{label:"Join Early Access",url:"contact.html"}]},
+
+      {keys:['wind mitigation','wind credit','wind discount','oir','form 1802','premium discount'],
+       reply:"A new roof installed to current Florida Building Code with proper nailing and a secondary water barrier typically maxes out the available wind mitigation credits on Form OIR-B1-1802. Industry data suggests homeowners who fully mitigate save around 39% on their wind insurance premium. After installation, request an updated wind mitigation inspection and submit the form to your insurer.",
+       nav:[{label:"FAQ on Wind Mitigation",url:"faq.html"},{label:"Financing &amp; MSFH",url:"financing.html"}]},
+
+      {keys:['price','cost','how much','pricing','estimate','quote'],
+       reply:"Pricing depends on the roofing system, the size of your roof, complexity, and current condition. We provide a free, no-obligation inspection with a written, itemized estimate — no hidden fees and no pressure. Schedule via the contact form or call (407) 439-1200.",
+       nav:[{label:"Schedule Free Inspection",url:"contact.html"}]},
+
+      // === SOCIAL / GENERIC ===
+      {keys:['hi','hello','hey','yo','good morning','good afternoon','good evening','hola'],
+       reply:"Hi! Happy to help. You can ask about any of our roofing services, materials, warranties, financing, or storm damage — or I can navigate you to any page on the site. What would you like to know?"},
+
+      {keys:['thanks','thank you','thx','appreciate','great','awesome','perfect'],
+       reply:"You're welcome! Anything else I can help with? You can also reach our team directly at (407) 439-1200 or via the contact form.",
+       nav:[{label:"Contact Us",url:"contact.html"}]},
+
+      {keys:['bye','goodbye','later','done','close','exit'],
+       reply:"Take care! If you have more questions later, you can always reopen me using the 'Ask Caliber' button at the bottom of the page or in the nav bar."},
+
+      {keys:['help','what can you do','how do you work','options','menu'],
+       reply:"I can help with: <br>• Navigating to any page<br>• Explaining our roofing services and materials<br>• Florida-specific questions (25% rule, wind mitigation, My Safe Florida Home)<br>• Warranty &amp; financing info<br>• Storm damage &amp; insurance claim guidance<br><br>Just ask in plain language — like \"show me the tile page\" or \"what's the 25% rule?\""}
+    ],
+
+    fallback: {
+      reply: "I want to give you accurate information, and that question is outside what I can answer from our website. For the best answer, our team is one click away — they'll help with anything I can't.",
+      nav: [{label:"Contact Us",url:"contact.html"},{label:"View FAQs",url:"faq.html"},{label:"Call Now",url:"tel:+14074391200"}]
+    },
+
+    quickStart: [
+      {tag:"Services",text:"What roofing systems do you install?",q:"services"},
+      {tag:"Storm",text:"I have storm damage — what do I do?",q:"storm damage"},
+      {tag:"FAQ",text:"What's the Florida 25% rule?",q:"25% rule"},
+      {tag:"Contact",text:"Schedule a free inspection",q:"free inspection"}
+    ]
+  };
+
+  // ============ MATCHING ENGINE ============
+  function normalize(s){ return (s||'').toLowerCase().replace(/[^\w\s%]/g,' ').replace(/\s+/g,' ').trim(); }
+
+  function scoreIntent(intent, text){
+    var n = normalize(text);
+    var score = 0;
+    intent.keys.forEach(function(k){
+      var nk = normalize(k);
+      if(n.indexOf(nk) !== -1){
+        // Longer keyword match = higher weight
+        score += nk.length + 2;
+        // Exact whole-word boost
+        var rx = new RegExp('\\b' + nk.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\b');
+        if(rx.test(n)) score += 5;
+      }
+    });
+    return score;
+  }
+
+  function match(text){
+    var best = null, bestScore = 0;
+    KB.intents.forEach(function(it){
+      var s = scoreIntent(it, text);
+      if(s > bestScore){ bestScore = s; best = it; }
+    });
+    return bestScore >= 3 ? best : null;
+  }
+
+  // ============ UI ============
+  var panel = document.getElementById('ccgAgentPanel');
+  var launcher = document.getElementById('ccgAgentLauncher');
+  var closeBtn = document.getElementById('ccgAgentClose');
+  var form = document.getElementById('ccgAgentForm');
+  var input = document.getElementById('ccgAgentInput');
+  var body = document.getElementById('ccgAgentBody');
+
+  function escapeHTML(s){
+    return String(s).replace(/[<>&"]/g, function(c){
+      return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];
+    });
+  }
+
+  function addBotMsg(html, nav, chips){
+    var navHTML = '';
+    if(nav && nav.length){
+      navHTML = '<div style="margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.4rem">';
+      nav.forEach(function(n){
+        var target = n.url.indexOf('tel:')===0 ? '' : ' target="_self"';
+        navHTML += '<a class="ccg-nav-btn" href="'+n.url+'"'+target+'>'+n.label+'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>';
+      });
+      navHTML += '</div>';
+    }
+    var chipsHTML = '';
+    if(chips && chips.length){
+      chipsHTML = '<div class="ccg-chip-row">';
+      chips.forEach(function(c){
+        chipsHTML += '<button class="ccg-chip" data-q="'+escapeHTML(c.q||c.text)+'">'+escapeHTML(c.text)+'</button>';
+      });
+      chipsHTML += '</div>';
+    }
+    var msgDiv = document.createElement('div');
+    msgDiv.className = 'ccg-msg ccg-msg-bot';
+    msgDiv.innerHTML = '<div class="ccg-bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="ccg-bubble">'+html+navHTML+chipsHTML+'</div>';
+    body.appendChild(msgDiv);
+    body.scrollTop = body.scrollHeight;
+    bindChips();
+  }
+
+  function addUserMsg(text){
+    var div = document.createElement('div');
+    div.className = 'ccg-msg ccg-msg-user';
+    div.innerHTML = '<div class="ccg-bubble">'+escapeHTML(text)+'</div>';
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function showTyping(){
+    var t = document.createElement('div');
+    t.className = 'ccg-msg ccg-msg-bot';
+    t.id = 'ccgTyping';
+    t.innerHTML = '<div class="ccg-bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="ccg-bubble" style="padding:.55rem 1rem"><div class="ccg-typing"><span></span><span></span><span></span></div></div>';
+    body.appendChild(t);
+    body.scrollTop = body.scrollHeight;
+  }
+  function hideTyping(){ var t=document.getElementById('ccgTyping'); if(t) t.remove(); }
+
+  function bindChips(){
+    body.querySelectorAll('.ccg-chip').forEach(function(c){
+      if(c.dataset.bound) return;
+      c.dataset.bound = '1';
+      c.addEventListener('click', function(){
+        var q = c.dataset.q;
+        handleUserQuery(q);
+      });
+    });
+  }
+
+  function handleUserQuery(text){
+    if(!text || !text.trim()) return;
+    addUserMsg(text);
+    input.value = '';
+    showTyping();
+    setTimeout(function(){
+      hideTyping();
+      var intent = match(text);
+      if(intent){
+        addBotMsg(intent.reply, intent.nav);
+      } else {
+        addBotMsg(KB.fallback.reply, KB.fallback.nav);
+      }
+    }, 500);
+  }
+
+  function showGreeting(){
+    addBotMsg(KB.greeting, null, KB.quickStart);
+  }
+
+  function openPanel(){
+    panel.classList.add('open');
+    document.body.classList.add('ccg-agent-open');
+    launcher.classList.remove('show');
+    if(!body.dataset.greeted){
+      showGreeting();
+      body.dataset.greeted = '1';
+    }
+    setTimeout(function(){ input.focus(); }, 150);
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    document.body.classList.remove('ccg-agent-open');
+    launcher.classList.add('show');
+    localStorage.setItem('ccg-agent-dismissed','1');
+  }
+
+  // Events
+  launcher.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    handleUserQuery(input.value);
+  });
+
+  // Nav bar "Ask Caliber" link
+  document.querySelectorAll('[data-ccg-agent-open]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openPanel();
+    });
+  });
+
+  // First-visit auto-popup behavior:
+  // - If never seen before: auto-open panel after 1.2s
+  // - If dismissed before: show launcher button only
+  var dismissed = localStorage.getItem('ccg-agent-dismissed');
+  if(dismissed === '1'){
+    launcher.classList.add('show');
+  } else {
+    setTimeout(openPanel, 1200);
+    launcher.classList.add('show'); // also show launcher so they know how to reopen
+  }
+})();
+</script>
+
 </body>
 </html>
