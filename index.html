@@ -1279,14 +1279,16 @@ body.ccg-agent-open .float-call{display:none!important}
   });
 
   // First-visit auto-popup behavior:
-  // - If never seen before: auto-open panel after 1.2s
-  // - If dismissed before: show launcher button only
+  // - Desktop only: auto-open panel after 1.2s on first visit
+  // - Mobile: never auto-popup (launcher button only)
+  // - If dismissed before: launcher only
   var dismissed = localStorage.getItem('ccg-agent-dismissed');
-  if(dismissed === '1'){
+  var isMobile = window.matchMedia('(max-width: 768px)').matches || ('ontouchstart' in window && window.innerWidth < 900);
+  if(dismissed === '1' || isMobile){
     launcher.classList.add('show');
   } else {
     setTimeout(openPanel, 1200);
-    launcher.classList.add('show'); // also show launcher so they know how to reopen
+    launcher.classList.add('show');
   }
 })();
 </script>
