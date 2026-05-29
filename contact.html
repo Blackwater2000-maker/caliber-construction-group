@@ -232,6 +232,7 @@ section{padding:4.5rem 0}
 
 
 
+
 <style id="ccg-agent-css">
 /* AI Agent — Caliber Concierge */
 .ccg-agent-launcher{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;background:linear-gradient(135deg,#071429 0%,#1a3a6b 100%);color:#fff;border:1px solid rgba(212,168,67,.35);border-radius:999px;padding:.65rem 1.1rem .65rem .85rem;display:none;align-items:center;gap:.55rem;cursor:pointer;box-shadow:0 8px 28px rgba(7,20,41,.45);font-family:'Inter',Arial,sans-serif;font-size:.85rem;font-weight:600;transition:transform .2s,box-shadow .2s;animation:ccg-launcher-pulse 2.5s ease-in-out infinite}
@@ -318,16 +319,9 @@ section{padding:4.5rem 0}
 
 /* Mobile */
 @media(max-width:480px){
-  .ccg-agent-panel{width:calc(100vw - 1.25rem);max-width:360px;height:min(72vh,500px);bottom:.65rem;right:.625rem;left:auto;border-radius:16px}
-  .ccg-agent-launcher{bottom:.75rem;right:.75rem;padding:.5rem .85rem .5rem .6rem;font-size:.8rem}
-  .ccg-agent-launcher .ccg-launcher-orb{width:22px;height:22px}
-  .ccg-agent-head{padding:.9rem 1rem}
-  .ccg-agent-orb{width:34px;height:34px}
-  .ccg-agent-body{padding:1rem}
-  .ccg-quick-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px) and (max-height:680px){
-  .ccg-agent-panel{height:min(68vh,440px)}
+  .ccg-agent-panel{width:calc(100vw - 1.5rem);height:calc(100vh - 1.5rem);bottom:.75rem;right:.75rem;border-radius:14px}
+  .ccg-agent-launcher{bottom:.85rem;right:.85rem;padding:.55rem .9rem .55rem .65rem}
+  .ccg-agent-launcher .ccg-launcher-orb{width:24px;height:24px}
 }
 
 /* Nav button */
@@ -589,6 +583,122 @@ body.ccg-agent-open .float-call{display:none!important}
 
 
 
+';
+    }
+    var chipsHTML = '';
+    if(chips && chips.length){
+      chipsHTML = '<div class="ccg-chip-row">';
+      chips.forEach(function(c){
+        chipsHTML += '<button class="ccg-chip" data-q="'+escapeHTML(c.q||c.text)+'">'+escapeHTML(c.text)+'</button>';
+      });
+      chipsHTML += '</div>';
+    }
+    var msgDiv = document.createElement('div');
+    msgDiv.className = 'ccg-msg ccg-msg-bot';
+    msgDiv.innerHTML = '<div class="ccg-bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="ccg-bubble">'+html+navHTML+chipsHTML+'</div>';
+    body.appendChild(msgDiv);
+    body.scrollTop = body.scrollHeight;
+    bindChips();
+  }
+
+  function addUserMsg(text){
+    var div = document.createElement('div');
+    div.className = 'ccg-msg ccg-msg-user';
+    div.innerHTML = '<div class="ccg-bubble">'+escapeHTML(text)+'</div>';
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function showTyping(){
+    var t = document.createElement('div');
+    t.className = 'ccg-msg ccg-msg-bot';
+    t.id = 'ccgTyping';
+    t.innerHTML = '<div class="ccg-bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="ccg-bubble" style="padding:.55rem 1rem"><div class="ccg-typing"><span></span><span></span><span></span></div></div>';
+    body.appendChild(t);
+    body.scrollTop = body.scrollHeight;
+  }
+  function hideTyping(){ var t=document.getElementById('ccgTyping'); if(t) t.remove(); }
+
+  function bindChips(){
+    body.querySelectorAll('.ccg-chip').forEach(function(c){
+      if(c.dataset.bound) return;
+      c.dataset.bound = '1';
+      c.addEventListener('click', function(){
+        var q = c.dataset.q;
+        handleUserQuery(q);
+      });
+    });
+  }
+
+  function handleUserQuery(text){
+    if(!text || !text.trim()) return;
+    addUserMsg(text);
+    input.value = '';
+    showTyping();
+    setTimeout(function(){
+      hideTyping();
+      var intent = match(text);
+      if(intent){
+        addBotMsg(intent.reply, intent.nav);
+      } else {
+        addBotMsg(KB.fallback.reply, KB.fallback.nav);
+      }
+    }, 500);
+  }
+
+  function showGreeting(){
+    addBotMsg(KB.greeting, null, KB.quickStart);
+  }
+
+  function openPanel(){
+    panel.classList.add('open');
+    document.body.classList.add('ccg-agent-open');
+    launcher.classList.remove('show');
+    if(!body.dataset.greeted){
+      showGreeting();
+      body.dataset.greeted = '1';
+    }
+    setTimeout(function(){ input.focus(); }, 150);
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    document.body.classList.remove('ccg-agent-open');
+    launcher.classList.add('show');
+    localStorage.setItem('ccg-agent-dismissed','1');
+  }
+
+  // Events
+  launcher.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    handleUserQuery(input.value);
+  });
+
+  // Nav bar "Ask Caliber" link
+  document.querySelectorAll('[data-ccg-agent-open]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openPanel();
+    });
+  });
+
+  // First-visit auto-popup behavior:
+  // - Desktop only: auto-open panel after 1.2s on first visit
+  // - Mobile: never auto-popup (launcher button only)
+  // - If dismissed before: launcher only
+  var dismissed = localStorage.getItem('ccg-agent-dismissed');
+  var isMobile = window.matchMedia('(max-width: 768px)').matches || ('ontouchstart' in window && window.innerWidth < 900);
+  if(dismissed === '1' || isMobile){
+    launcher.classList.add('show');
+  } else {
+    setTimeout(openPanel, 1200);
+    launcher.classList.add('show');
+  }
+})();
+</script>
+
+
 <!-- CCG AI Concierge Agent -->
 <button class="ccg-agent-launcher" id="ccgAgentLauncher" aria-label="Open Caliber Concierge">
   <div class="ccg-launcher-orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
@@ -709,8 +819,12 @@ body.ccg-agent-open .float-call{display:none!important}
        reply:"We pull all required roofing permits with the appropriate Central Florida county or municipality (Orange, Seminole, Osceola, Lake, Polk, Volusia, or Brevard). Permits are included in every full replacement. Never let a contractor skip the permit — it voids insurance coverage and complicates future home sales.",
        nav:[{label:"FAQ on Permits",url:"faq.html"}]},
 
+      {keys:['license number','license #','license no','ccc1337709','ccc 1337709','what is your license','your license','verify license','myfloridalicense','dbpr'],
+       reply:"Our Florida State Certified Roofing Contractor license number is <strong>CCC1337709</strong>. It is active and verified through the Florida Department of Business and Professional Regulation (DBPR). You can verify it anytime at myfloridalicense.com — just enter our license number or our business name.",
+       nav:[{label:"Verify at MyFloridaLicense",url:"https://www.myfloridalicense.com/wl11.asp?mode=2&search=LicNbr&SID=&brd=&typ="},{label:"About Caliber",url:"about.html"}]},
+
       {keys:['licensed','license','insured','insurance coverage','liability'],
-       reply:"Yes — Caliber is a Florida-licensed roofing contractor, fully insured with general liability and workers' compensation. State License #CCC1337709 — active and verified. Our permit holder also holds a Florida civil engineering license.",
+       reply:"Yes — Caliber is a Florida State Certified Roofing Contractor — License #CCC1337709, active and verified with the Florida Department of Business and Professional Regulation. Fully insured with general liability and workers\' compensation. Our permit holder also holds a Florida civil engineering license.",
        nav:[{label:"About Caliber",url:"about.html"}]},
 
       {keys:['county','counties','area','service area','where','location','locations','orlando','seminole','osceola','lake','polk','volusia','brevard'],
